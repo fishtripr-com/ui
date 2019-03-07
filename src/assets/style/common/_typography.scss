@@ -1,0 +1,78 @@
+// ==========================================================================
+// Font
+// ==========================================================================
+
+@mixin typo-base($fw, $fs, $lh) {
+  font: {
+    style: normal;
+    weight: $fw;
+    size: $fs
+  }
+  line-height: $lh;
+  color: map-get($colors, "text");
+}
+
+//  1. Titles & Texts
+// ==========================================================================
+
+@each $size in map-keys($fs-title) {
+  .title-#{$size} {
+    @include typo-base($fw-l, map-get($fs-title, $size), map-get($lh-title, $size))
+  }
+}
+
+@each $size in map-keys($fs-text) {
+  .txt-#{$size} {
+    @include typo-base($fw-m, map-get($fs-text, $size), map-get($lh-text, $size))
+  }
+}
+
+//  2. Links
+// ==========================================================================
+
+.link {
+  color: map-get($colors, "link") !important;
+  cursor: pointer;
+
+  &:hover {
+    color: map-get($colors, "link-hover") !important;
+  }
+}
+
+.link-light {
+  color: map-get($colors, "link-light") !important;
+  cursor: pointer;
+
+  &:hover {
+    color: map-get($colors, "link-hover-light") !important;
+  }
+}
+
+.link-white {
+  color: map-get($colors, "link-white") !important;
+  cursor: pointer;
+
+  &:hover {
+    color: map-get($colors, "link-hover-white") !important;
+  }
+}
+
+//  3. Class light (For reverse theme)
+// ==========================================================================
+
+.light {
+  color: map-get($colors, "text-light");
+}
+.white {
+  color: map-get($colors, "text-white");
+}
+
+//  4. Class bold
+// ==========================================================================
+
+.thin {
+  font-weight: $fw-m;
+}
+.bold {
+  font-weight: $fw-l;
+}

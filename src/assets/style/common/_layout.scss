@@ -1,0 +1,47 @@
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+//  1. Containers
+// ==========================================================================
+
+@mixin container-base() {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  @include container-base();
+  flex-direction: column;
+}
+.container-row {
+  @include container-base();
+}
+
+//  2. Layouts
+// ==========================================================================
+
+.lyt-body {
+  margin: 0 auto;
+  width: $layout-body-width;
+  max-width: $layout-body-max-width;
+  min-width: $layout-body-min-width;
+
+  @media #{$screen-l} {
+    width: $layout-body-width-l;
+    max-width: $layout-body-max-width-l;
+    min-width: $layout-body-min-width-l;
+  }
+  @media #{$screen-m} {
+    width: $layout-body-width-m;
+    max-width: $layout-body-max-width-m;
+    min-width: $layout-body-min-width-m;
+  }
+  @media #{$screen-s} {
+    width: $layout-body-width-s;
+    max-width: $layout-body-max-width-s;
+    min-width: $layout-body-min-width-s;
+  }
+}
