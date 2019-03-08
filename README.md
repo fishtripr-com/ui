@@ -19,11 +19,12 @@ $ yarn add @fishtripr-com/ui
 ## How to make a release
 
 1. Always make your changes on a feature branch, starting from `development`, with the version number (for example `feature-v0.0.2`).
-2. Bump the version in `package.json` by using the command `npm version` (make sure it's the same version as the name of your branch).
-3. Make a pull request on GitHub and wait for approval.
-4. Once the pull request is approved, merge it into the `development` branch.
-5. Publish to npm using the `npm publish --access=public` command.
-6. Merge the `development` branch into `master` and push to GitHub.
+2. Make sure you build the package by running `yarn build`. It will create a new `index.js` file in `dist`.
+3. Bump the version in `package.json` by using the command `npm version` (make sure it's the same version as the name of your branch).
+4. Make a pull request on GitHub and wait for approval.
+5. Once the pull request is approved, merge it into the `development` branch.
+6. Publish to npm using the `npm publish --access=public` command.
+7. Merge the `development` branch into `master` and push to GitHub.
 
 ## Storybook
 
