@@ -1,25 +1,16 @@
+import Vue from 'vue'
 import Avatar from './components/avatar';
 import ImageContainer from './components/image-container';
 
-const components = [
-  Avatar,
-  ImageContainer,
-];
-
-const install = function(Vue) {
-  components.map(component => {
-    Vue.component(component.name, component);
-  });
-};
-
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
-
-module.exports = {
-  install,
+const Components = {
   Avatar,
   ImageContainer
-};
+}
 
-module.exports.default = module.exports;
+export default {
+  install(Vue, options) {
+    Object.keys(Components).forEach((name) => {
+      Vue.component(name, Components[name])
+    })
+  }
+}
