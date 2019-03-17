@@ -1,19 +1,13 @@
 <template>
-  <div class="avatar">
-    <div 
-      class="image-wrapper"
-      :style='{ 
-        backgroundImage: coverImg,
-        paddingTop: verticalSize
-      }'>
-      &nbsp;
-    </div>
+  <div class="avatar" :class="[size]">
+    <image-container :image="image || getRandomFallback()" :height="100" class="image"/>
   </div>
 </template>
 
 <script>
 import { getRandomNumber } from '../../functions/math'
 import { S3_BUCKET_URL } from '../../constants/urls'
+import ImageContainer from '../image-container'
 
 export default {
   name: 'avatar',
@@ -21,23 +15,16 @@ export default {
     image: {
       type: String
     },
-    height: {
-      type: Number,
-      default: 0
+    size: {
+      type: String,
+      default: 'm',
+      validator: value => ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'].includes(value)
     }
   },
+  components: { ImageContainer },
   data() {
     return {
       fishesColorNames: ['blue_pale', 'gray', 'green_light', 'green_pale', 'green', 'orange', 'pink', 'red_pale', 'yellow']
-    }
-  },
-  computed: {
-    coverImg() {
-      const pic = this.image || this.getRandomFallback()
-      return `url('${pic}')`
-    },
-    verticalSize() {
-      return `${this.height}%`
     }
   },
   methods: {
@@ -50,25 +37,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin dimensions($size) {
+  width: #{$size}px;
+  min-width: #{$size}px;
+  max-width: #{$size}px;
+  height: #{$size}px;
+  max-height: #{$size}px;
+  min-height: #{$size}px;
+}
+
 .avatar {
   display: flex;
   align-items: center;
-  width: 85px;
-  min-width: 85px;
-  max-width: 85px;
-  height: 85px;
-  max-height: 85px;
-  min-height: 85px;
+  border-radius: 100%;
+  overflow: hidden;
 
-  .image-wrapper {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    border-radius: 100%;
-  }
+  &.xxs { @include dimensions(24) }
+  &.xs { @include dimensions(30) }
+  &.s { @include dimensions(36) }
+  &.m { @include dimensions(48) }
+  &.l { @include dimensions(64) }
+  &.xl { @include dimensions(72) }
+  &.xxl { @include dimensions(86) }
 }
 </style>
