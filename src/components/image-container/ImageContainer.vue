@@ -49,6 +49,6 @@ export default {
   background-position: center;
   position: relative;
   width: 100%;
-  min-width: 100px;
+  min-width: 10px;
 }
 </style>
