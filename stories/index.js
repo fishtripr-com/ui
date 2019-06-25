@@ -21,3 +21,16 @@ storiesOf('Conversation card', module)
 
 storiesOf('Loader', module)
   .add('Basic', () => '<fishtripr-loader/>');
+
+storiesOf('Offer Card', module)
+  .add(
+    'Basic', 
+    () => {
+      `<offer-card
+        picture="https://i.ytimg.com/vi/OJcvzRnPHCI/maxresdefault.jpg"
+        title="An unforgettable father-and-son fishing experience in Jura"
+        hat="1 Guest - Jun 07, 2019 - €200"
+        status="Pending"
+        mode="warning"
+        />`
+    });
