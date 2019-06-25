@@ -34,3 +34,14 @@ storiesOf('Offer Card', module)
         mode="warning"
         />`
     );
+
+storiesOf('Chat Message Card', module)
+  .add(
+    'Basic', 
+    () => 
+      `<chat-message-card
+        avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
+        message-header="Kevin Tassi"
+        message-time="Jun 20, 6:44pm"
+        />`
+    );
