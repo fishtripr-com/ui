@@ -87,10 +87,10 @@ export default {
     justify-content: space-around;
 
     .title {
-      font-size: 16px;
-      line-height: 16px;
-      font-weight: 500;
+      font-weight: 700;
       margin: 0;
+      font-size: .9rem;
+      line-height: 1.4rem;
     }
     .hat {
       font-size: 14px;
