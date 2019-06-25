@@ -6,26 +6,22 @@
 
     <template v-if="!isLoading">
       <div class="img">
-        <fly-image :img="image" :height='70'/>
+        <img :src="image"/>
       </div>
 
       <div class="body">
 
-        <fly-text size="s" weight="bold">
+        <p class="title">
           {{ title }}
-        </fly-text>
+        </p>
 
-        <fly-text size="xs">
+        <p class="hat">
           {{ hat }}
-        </fly-text>
+        </p>
 
-        <fly-text
-          :type="mode"
-          size='xs'
-          weight='semibold'
-          >
+        <p class="status" :class="mode">
           {{ status }}
-        </fly-text>
+        </p>
 
       </div>
 
@@ -64,18 +60,63 @@ export default {
   align-items: center;
   border: 1px solid #E4E5EC;
   width: 100%;
-  max-height: 80px;
+  height: 100px;
+  max-height: 100px;
   cursor: pointer;
   background-color: white;
 
   .img {
-    width: 100px;
+    width: 110px;
+    height: 70px;
     padding: 0.8rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .body {
     flex: 1;
-    padding: 0.8rem 0;
+    height: 100%;
+    max-height: 80px;
+    font-family: 'Montserrat', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .title {
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 500;
+      margin: 0;
+    }
+    .hat {
+      font-size: 14px;
+      line-height: 16px;
+      margin: 0;
+      color: #898EA2;
+    }
+    .status {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16px;
+      margin: 0;
+
+      &.success {
+        color: #30DEA0
+      }
+      &.danger {
+        color: #FF4961
+      }
+      &.warning {
+        color: #FFC06A
+      }
+      &.info {
+        color: #1E9FF2
+      }
+    }
   }
 
   .arrow {

@@ -25,12 +25,12 @@ storiesOf('Loader', module)
 storiesOf('Offer Card', module)
   .add(
     'Basic', 
-    () => {
+    () => 
       `<offer-card
-        picture="https://i.ytimg.com/vi/OJcvzRnPHCI/maxresdefault.jpg"
+        image="https://picsum.photos/200/300"
         title="An unforgettable father-and-son fishing experience in Jura"
         hat="1 Guest - Jun 07, 2019 - €200"
         status="Pending"
         mode="warning"
         />`
-    });
+    );
