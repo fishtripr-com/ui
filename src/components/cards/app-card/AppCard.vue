@@ -54,7 +54,7 @@ export default {
     description: { type: String },
     status: { 
       type: String,
-      validator: value => ['on', 'off', 'coming-soon'].includes(value)
+      validator: value => ['on', 'off', 'coming soon'].includes(value)
     },
     statusMode: { 
       type: String,
@@ -114,6 +114,8 @@ export default {
       }
       .icon {
         margin-left: 10px;
+        width: 16px;
+        height: 16px;
       }
     }
 
