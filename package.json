@@ -36,6 +36,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
+    "publish": "./npm-publisher.sh",
     "storybook": "start-storybook -p 9001 -c .storybook"
   }
 }
