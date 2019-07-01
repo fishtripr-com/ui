@@ -22,9 +22,9 @@ storiesOf('Conversation card', module)
 storiesOf('Loader', module)
   .add('Basic', () => '<fishtripr-loader/>');
 
-storiesOf('Offer Card', module)
+storiesOf('Cards', module)
   .add(
-    'Basic', 
+    'Offer Card', 
     () => 
       `<offer-card
         image="https://picsum.photos/200/300"
@@ -33,15 +33,27 @@ storiesOf('Offer Card', module)
         status="Pending"
         mode="warning"
         />`
-    );
-
-storiesOf('Chat Message Card', module)
+  )
   .add(
-    'Basic', 
+    'Chat Message Card', 
     () => 
       `<chat-message-card
         avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
         message-header="Kevin Tassi"
         message-time="Jun 20, 6:44pm"
         />`
-    );
+  )
+  .add(
+    'App Card', 
+    () => 
+      `<app-card
+        id="123"
+        image="https://picsum.photos/200/300"
+        title="My beautifull app"
+        description="This is an example on description"
+        status="on"
+        status-mode="success"
+        icon="check"
+        />`
+  );
+
