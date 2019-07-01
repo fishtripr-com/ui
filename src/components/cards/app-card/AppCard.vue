@@ -74,11 +74,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/style/index';
+
 .app-card {
   display: flex;
   width: 300px;
   box-sizing: border-box;
-  border: 5px solid transparent;
+  border: $border-card solid transparent;
 
   .wrapper {
     display: flex;
@@ -86,7 +88,7 @@ export default {
     flex-direction: column;
     width: 100%;
     padding: 20px 20px 50px 20px;
-    border: 1px solid #E4E5EC;
+    border: 1px solid $color-border;
     cursor: pointer;
 
     .image-container {
@@ -95,6 +97,8 @@ export default {
 
     .header-container {
       display: flex;
+      margin: $space-s 0;
+
       .title {
         font-size: 16px;
         font-weight: 700;
@@ -105,7 +109,7 @@ export default {
     }
 
     .description {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
       color: #898EA2;
       margin: 0;
@@ -120,10 +124,19 @@ export default {
       bottom: 10px;
 
       &.success {
-        color: #30DEA0;
+        color: $color-success;
       }
-      &.comming-soon {
-        color: #666EE8;
+      &.coming-soon {
+        color: $color-premium;
+      }
+      &.danger {
+        color: $color-danger;
+      }
+      &.info {
+        color: $color-info;
+      }
+      &.warning {
+        color: $color-warning;
       }
     }
 
