@@ -43,8 +43,6 @@
 
 <script>
 import ImageContainer from '../../image-container'
-import checkIcon from '../../../assets/icons/check.svg'
-import padlockIcon from '../../../assets/icons/padlock.svg'
 
 export default {
   name: 'app-card',
