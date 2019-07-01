@@ -52,9 +52,18 @@ export default {
     image: { type: String },
     title: { type: String },
     description: { type: String },
-    status: { type: String },
-    statusMode: { type: String },
-    icon: { type: String }
+    status: { 
+      type: String,
+      validator: value => ['on', 'off', 'coming-soon'].includes(value)
+    },
+    statusMode: { 
+      type: String,
+      validator: value => ['success', 'danger', 'warning', 'info', 'premium'].includes(value)
+    },
+    icon: { 
+      type: String,
+      validator: value => ['check', 'lock'].includes(value)
+    },
   },
   computed: {
     iconSVG() {
@@ -126,7 +135,7 @@ export default {
       &.success {
         color: $color-success;
       }
-      &.coming-soon {
+      &.premium {
         color: $color-premium;
       }
       &.danger {
