@@ -1,0 +1,140 @@
+// ==========================================================================
+// Materialize variables
+// ==========================================================================
+
+// Table of Contents:
+
+//  1. Media queries
+//  3. Sizes
+//  4. Colors
+//  4.1. Colors : Template
+//  5. Font
+//  6. Spacing
+//  7. Box-shadow
+
+// 1. Media queries
+// ==========================================================================
+
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$large-and-down: "only screen and (max-width : #{$large-screen})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// 3. Sizes
+// ==========================================================================
+
+$height-navbar: 70px;
+$border-card: 6px;
+
+// 4. Colors
+// ==========================================================================
+
+// Primary
+$seafoam-blue: #56D2AB;
+$white: #FFFFFF;
+// Secondary
+$charcoal-grey: #353745;
+$steel: #898EA2;
+$pale-grey: #E4E5EC;
+// Status
+$watermelon: #FF4961;
+$aqua-marine: #30DEA0;
+$azure: #1E9FF2;
+$apricot: #FFC06A;
+// Tags
+$tag-guideNHost: #666EE8;
+$tag-guide: #BE7A0B;
+$tag-host: #36BEFB;
+$tag-fishery: #7C8E72;
+
+// 4.1 Colors : Template front end marketplace (DECISIONS)
+// ==========================================================================
+
+$color-background-nav: $white;
+$color-background-primary: $seafoam-blue;
+$color-background-danger: $watermelon;
+$color-background-success: $aqua-marine;
+$color-background-info: $azure;
+$color-background-warning: $apricot;
+$color-background-plain: transparent;
+$color-background-light: $steel;
+$color-background-lighter: $pale-grey;
+
+$color-link: $charcoal-grey;
+$color-link-light: $white;
+
+$color-text: $charcoal-grey;
+$color-text-light: $steel;
+$color-text-dark: $white;
+$color-text-primary: $seafoam-blue;
+$color-text-danger: $watermelon;
+$color-text-success: $aqua-marine;
+$color-text-info: $azure;
+$color-text-warning: $apricot;
+
+$color-heading: $charcoal-grey;
+$color-heading-light: $steel;
+$color-heading-dark: $white;
+$color-heading-primary: $seafoam-blue;
+$color-heading-secondary: $pale-grey;
+
+$color-border: $pale-grey;
+$color-border-light: $steel;
+$color-border-dark: $white;
+$color-border-primary: $seafoam-blue;
+
+
+// 5. Fonts
+// ==========================================================================
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+$font-family: 'Montserrat', sans-serif;
+$font-size-xs: 0.65rem;
+$font-size-s: 0.75rem;
+$font-size-m: 0.9rem;
+$font-size-l: 1rem;
+$font-size-xl: 1.1rem;
+$heading-size-xs: 0.9rem;
+$heading-size-s: 1.2rem;
+$heading-size-m: 1.9rem;
+$heading-size-l: 2.5rem;
+$heading-size-xl: 3rem;
+$line-height-diff: 0.5rem;
+$line-height-xs: $font-size-xs + $line-height-diff;
+$line-height-s: $font-size-s + $line-height-diff;
+$line-height-m: $font-size-m + $line-height-diff;
+$line-height-l: $font-size-l + $line-height-diff;
+$line-height-xl: $font-size-xl + $line-height-diff;
+$letter-spacing: 0.008rem;
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+
+//  6. Spacing
+// ==========================================================================
+
+$space-xxxs: 0.15rem;
+$space-xxs: 0.3rem;
+$space-xs: 0.6rem;
+$space-s: 0.8rem;
+$space-m: 1rem;
+$space-l: 1.2rem;
+$space-xl: 2.2rem;
+$space-xxl: 3.4rem;
+$space-xxxl: 7rem;
+
+//  7. Box-shadow
+// ==========================================================================
+
+$box-shadow: 0 2px 15px 0 rgba(69, 73, 91, 0.18);
+$box-bottom-shadow: 0px 10px 15px 0 rgba(69, 73, 91, 0.3);

@@ -1,0 +1,49 @@
+// ==========================================================================
+// Classes
+// ==========================================================================
+
+//  1. Type of experiences
+// ==========================================================================
+
+.guide_hosting {
+  color: $tag-guideNHost;
+}
+
+.guide {
+  color: $tag-guide;
+}
+
+.hosting {
+  color: $tag-host;
+}
+
+.fishery {
+  color: $tag-fishery;
+}
+
+.call-to {
+  color: inherit;
+}
+
+.rating-s {
+  display: flex;
+  align-items: center;
+
+  .el-rate__item {
+    .el-rate__icon {
+      margin: 0;
+      padding: 0;
+
+      &::before {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .el-rate__text {
+    margin-left: 8px;
+    margin-top: 3px;
+    font-size: $font-size-s;
+    color: $charcoal-grey !important;
+  }
+}
