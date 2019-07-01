@@ -7,7 +7,7 @@
 
       <div class="image-container">
         <image-container 
-          :img="image"
+          :image="image"
           :height="100"
           />
       </div>
