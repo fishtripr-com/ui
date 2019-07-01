@@ -60,7 +60,11 @@ export default {
   },
   computed: {
     iconSVG() {
-      return this.icon === 'check' ? checkIcon : padlockIcon
+      if (this.icon === 'check') {
+        return 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/images/icons/success.svg' 
+      } else {
+        return 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/images/icons/padlock.svg'
+      }
     }
   },
   methods: {
