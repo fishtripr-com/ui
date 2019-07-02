@@ -1,6 +1,6 @@
 {
   "name": "@fishtripr-com/ui",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "UI elements for Fishtripr",
   "license": "MIT",
   "repository": {
@@ -36,7 +36,6 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "publish": "./npm-publisher.sh",
     "storybook": "start-storybook -p 9001 -c .storybook"
   }
 }
