@@ -28,14 +28,6 @@
         {{ description }}
       </p>
 
-      <p 
-        v-if="status"
-        class="status"
-        :class="statusMode"
-        >
-        {{ status }}
-      </p>
-
     </div>
 
   </div>
@@ -55,10 +47,6 @@ export default {
     status: { 
       type: String,
       validator: value => ['on', 'off', 'coming soon'].includes(value)
-    },
-    statusMode: { 
-      type: String,
-      validator: value => ['success', 'danger', 'warning', 'info', 'premium'].includes(value)
     },
     icon: { 
       type: String,
@@ -126,31 +114,6 @@ export default {
       margin: 0;
       margin-bottom: 5px;
     }
-
-    .status {
-      position: absolute;
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      bottom: 10px;
-
-      &.success {
-        color: $color-success;
-      }
-      &.premium {
-        color: $color-premium;
-      }
-      &.danger {
-        color: $color-danger;
-      }
-      &.info {
-        color: $color-info;
-      }
-      &.warning {
-        color: $color-warning;
-      }
-    }
-
   }
 }
 </style>
