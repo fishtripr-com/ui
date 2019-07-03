@@ -1,5 +1,14 @@
 import { storiesOf } from '@storybook/vue';
 
+storiesOf('Button', module)
+  .add('Loading', () => '<base-button label="I\'m loading" loading/>')
+  .add('Primary', () => '<base-button>Click me</base-button>')
+  .add('Success', () => '<base-button type="success">Click me</base-button>')
+  .add('Danger', () => '<base-button type="danger">Click me</base-button>')
+  .add('Premium', () => '<base-button type="premium">Click me</base-button>')
+  .add('Small', () => '<base-button size="s">Click me</base-button>')
+  .add('Medium', () => '<base-button size="m">Click me</base-button>')
+
 storiesOf('Avatar', module)
   .add('with URL', () => '<avatar image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"/>')
   .add('without URL (fallback)', () => '<avatar/>')
