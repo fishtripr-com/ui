@@ -55,5 +55,6 @@ storiesOf('Cards', module)
         status-mode="success"
         icon="check"
         />`
-  );
+  )
+  .add('Employee Card', () => '<employee-card/>')
 
