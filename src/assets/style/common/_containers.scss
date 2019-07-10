@@ -1,0 +1,63 @@
+// ==========================================================================
+// Containers
+// ==========================================================================
+
+//  1. layouts
+// ==========================================================================
+
+.layout-body {
+  margin: 0 auto;
+  max-width: 1280px;
+  min-width: 960px;
+  width: 60%;
+
+  @media #{$large-and-down} {
+    width: 70%;
+    min-width: 860px;
+  }
+  @media #{$medium-and-down} {
+    width: 80%;
+    min-width: 460px;
+  }
+  @media #{$small-and-down} {
+    width: 90%;
+    min-width: 260px;
+  }
+}
+
+.layout-header {
+  margin: auto;
+  width: 98%;
+  max-width: 1620px;
+  min-width: 260px;
+
+  @media #{$large-and-down} {
+    width: 97.8%;
+  }
+
+  @media #{$medium-and-down} {
+    width: 97%;
+  }
+
+  @media #{$small-and-down} {
+    width: 90%;
+  }
+}
+
+.layout-nav {
+  margin: auto;
+  width: 98%;
+  min-width: 260px;
+
+  @media #{$large-and-down} {
+    width: 97.8%;
+  }
+
+  @media #{$medium-and-down} {
+    width: 97%;
+  }
+
+  @media #{$small-and-down} {
+    width: 90%;
+  }
+}

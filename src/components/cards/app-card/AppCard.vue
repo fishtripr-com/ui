@@ -7,7 +7,7 @@
 
       <div class="image-container">
         <image-container 
-          :img="image"
+          :image="image"
           :height="100"
           />
       </div>
@@ -28,14 +28,6 @@
         {{ description }}
       </p>
 
-      <p 
-        v-if="status"
-        class="status"
-        :class="statusMode"
-        >
-        {{ status }}
-      </p>
-
     </div>
 
   </div>
@@ -43,8 +35,6 @@
 
 <script>
 import ImageContainer from '../../image-container'
-import checkIcon from '../../../assets/icons/check.svg'
-import padlockIcon from '../../../assets/icons/padlock.svg'
 
 export default {
   name: 'app-card',
@@ -54,13 +44,22 @@ export default {
     image: { type: String },
     title: { type: String },
     description: { type: String },
-    status: { type: String },
-    statusMode: { type: String },
-    icon: { type: String }
+    status: { 
+      type: String,
+      validator: value => ['on', 'off', 'coming soon'].includes(value)
+    },
+    icon: { 
+      type: String,
+      validator: value => ['check', 'lock'].includes(value)
+    },
   },
   computed: {
     iconSVG() {
-      return this.icon === 'check' ? checkIcon : padlockIcon
+      if (this.icon === 'check') {
+        return 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/images/icons/success.svg' 
+      } else {
+        return 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/images/icons/padlock.svg'
+      }
     }
   },
   methods: {
@@ -72,11 +71,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/style/index';
+
 .app-card {
   display: flex;
   width: 300px;
   box-sizing: border-box;
-  border: 5px solid transparent;
+  border: $border-card solid transparent;
 
   .wrapper {
     display: flex;
@@ -84,7 +85,7 @@ export default {
     flex-direction: column;
     width: 100%;
     padding: 20px 20px 50px 20px;
-    border: 1px solid #E4E5EC;
+    border: 1px solid $color-border;
     cursor: pointer;
 
     .image-container {
@@ -93,38 +94,26 @@ export default {
 
     .header-container {
       display: flex;
+      margin: $space-s 0;
+
       .title {
         font-size: 16px;
         font-weight: 700;
       }
       .icon {
         margin-left: 10px;
+        width: 16px;
+        height: 16px;
       }
     }
 
     .description {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
       color: #898EA2;
       margin: 0;
       margin-bottom: 5px;
     }
-
-    .status {
-      position: absolute;
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      bottom: 10px;
-
-      &.success {
-        color: #30DEA0;
-      }
-      &.comming-soon {
-        color: #666EE8;
-      }
-    }
-
   }
 }
 </style>

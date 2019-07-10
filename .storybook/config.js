@@ -11,6 +11,7 @@ import OfferCard from '../src/components/cards/offer-card';
 import ChatMessageCard from '../src/components/cards/chat-message-card';
 import AppCard from '../src/components/cards/app-card';
 import EmployeeCard from '../src/components/cards/employees-card'
+import BaseButton from '../src/components/button';
 
 // Register custom components.
 Vue.component('avatar', Avatar); 
@@ -22,6 +23,7 @@ Vue.component('chat-message-card', ChatMessageCard);
 Vue.component('app-card', AppCard); 
 Vue.component('employee-card', EmployeeCard); 
 
+Vue.component('base-button', BaseButton); 
 
 function loadStories() {
   // You can require as many stories as you need.
