@@ -33,8 +33,8 @@ storiesOf('Loader', module)
 
 storiesOf('Cards', module)
   .add(
-    'Offer Card', 
-    () => 
+    'Offer Card',
+    () =>
       `<offer-card
         image="https://picsum.photos/200/300"
         title="An unforgettable father-and-son fishing experience in Jura"
@@ -44,8 +44,8 @@ storiesOf('Cards', module)
         />`
   )
   .add(
-    'Chat Message Card', 
-    () => 
+    'Chat Message Card',
+    () =>
       `<chat-message-card
         avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
         message-header="Kevin Tassi"
@@ -53,8 +53,8 @@ storiesOf('Cards', module)
         />`
   )
   .add(
-    'App Card', 
-    () => 
+    'App Card',
+    () =>
       `<app-card
         id="123"
         image="https://picsum.photos/200/300"
@@ -65,5 +65,12 @@ storiesOf('Cards', module)
         icon="check"
         />`
   )
-  .add('Employee Card', () => '<employee-card/>')
+  .add('Employee Card',
+    () =>
+      `<employee-card
+        first-name="Kevin"
+        last-name="Tassi"
+        role="Co-founder&CEO"
+        />`
+  )
 
