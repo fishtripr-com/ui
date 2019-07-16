@@ -1,0 +1,12 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <path
+      fill="none"
+      stroke="#3B4A59"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M3.70710678,5 L9,10.2928932 L11,8.29289322 L14.7071068,12 L12.2071068,14.5 L12,14.5 C5.09685763,14.5 -0.5,8.90314237 -0.5,2 L-0.5,1.79289322 L2,-0.707106781 L5.70710678,3 L3.70710678,5 Z"
+      transform="translate(1 1)"
+    />
+  </svg>
+</template>

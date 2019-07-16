@@ -1,0 +1,8 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+    <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+      <circle cx="20" cy="20" r="20" stroke="#FFF" />
+      <polygon fill="#FFF" points="16.914 14.617 16.914 24.959 25.92 19.788" />
+    </g>
+  </svg>
+</template>

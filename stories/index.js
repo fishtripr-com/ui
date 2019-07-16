@@ -100,4 +100,28 @@ storiesOf("Cards", module)
           user-role="Fishing Guide"
           />
       </div>`
+  )
+  .add(
+    "Marketing Thumbs Card",
+    () =>
+      `<marketing-thumbs-card image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80" title="Vincen Battaglia" text="Vincen Battaglia" />`
+  );
+
+storiesOf("Pictos", module)
+  .add("Arrow Right", () => `<arrow-right />`)
+  .add("Book", () => `<book />`)
+  .add("Calendar", () => `<calendar />`)
+  .add("Correct", () => `<correct />`)
+  .add("Discover", () => `<discover />`)
+  .add("Dot", () => `<dot />`)
+  .add("ErrorPicto", () => `<error-picto />`)
+  .add("Location", () => `<location />`)
+  .add("MapPointer", () => `<map-pointer style="background-color: #301A87"/>`)
+  .add("People", () => `<people />`)
+  .add("Phone", () => `<phone />`)
+  .add("Plan", () => `<plan />`)
+  .add("Quote", () => `<quote />`)
+  .add(
+    "VideoPlayer",
+    () => `<video-player style="background-color: #301A87"/>`
   );

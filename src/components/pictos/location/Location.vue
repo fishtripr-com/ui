@@ -1,0 +1,33 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 19 26">
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="#53D7AD"
+      stroke-linecap="square"
+      stroke-width="2"
+      transform="translate(1 1.6)"
+    >
+      <path
+        d="M16.8615385,8.4 C16.8615385,13.545 8.43076923,22.05 8.43076923,22.05 C8.43076923,22.05 0,13.545 0,8.4 C0,3.045 4.32076923,0 8.43076923,0 C12.5407692,0 16.8615385,3.045 16.8615385,8.4 Z"
+      />
+      <ellipse cx="8.431" cy="8.4" rx="3.162" ry="3.15" />
+    </g>
+  </svg>
+</template>
+
+<script>
+export default {
+  props: {
+    width: {
+      default: 19
+    },
+    height: {
+      default: 26
+    }
+  }
+};
+</script>
+
+<style lang='scss' scoped>
+</style>
