@@ -38,7 +38,7 @@ export default {
 
         img {
           width: 80px;
-          height: 80px;
+          height: 80px; 
 
           @media #{$small-and-down} {
             width: 50px;
