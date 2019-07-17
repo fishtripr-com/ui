@@ -1,9 +1,8 @@
-<template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
     <path
       fill="#FF4961"
       d="M308,16 C303.6,16 300,19.6 300,24 C300,28.4 303.6,32 308,32 C312.4,32 316,28.4 316,24 C316,19.6 312.4,16 308,16 Z M311.5,26.1 L310.1,27.5 L308,25.4 L305.9,27.5 L304.5,26.1 L306.6,24 L304.5,21.9 L305.9,20.5 L308,22.6 L310.1,20.5 L311.5,21.9 L309.4,24 L311.5,26.1 Z"
       transform="translate(-300 -16)"
     />
   </svg>
-</template>
+

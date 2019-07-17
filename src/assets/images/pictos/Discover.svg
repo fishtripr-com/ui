@@ -1,5 +1,4 @@
-<template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 67 78">
+<svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 67 78">
     <g fill="none" transform="translate(-2)">
       <circle cx="7.809" cy="66.66" r="5.255" fill="#E4E5E7" />
       <circle cx="6.149" cy="24.064" r="3.596" fill="#E4E5E7" />
@@ -72,17 +71,3 @@
       />
     </g>
   </svg>
-</template>
-
-<script>
-export default {
-  props: {
-    width: {
-      default: "67px"
-    },
-    height: {
-      default: "78px"
-    }
-  }
-};
-</script>

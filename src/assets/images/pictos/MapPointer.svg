@@ -1,5 +1,4 @@
-<template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 14 16">
+<svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 14 16">
     <path
       :fill="color"
       fill-rule="evenodd"
@@ -7,20 +6,3 @@
       transform="translate(0 -6)"
     />
   </svg>
-</template>
-
-<script>
-export default {
-  props: {
-    width: {
-      default: 14
-    },
-    height: {
-      default: 16
-    },
-    color: {
-      default: "#FFF"
-    }
-  }
-};
-</script>

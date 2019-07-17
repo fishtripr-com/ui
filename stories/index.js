@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/vue";
 
 storiesOf("Button", module)
   .add("Loading", () => '<base-button label="I\'m loading" loading/>')
-  .add("Primary", () => "<base-button>Click me</base-button>")
+  .add("Primary", () => '<base-button>Click me</base-button>')
   .add("Success", () => '<base-button type="success">Click me</base-button>')
   .add("Danger", () => '<base-button type="danger">Click me</base-button>')
   .add("Premium", () => '<base-button type="premium">Click me</base-button>')
@@ -104,24 +104,8 @@ storiesOf("Cards", module)
   .add(
     "Marketing Thumbs Card",
     () =>
-      `<marketing-thumbs-card image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80" title="Vincen Battaglia" text="Vincen Battaglia" />`
+      `<div>
+      <marketing-thumbs-card imageURL="https://www.fishtripr.com/images/b2b-thumb-commission.png" title="Search and compare" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in dolor volutpat, ultrices augue non, ornare enim. Ut sodales, neque id vehicula varius, dolor orci scelerisque purus, eu malesuada nisl." />
+      </div>`
   );
-
-storiesOf("Pictos", module)
-  .add("Arrow Right", () => `<arrow-right />`)
-  .add("Book", () => `<book />`)
-  .add("Calendar", () => `<calendar />`)
-  .add("Correct", () => `<correct />`)
-  .add("Discover", () => `<discover />`)
-  .add("Dot", () => `<dot />`)
-  .add("ErrorPicto", () => `<error-picto />`)
-  .add("Location", () => `<location />`)
-  .add("MapPointer", () => `<map-pointer style="background-color: #301A87"/>`)
-  .add("People", () => `<people />`)
-  .add("Phone", () => `<phone />`)
-  .add("Plan", () => `<plan />`)
-  .add("Quote", () => `<quote />`)
-  .add(
-    "VideoPlayer",
-    () => `<video-player style="background-color: #301A87"/>`
-  );
+  

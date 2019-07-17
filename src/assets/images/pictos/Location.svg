@@ -1,5 +1,4 @@
-<template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 19 26">
+<svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 19 26">
     <g
       fill="none"
       fill-rule="evenodd"
@@ -14,20 +13,3 @@
       <ellipse cx="8.431" cy="8.4" rx="3.162" ry="3.15" />
     </g>
   </svg>
-</template>
-
-<script>
-export default {
-  props: {
-    width: {
-      default: 19
-    },
-    height: {
-      default: 26
-    }
-  }
-};
-</script>
-
-<style lang='scss' scoped>
-</style>
