@@ -101,3 +101,12 @@ storiesOf("Cards", module)
           />
       </div>`
   );
+  storiesOf("Basic Elements", module)
+  .add("ExperienceType", () => '<experience-type classType="guide_hosting" offer="Guide&Host" country="Nigeria" />')
+  .add("PartnerType", 
+      () => 
+        `<div style="background-color: #5F5F5F; height: 50px">
+          <partner-type classType="outfitter" partner="Outfitter" country="Belgium" 
+          />
+        </div>`
+        );
