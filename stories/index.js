@@ -86,3 +86,38 @@ storiesOf('Cards', module)
           />
       </div>`
   );
+  storiesOf("Text Type bloc", module)
+    .add("Light", () => 
+      `<text-type-bloc 
+        className="guide_hosting" 
+        textType="Guide & Host" 
+        text="Nigeria" 
+        />`
+    )
+    .add("Light & Uppercase", () => 
+      `<text-type-bloc 
+        className="guide_hosting" 
+        textType="Guide & Host" 
+        text="Nigeria"
+        uppercase 
+        />`
+    )
+    .add("Light with other separator", () => 
+      `<text-type-bloc 
+        className="guide" 
+        textType="Guide" 
+        text="Belgium" 
+        separator="|"
+        />`
+    )
+    .add("Dark", 
+      () => 
+        `<div style="background-color: #5F5F5F; height: 50px">
+          <text-type-bloc 
+            className="guide_hosting" 
+            textType="Guide & Host" 
+            text="Nigeria" 
+            dark
+            />
+        </div>`
+        );
