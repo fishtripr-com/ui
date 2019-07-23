@@ -1,5 +1,5 @@
 <template>
-  <div class="avatar" :class="[size]">
+  <div class="avatar" :class="[size, { border: hasBorder }]">
     <image-container :image="image || getRandomFallback()" :height="100" class="image"/>
   </div>
 </template>
@@ -19,13 +19,17 @@ export default {
       type: String,
       default: 'm',
       validator: value => ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'].includes(value)
+    },
+    hasBorder: {
+      type: Boolean,
+      default: false
     }
   },
   components: { ImageContainer },
   data() {
     return {
       fishesColorNames: ['blue_pale', 'gray', 'green_light', 'green_pale', 'green', 'orange', 'pink', 'red_pale', 'yellow']
-    }
+    };
   },
   methods: {
     getRandomFallback() {
@@ -59,5 +63,6 @@ export default {
   &.l { @include dimensions(64) }
   &.xl { @include dimensions(72) }
   &.xxl { @include dimensions(86) }
+  &.border { border: 2px solid #958ce4 }
 }
 </style>

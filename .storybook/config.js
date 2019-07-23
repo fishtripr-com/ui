@@ -10,7 +10,8 @@ import FishtriprLoader from '../src/components/loaders/fishtripr-loader';
 import OfferCard from '../src/components/cards/offer-card';
 import ChatMessageCard from '../src/components/cards/chat-message-card';
 import AppCard from '../src/components/cards/app-card';
-import EmployeeCard from '../src/components/cards/employee-card'
+import EmployeeCard from '../src/components/cards/employee-card';
+import UserNavbarCard from '../src/components/cards/user-navbar-card';
 import BaseButton from '../src/components/button';
 
 // Register custom components.
@@ -22,7 +23,7 @@ Vue.component('offer-card', OfferCard);
 Vue.component('chat-message-card', ChatMessageCard);
 Vue.component('app-card', AppCard);
 Vue.component('employee-card', EmployeeCard);
-
+Vue.component('user-navbar-card', UserNavbarCard);
 Vue.component('base-button', BaseButton);
 
 function loadStories() {

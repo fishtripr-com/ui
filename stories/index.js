@@ -18,7 +18,8 @@ storiesOf('Avatar', module)
   .add('Size m', () => '<avatar size="m"/>')
   .add('Size l', () => '<avatar size="l"/>')
   .add('Size xl', () => '<avatar size="xl"/>')
-  .add('Size xxl', () => '<avatar size="xxl"/>');
+  .add('Size xxl', () => '<avatar size="xxl"/>')
+  .add('With border', () => '<avatar hasBorder size="s" image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"/>');
 
 storiesOf('Images', module)
   .add('with URL', () => '<image-container image="https://i.ytimg.com/vi/OJcvzRnPHCI/maxresdefault.jpg" :height="80" />')
@@ -65,7 +66,8 @@ storiesOf('Cards', module)
         icon="check"
         />`
   )
-  .add('Employee Card',
+  .add(
+    'Employee Card',
     () =>
       `<employee-card
         first-name="Kevin"
@@ -73,4 +75,14 @@ storiesOf('Cards', module)
         role="Co-founder&CEO"
         />`
   )
-
+  .add(
+    'User Navbar Card',
+    () =>
+      `<div style="background-color: #301A87">
+        <user-navbar-card
+          avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
+          user-first-name="Max"
+          user-role="Fishing Guide"
+          />
+      </div>`
+  );
