@@ -13,8 +13,7 @@ import AppCard from '../src/components/cards/app-card';
 import EmployeeCard from '../src/components/cards/employee-card';
 import UserNavbarCard from '../src/components/cards/user-navbar-card';
 import BaseButton from '../src/components/button';
-import ExperienceType from '../src/components/base-elements/experience-type';
-import PartnerType from '../src/components/base-elements/partner-type';
+import TextTypeBloc from '../src/components/base-elements/text-type-bloc';
 
 
 // Register custom components.
@@ -28,8 +27,7 @@ Vue.component('app-card', AppCard);
 Vue.component('employee-card', EmployeeCard);
 Vue.component('user-navbar-card', UserNavbarCard);
 Vue.component('base-button', BaseButton);
-Vue.component('experience-type', ExperienceType);
-Vue.component('partner-type', PartnerType);
+Vue.component('text-type-bloc', TextTypeBloc);
 
 function loadStories() {
   // You can require as many stories as you need.

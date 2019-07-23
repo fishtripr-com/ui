@@ -86,12 +86,38 @@ storiesOf('Cards', module)
           />
       </div>`
   );
-  storiesOf("Basic Elements", module)
-  .add("ExperienceType", () => '<experience-type classType="guide_hosting" offer="Guide&Host" country="Nigeria" />')
-  .add("PartnerType", 
+  storiesOf("Text Type bloc", module)
+    .add("Light", () => 
+      `<text-type-bloc 
+        className="guide_hosting" 
+        textType="Guide & Host" 
+        text="Nigeria" 
+        />`
+    )
+    .add("Light & Uppercase", () => 
+      `<text-type-bloc 
+        className="guide_hosting" 
+        textType="Guide & Host" 
+        text="Nigeria"
+        uppercase 
+        />`
+    )
+    .add("Light with other separator", () => 
+      `<text-type-bloc 
+        className="guide" 
+        textType="Guide" 
+        text="Belgium" 
+        separator="|"
+        />`
+    )
+    .add("Dark", 
       () => 
         `<div style="background-color: #5F5F5F; height: 50px">
-          <partner-type classType="outfitter" partner="Outfitter" country="Belgium" 
-          />
+          <text-type-bloc 
+            className="guide_hosting" 
+            textType="Guide & Host" 
+            text="Nigeria" 
+            dark
+            />
         </div>`
         );
