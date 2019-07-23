@@ -1,13 +1,13 @@
 <template>
   <div class="avatar" :class="[size, { border: hasBorder }]">
-    <image-container :image="image || getRandomFallback()" :height="100" class="image" />
+    <image-container :image="image || getRandomFallback()" :height="100" class="image"/>
   </div>
 </template>
 
 <script>
-import { getRandomNumber } from '../../functions/math';
-import { S3_BUCKET_URL } from '../../constants/urls';
-import ImageContainer from '../image-container';
+import { getRandomNumber } from '../../functions/math'
+import { S3_BUCKET_URL } from '../../constants/urls'
+import ImageContainer from '../image-container'
 
 export default {
   name: 'avatar',
@@ -18,8 +18,7 @@ export default {
     size: {
       type: String,
       default: 'm',
-      validator: value =>
-        ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'].includes(value)
+      validator: value => ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'].includes(value)
     },
     hasBorder: {
       type: Boolean,
@@ -29,17 +28,7 @@ export default {
   components: { ImageContainer },
   data() {
     return {
-      fishesColorNames: [
-        'blue_pale',
-        'gray',
-        'green_light',
-        'green_pale',
-        'green',
-        'orange',
-        'pink',
-        'red_pale',
-        'yellow'
-      ]
+      fishesColorNames: ['blue_pale', 'gray', 'green_light', 'green_pale', 'green', 'orange', 'pink', 'red_pale', 'yellow']
     };
   },
   methods: {
