@@ -121,3 +121,12 @@ storiesOf('Cards', module)
             />
         </div>`
         );
+
+storiesOf("Marketing Thumb", module)
+  .add("Basic", () => 
+    `<marketing-thumb
+      image="https://picsum.photos/65/65"
+      title="Search and compare"
+      text="hundreds of fishing experiences around the world handpicked by Fishtripr."
+      />`
+  )
