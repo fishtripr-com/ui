@@ -10,10 +10,8 @@
       </div>
 
       <div class="body">
+        <p class="title">{{ truncate(title) }}</p>
 
-        <p class="title">
-          {{ title }}
-        </p>
 
         <p class="hat">
           {{ hat }}
@@ -45,30 +43,58 @@ export default {
     hat: { type: String },
     status: { type: String },
     mode: { type: String },
+    icon: { type: String }
   },
   methods: {
     onClick() {
       this.$emit('click')
+    },
+    truncate(title) {
+      if (title.length > 50) {
+        return title.slice(0, 50 - 3) + "...";
+      }
+      return title;
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/style/index";
+
 .offer-card {
   display: flex;
   align-items: center;
   border: 1px solid #E4E5EC;
   width: 100%;
-  height: 100px;
-  max-height: 100px;
   cursor: pointer;
   background-color: white;
+  height: 70px;
+  flex-direction: row;
+
+  @media #{$medium-and-down} {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 177px;
+  }
+
+  @media #{$small-and-down} {
+    justify-content: space-between;
+
+    height: 220px;
+  }
 
   .img {
-    width: 110px;
+    width: 100px;
     height: 70px;
-    padding: 0.8rem;
+    padding: 0.6rem;
+
+    @media #{$medium-and-down} {
+      width: 100%;
+      height: 100px;
+    }
 
     img {
       width: 100%;
@@ -80,28 +106,32 @@ export default {
   .body {
     flex: 1;
     height: 100%;
-    max-height: 80px;
     font-family: 'Montserrat', sans-serif !important;
+    max-height: 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
+    @media #{$medium-and-down} {
+      padding: 0.6rem;
+    }
+
     .title {
-      font-weight: 700;
+      font-weight: $bold;
       margin: 0;
-      font-size: .9rem;
-      line-height: 1.4rem;
+      font-size: $font-size-xs;
+      line-height: $line-height-xs;
     }
     .hat {
-      font-size: 14px;
-      line-height: 16px;
+      font-size: $font-size-xs;
+      line-height: $line-height-xs;
       margin: 0;
       color: #898EA2;
     }
     .status {
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 16px;
+      font-size: $font-size-xs;
+      font-weight: $semibold;
+      line-height: $line-height-xs;
       margin: 0;
 
       &.success {
