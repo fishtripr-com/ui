@@ -14,6 +14,7 @@ import EmployeeCard from '../src/components/cards/employee-card';
 import UserNavbarCard from '../src/components/cards/user-navbar-card';
 import BaseButton from '../src/components/button';
 import TextTypeBloc from '../src/components/base-elements/text-type-bloc';
+import OptionImage from '../src/components/option-card';
 
 
 // Register custom components.
@@ -28,6 +29,7 @@ Vue.component('employee-card', EmployeeCard);
 Vue.component('user-navbar-card', UserNavbarCard);
 Vue.component('base-button', BaseButton);
 Vue.component('text-type-bloc', TextTypeBloc);
+Vue.component('option-image', OptionImage);
 
 function loadStories() {
   // You can require as many stories as you need.

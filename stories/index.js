@@ -120,4 +120,12 @@ storiesOf('Cards', module)
             dark
             />
         </div>`
-        );
+  );
+storiesOf("Option Cards", module)
+  .add("Option with Image", () =>
+    `<option-image
+        image="https://picsum.photos/200/300"
+        title="People are eyeing this experience."
+        text="12 others are looking at it for these dates."
+      />`
+  )
