@@ -15,6 +15,7 @@ import UserNavbarCard from '../src/components/cards/user-navbar-card';
 import BaseButton from '../src/components/button';
 import TextTypeBloc from '../src/components/base-elements/text-type-bloc';
 import OptionImage from '../src/components/option-card';
+import MarketingThumb from '../src/components/marketing-thumb';
 
 
 // Register custom components.
@@ -30,6 +31,7 @@ Vue.component('user-navbar-card', UserNavbarCard);
 Vue.component('base-button', BaseButton);
 Vue.component('text-type-bloc', TextTypeBloc);
 Vue.component('option-image', OptionImage);
+Vue.component('marketing-thumb', MarketingThumb)
 
 function loadStories() {
   // You can require as many stories as you need.

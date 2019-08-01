@@ -10,8 +10,9 @@
       </div>
 
       <div class="body">
-        <p class="title">{{ truncate(title) }}</p>
-
+        <p class="title">
+          {{ truncate(title) }}
+        </p>
 
         <p class="hat">
           {{ hat }}
@@ -24,7 +25,10 @@
       </div>
 
       <div class="arrow">
-        <fly-icon icon="arrowRight" color="#898EA2"/>
+        <img 
+          class="image" 
+          :src="arrowIcon"
+          />
       </div>
     </template>
     
@@ -34,6 +38,8 @@
 </template>
 
 <script>
+import { IMG } from '@fishtripr/constants'
+
 export default {
   name: 'offer-card',
   props: {
@@ -43,7 +49,11 @@ export default {
     hat: { type: String },
     status: { type: String },
     mode: { type: String },
-    icon: { type: String }
+  },
+  computed: {
+    arrowIcon() {
+      return IMG.ICON.ARROW_RIGHT
+    }
   },
   methods: {
     onClick() {
@@ -72,7 +82,7 @@ export default {
   height: 70px;
   flex-direction: row;
 
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -80,19 +90,13 @@ export default {
     height: 177px;
   }
 
-  @media #{$small-and-down} {
-    justify-content: space-between;
-
-    height: 220px;
-  }
-
   .img {
     width: 100px;
     height: 70px;
     padding: 0.6rem;
 
-    @media #{$medium-and-down} {
-      width: 100%;
+    @media #{$small-and-down} {
+      width: 100px;
       height: 100px;
     }
 
@@ -112,7 +116,7 @@ export default {
     flex-direction: column;
     justify-content: space-around;
 
-    @media #{$medium-and-down} {
+    @media #{$small-and-down} {
       padding: 0.6rem;
     }
 
@@ -151,6 +155,10 @@ export default {
 
   .arrow {
     width: 45px;
+
+    @media #{$small-and-down} {
+      display: none;
+    }
   }
 }
 </style>
