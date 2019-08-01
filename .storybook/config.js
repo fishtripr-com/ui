@@ -15,7 +15,7 @@ import UserNavbarCard from '../src/components/cards/user-navbar-card';
 import BaseButton from '../src/components/button';
 import TextTypeBloc from '../src/components/base-elements/text-type-bloc';
 import OptionImage from '../src/components/option-card';
-
+import OptionRadio from '../src/components/option-card/option-choice-radio';
 
 // Register custom components.
 Vue.component('avatar', Avatar);
@@ -30,6 +30,7 @@ Vue.component('user-navbar-card', UserNavbarCard);
 Vue.component('base-button', BaseButton);
 Vue.component('text-type-bloc', TextTypeBloc);
 Vue.component('option-image', OptionImage);
+Vue.component('option-radio', OptionRadio);
 
 function loadStories() {
   // You can require as many stories as you need.

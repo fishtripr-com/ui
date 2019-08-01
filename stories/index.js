@@ -129,3 +129,27 @@ storiesOf("Option Cards", module)
         text="12 others are looking at it for these dates."
       />`
   )
+  .add("Option Radio", () =>
+    `<div>
+    <option-radio
+      checked
+      title1="People are eyeing this experience."
+      text1="12 others are looking at it for these dates."
+      title2="€370.00"
+      text2="Now"
+    />
+      <option-radio
+      title1="People are eyeing this experience."
+      text1="12 others are looking at it for these dates."
+      title2="€370.00"
+      text2="Now"
+    />
+  
+    <option-radio
+    title1="People are eyeing this experience."
+   
+    title2="€370.00"
+    text2="Now"
+    />
+  </div>`
+  )
