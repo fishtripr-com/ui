@@ -17,12 +17,8 @@
 </template>
 
 <script>
-// import Foo from 'bar/foo'
-
 export default {
   name: "option-radio",
-  mixins: [],
-  components: {},
   props: {
     checked: { type: Boolean, default: false },
     title1: { type: String, default: "" },
@@ -30,10 +26,6 @@ export default {
     title2: { type: String, default: "" },
     text2: { type: String }
   },
-  data() {
-    return {};
-  },
-  computed: {},
   methods: {
     onClick() {
       this.$emit("click");
