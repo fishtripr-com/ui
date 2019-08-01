@@ -15,22 +15,13 @@
 </template>
 
 <script>
-// import Foo from 'bar/foo'
-
 export default {
   name: "option-image",
-  mixins: [],
-  components: {},
   props: {
     image: { type: String },
     title: { type: String, default: "" },
     text: { type: String, default: "" }
-  },
-  data() {
-    return {};
-  },
-  computed: {},
-  methods: {}
+  }
 };
 </script>
 
