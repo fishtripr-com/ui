@@ -782,6 +782,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.3.tgz#dfa0c92efe44a1d1a7974fb49ffeb40ef2da5a27"
   integrity sha512-zVgvPwGK7c1aVdUVc9Qv7SqepOGRDrqCw7KZPSZziWGxSlbII3gmvGLPzLX4d0n0BMbamBacUrN22zOMyFFEkQ==
 
+"@fishtripr/constants@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@fishtripr/constants/-/constants-0.0.9.tgz#da85b920f21c5284eeb00aa88d3aafcf5491f203"
+  integrity sha512-HBp7dQeiGJlrGtP9Llu/riFmUJldPlPdXhNw5SUiCpyX3cKhp5rA047DgdSBkVPuGZxgPXuq3NiCN6rIS0vrSA==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
