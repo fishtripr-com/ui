@@ -48,7 +48,7 @@ export default {
     title: { type: String },
     hat: { type: String },
     status: { type: String },
-    mode: { type: String }
+    mode: { type: String },
   },
   computed: {
     arrowIcon() {
