@@ -138,4 +138,12 @@ storiesOf("Marketing Thumb", module)
       title="Search and compare"
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
+  );
+
+storiesOf("Navbar", module)
+  .add("Navbar", () =>
+    `<navbar
+      image="https://picsum.photos/65/65"
+      
+      />`
   )
