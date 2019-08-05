@@ -155,7 +155,7 @@ export default {
 
   .arrow {
     width: 45px;
-    
+
     @media #{$small-and-down} {
       display: none;
     }
