@@ -37,7 +37,7 @@
     "vue-styled-components": "^1.4.4"
   },
   "scripts": {
-    "build": "webpack --mode production",
+    "build:prod": "webpack --mode production",
     "storybook": "start-storybook -p 9001 -c .storybook"
   }
 }
