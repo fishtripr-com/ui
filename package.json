@@ -32,11 +32,11 @@
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
+    "@fishtripr/constants": "0.0.9",
     "vue": "^2.6.8",
     "vue-styled-components": "^1.4.4"
   },
   "scripts": {
-    "@fishtripr/constants": "0.0.9",
     "build:prod": "webpack --mode production",
     "storybook": "start-storybook -p 9001 -c .storybook"
   }
