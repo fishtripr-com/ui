@@ -122,37 +122,36 @@ storiesOf("Text Type bloc", module)
         </div>`
   );
   
-storiesOf("Option Cards", module)
-  .add("Option with Image", () =>
-    `<option-image
-        image="https://picsum.photos/200/300"
-        title="People are eyeing this experience."
-        text="12 others are looking at it for these dates."
-      />`
+storiesOf("Check Box Card", module)
+  .add('Unchecked', () =>
+    `<check-box-card
+      title="People are eyeing this experience."
+      text="€370.00"
+      subtitle="12 others are looking at it for these dates."
+      subtext="Now"
+    />`
   )
-  .add("Option Radio", () =>
-    `<div>
-    <option-radio
+  .add('Checked', () =>
+    `<check-box-card
       checked
-      title1="People are eyeing this experience."
-      text1="12 others are looking at it for these dates."
-      title2="€370.00"
-      text2="Now"
-    />
-      <option-radio
-      title1="People are eyeing this experience."
-      text1="12 others are looking at it for these dates."
-      title2="€370.00"
-      text2="Now"
-    />
-  
-    <option-radio
-    title1="People are eyeing this experience."
-   
-    title2="€370.00"
-    text2="Now"
-    />
-  </div>`
+      title="People are eyeing this experience."
+      text="€370.00"
+      subtitle="12 others are looking at it for these dates."
+      subtext="Now"
+    />`
+  )
+  .add('Checked without additionnal text', () =>
+    `<check-box-card
+      checked
+      title="People are eyeing this experience."
+      text="Free"
+    />`
+  )
+  .add('Unchecked without additionnal text', () =>
+    `<check-box-card
+      title="People are eyeing this experience."
+      text="Free"
+    />`
   );
   
 storiesOf("Tip Card", module)

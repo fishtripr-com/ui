@@ -14,7 +14,7 @@ import EmployeeCard from '../src/components/cards/employee-card';
 import UserNavbarCard from '../src/components/cards/user-navbar-card';
 import BaseButton from '../src/components/button';
 import TextTypeBloc from '../src/components/base-elements/text-type-bloc';
-import OptionRadio from '../src/components/option-card/option-choice-radio';
+import CheckBoxCard from '../src/components/check-box-card/CheckBoxCard';
 import TipCard from '../src/components/tip-card';
 import MarketingThumb from '../src/components/marketing-thumb';
 
@@ -31,9 +31,9 @@ Vue.component('employee-card', EmployeeCard);
 Vue.component('user-navbar-card', UserNavbarCard);
 Vue.component('base-button', BaseButton);
 Vue.component('text-type-bloc', TextTypeBloc);
-Vue.component('option-radio', OptionRadio);
+Vue.component('check-box-card', CheckBoxCard);
 Vue.component('tip-card', TipCard);
-Vue.component('marketing-thumb', MarketingThumb)
+Vue.component('marketing-thumb', MarketingThumb);
 
 function loadStories() {
   // You can require as many stories as you need.
