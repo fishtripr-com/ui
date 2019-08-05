@@ -3,7 +3,7 @@
 
     <div class="avatar-container">
       <avatar 
-        :avatar="avatar"
+        :image="avatar"
         size="s"
        />
     </div>
