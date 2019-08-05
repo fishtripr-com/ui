@@ -122,6 +122,38 @@ storiesOf("Text Type bloc", module)
         </div>`
   );
   
+storiesOf("Check Box Card", module)
+  .add('Unchecked', () =>
+    `<check-box-card
+      title="People are eyeing this experience."
+      text="€370.00"
+      subtitle="12 others are looking at it for these dates."
+      subtext="Now"
+    />`
+  )
+  .add('Checked', () =>
+    `<check-box-card
+      checked
+      title="People are eyeing this experience."
+      text="€370.00"
+      subtitle="12 others are looking at it for these dates."
+      subtext="Now"
+    />`
+  )
+  .add('Checked without additionnal text', () =>
+    `<check-box-card
+      checked
+      title="People are eyeing this experience."
+      text="Free"
+    />`
+  )
+  .add('Unchecked without additionnal text', () =>
+    `<check-box-card
+      title="People are eyeing this experience."
+      text="Free"
+    />`
+  );
+  
 storiesOf("Tip Card", module)
   .add("Default", () =>
     `<tip-card
