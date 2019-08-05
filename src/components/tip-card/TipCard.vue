@@ -1,43 +1,35 @@
 <template>
-  <div class="option-image">
+  <div class="tip-card">
     <div class="wrapper">
+
       <div class="image-container">
         <image-container :image="image" :height="100" />
       </div>
 
       <div class="header-container">
         <p class="title">{{ title }}</p>
-
         <p class="text">{{ text }}</p>
       </div>
+
     </div>
   </div>
 </template>
 
 <script>
-// import Foo from 'bar/foo'
-
 export default {
-  name: "option-image",
-  mixins: [],
-  components: {},
+  name: "tip-card",
   props: {
     image: { type: String },
     title: { type: String, default: "" },
     text: { type: String, default: "" }
-  },
-  data() {
-    return {};
-  },
-  computed: {},
-  methods: {}
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/style/index";
 
-.option-image {
+.tip-card {
   display: flex;
   max-width: 700px;
   min-width: 335px;
