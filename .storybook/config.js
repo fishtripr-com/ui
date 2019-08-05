@@ -14,7 +14,7 @@ import EmployeeCard from '../src/components/cards/employee-card';
 import UserNavbarCard from '../src/components/cards/user-navbar-card';
 import BaseButton from '../src/components/button';
 import TextTypeBloc from '../src/components/base-elements/text-type-bloc';
-import OptionImage from '../src/components/option-card';
+import TipCard from '../src/components/tip-card';
 import MarketingThumb from '../src/components/marketing-thumb';
 
 
@@ -30,7 +30,7 @@ Vue.component('employee-card', EmployeeCard);
 Vue.component('user-navbar-card', UserNavbarCard);
 Vue.component('base-button', BaseButton);
 Vue.component('text-type-bloc', TextTypeBloc);
-Vue.component('option-image', OptionImage);
+Vue.component('tip-card', TipCard);
 Vue.component('marketing-thumb', MarketingThumb)
 
 function loadStories() {

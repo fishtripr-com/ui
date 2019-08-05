@@ -121,13 +121,14 @@ storiesOf("Text Type bloc", module)
             />
         </div>`
   );
-storiesOf("Option Cards", module)
-  .add("Option with Image", () =>
-    `<option-image
-        image="https://picsum.photos/200/300"
-        title="People are eyeing this experience."
-        text="12 others are looking at it for these dates."
-      />`
+  
+storiesOf("Tip Card", module)
+  .add("Default", () =>
+    `<tip-card
+      image="https://picsum.photos/200/300"
+      title="People are eyeing this experience."
+      text="12 others are looking at it for these dates."
+    />`
   );
 
 storiesOf("Marketing Thumb", module)
