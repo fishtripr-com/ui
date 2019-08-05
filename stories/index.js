@@ -121,7 +121,7 @@ storiesOf("Text Type bloc", module)
             />
         </div>`
   );
-  
+
 storiesOf("Check Box Card", module)
   .add('Unchecked', () =>
     `<check-box-card
@@ -153,7 +153,8 @@ storiesOf("Check Box Card", module)
       text="Free"
     />`
   );
-  
+
+
 storiesOf("Tip Card", module)
   .add("Default", () =>
     `<tip-card
@@ -174,8 +175,18 @@ storiesOf("Marketing Thumb", module)
 
 storiesOf("Navbar", module)
   .add("Navbar", () =>
-    `<navbar
-      image="https://picsum.photos/65/65"
-      
-      />`
+    `
+    <navbar
+      logo="https://s3.eu-west-3.amazonaws.com/fishtripr-prod-offer-pics/images/logos/fishtripr-manager-only-manager-logo_white.png">
+        <template #body>
+          <p>Home  About  Story  Travel  Fishing</p>
+        </template>
+        <template #action>
+          <user-navbar-card
+            avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
+            user-first-name="Max"
+            user-role="Fishing Guide"
+          />
+        </template>
+      </navbar>`
   )
