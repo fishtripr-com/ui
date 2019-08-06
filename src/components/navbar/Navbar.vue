@@ -1,12 +1,12 @@
 <template>
-  <div class="navbar">
+  <div :class="['navbar', theme]">
     <div class="container">
       <div class="content">
-        <div class="image-wrapper">
-          <img class="image" :src="logo" alt="Fishtripr logo" />
+        <div :class="['image-wrapper', theme]">
+          <img class="image" :src="navLogo" alt="logo" @click="goHome" />
         </div>
         <div class="body-wrapper">
-          <slot name="body"></slot>
+          <slot v-if="isMounted" name="body" theme="test">{{theme}}</slot>
         </div>
       </div>
       <div class="action-wrapper">
@@ -24,18 +24,41 @@ export default {
   mixins: [],
   components: {},
   props: {
+    theme: {
+      type: String,
+      validator: value => {
+        console.log("valid navbar", value);
+        return ["dark", "premium", "light"].includes(value);
+      }
+    },
     logo: { type: String }
   },
   data() {
-    return {};
+    return {
+      isMounted: false
+    };
   },
-  computed: {},
-  methods: {},
+  computed: {
+    navLogo() {
+      return this.theme === "dark" || this.theme === "premium"
+        ? "https://picsum.photos/200/400"
+        : "https://picsum.photos/400/200";
+    }
+  },
+  methods: {
+    goHome() {
+      this.$emit("home");
+    }
+  },
   watch: {},
   beforeCreated() {},
-  created() {},
+  created() {
+    console.log("created hook", this.$slots);
+  },
   beforeMount() {},
-  mounted() {},
+  mounted() {
+    this.isMounted = true;
+  },
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
@@ -49,12 +72,15 @@ export default {
 .navbar {
   display: flex;
   box-sizing: border-box;
-
-  background-color: #371d92;
+  background-color: #ffff;
   width: 100%;
   height: $height-navbar;
   margin: 0;
   padding: 0;
+
+  &.dark {
+    background-color: #371d92;
+  }
 
   .container {
     display: flex;
@@ -91,7 +117,7 @@ export default {
       }
     }
   }
-  .action-wrapper {
+  .avatar-container {
   }
 }
 </style>

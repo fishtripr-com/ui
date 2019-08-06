@@ -34,6 +34,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/style/main";
+
 .user-navbar-card {
   display: flex;
   font-family: "Montserrat", sans-serif !important;

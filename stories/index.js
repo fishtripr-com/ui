@@ -174,12 +174,17 @@ storiesOf("Marketing Thumb", module)
   );
 
 storiesOf("Navbar", module)
-  .add("Navbar", () =>
-    `
-    <navbar
+  .add("Navbar Light", () =>
+    `<navbar 
+      theme="light"
       logo="https://s3.eu-west-3.amazonaws.com/fishtripr-prod-offer-pics/images/logos/fishtripr-manager-only-manager-logo_white.png">
         <template #body>
-          <p>Home  About  Story  Travel  Fishing</p>
+        <navigation-menu
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />
         </template>
         <template #action>
           <user-navbar-card
@@ -190,3 +195,84 @@ storiesOf("Navbar", module)
         </template>
       </navbar>`
   )
+  .add("Navbar Dark", () =>
+    `<navbar 
+    theme="dark"
+      logo="https://s3.eu-west-3.amazonaws.com/fishtripr-prod-offer-pics/images/logos/fishtripr-manager-only-manager-logo_white.png">
+        
+        <navigation-menu 
+        slot='body'
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />
+        <template #action>
+          <user-navbar-card
+            avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
+            user-first-name="Max"
+            user-role="Fishing Guide"
+          />
+        </template>
+      </navbar>`
+  );
+storiesOf("Navigation Menu", module)
+  .add("Wide Light", () =>
+    `<navigation-menu
+        theme="light"
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />`
+  )
+  .add("Wide Dark", () =>
+    `<navigation-menu
+        theme="dark"
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />`
+  )
+  .add("Wide Premium", () =>
+    `<navigation-menu
+        theme="premium"
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />`
+  )
+  .add("Responsive Light", () =>
+    `<navigation-menu
+        theme="light"
+        isSmallScreenMode
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />`
+  )
+  .add("Responsive Dark", () =>
+    `<navigation-menu
+        theme="dark"
+        isSmallScreenMode
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />`
+  )
+  .add("Responsive Premium", () =>
+    `<navigation-menu
+        theme="premium"
+        isSmallScreenMode
+        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
+          {id:1, 'path':'/bbb', 'label':'About'},
+          {id:2, 'path':'/ccc', 'label':'Contact'},
+          {id:3, 'path':'/ddd', 'label':'Information'}]"
+      />`
+  );
+
+
