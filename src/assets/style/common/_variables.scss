@@ -51,7 +51,7 @@ $watermelon: #FF4961;
 $aqua-marine: #30DEA0;
 $azure: #1E9FF2;
 $apricot: #FFC06A;
-$premium: #666EE8;
+$premium: #371d92;//#666EE8;
 // Tags
 $tag-guideNHost: #666EE8;
 $tag-guide: #BE7A0B;
@@ -68,16 +68,17 @@ $color-info: $azure;
 $color-warning: $apricot;
 $color-premium: $premium;
 
-$color-background-nav: $white;
+$color-background-light: $white;
+$color-background-dark: $charcoal-grey;
+$color-background-premium: $color-premium;
 $color-background-primary: $seafoam-blue;
 $color-background-danger: $watermelon;
 $color-background-success: $aqua-marine;
 $color-background-info: $azure;
 $color-background-warning: $apricot;
-$color-background-premium: $color-premium;
 $color-background-plain: transparent;
-$color-background-light: $steel;
-$color-background-lighter: $pale-grey;
+$color-background-grey: $steel;
+$color-background-light-grey: $pale-grey;
 
 $color-link: $charcoal-grey;
 $color-link-light: $white;
