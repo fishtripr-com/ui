@@ -220,63 +220,6 @@ storiesOf("Navbar", module)
         </template>
       </navbar>`
   );
-storiesOf("Navigation Menu", module)
-  .add("Wide Light", () =>
-    `<navigation-menu
-        theme="light"
-        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
-          {id:1, 'path':'/bbb', 'label':'About'},
-          {id:2, 'path':'/ccc', 'label':'Contact'},
-          {id:3, 'path':'/ddd', 'label':'Information'}]"
-      />`
-  )
-  .add("Wide Dark", () =>
-    `<navigation-menu
-        theme="dark"
-        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
-          {id:1, 'path':'/bbb', 'label':'About'},
-          {id:2, 'path':'/ccc', 'label':'Contact'},
-          {id:3, 'path':'/ddd', 'label':'Information'}]"
-      />`
-  )
-  .add("Wide Premium", () =>
-    `<navigation-menu
-        theme="premium"
-        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
-          {id:1, 'path':'/bbb', 'label':'About'},
-          {id:2, 'path':'/ccc', 'label':'Contact'},
-          {id:3, 'path':'/ddd', 'label':'Information'}]"
-      />`
-  )
-  .add("Responsive Light", () =>
-    `<navigation-menu
-        theme="light"
-        isSmallScreenMode
-        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
-          {id:1, 'path':'/bbb', 'label':'About'},
-          {id:2, 'path':'/ccc', 'label':'Contact'},
-          {id:3, 'path':'/ddd', 'label':'Information'}]"
-      />`
-  )
-  .add("Responsive Dark", () =>
-    `<navigation-menu
-        theme="dark"
-        isSmallScreenMode
-        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
-          {id:1, 'path':'/bbb', 'label':'About'},
-          {id:2, 'path':'/ccc', 'label':'Contact'},
-          {id:3, 'path':'/ddd', 'label':'Information'}]"
-      />`
-  )
-  .add("Responsive Premium", () =>
-    `<navigation-menu
-        theme="premium"
-        isSmallScreenMode
-        :list="[{id:0, 'path':'/aaa', 'label':'Home'},
-          {id:1, 'path':'/bbb', 'label':'About'},
-          {id:2, 'path':'/ccc', 'label':'Contact'},
-          {id:3, 'path':'/ddd', 'label':'Information'}]"
-      />`
-  );
+ 
 
 
