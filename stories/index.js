@@ -1,5 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 
+import './navigation/index';
+
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
   .add('Primary', () => '<base-button>Click me</base-button>')

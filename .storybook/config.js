@@ -18,7 +18,7 @@ import CheckBoxCard from '../src/components/check-box-card/CheckBoxCard';
 import TipCard from '../src/components/tip-card';
 import MarketingThumb from '../src/components/marketing-thumb';
 import Navbar from '../src/components/navbar';
-import NavigationMenu from '../src/components/navigation-menu';
+import Navigation from '../src/components/navigation';
 
 
 // Register custom components.
@@ -37,7 +37,7 @@ Vue.component('check-box-card', CheckBoxCard);
 Vue.component('tip-card', TipCard);
 Vue.component('marketing-thumb', MarketingThumb);
 Vue.component('navbar', Navbar);
-Vue.component('navigation-menu', NavigationMenu);
+Vue.component('navigation', Navigation);
 
 function loadStories() {
   // You can require as many stories as you need.
