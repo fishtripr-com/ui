@@ -1,15 +1,19 @@
 <template>
   <div :class="['navbar', theme]">
     <div class="container">
-      <div class="content">
-        <div :class="['image-wrapper', theme]">
-          <img class="image" :src="navLogo" alt="logo" @click="goHome" />
-        </div>
-        <div class="body-wrapper">
-          <slot v-if="isMounted" name="body" theme="test">{{theme}}</slot>
-        </div>
+      <!-- <div class="content"> -->
+      <div :class="['image-wrapper', theme]">
+        <img class="image" :src="navLogo" alt="logo" @click="goHome" />
       </div>
-      <div class="action-wrapper">
+      <div
+        class="body-wrapper"
+        :class="[theme, {'isSmallScreenMode':isSmallScreenMode}]"
+        :isSmallScreenMode="isSmallScreenMode"
+      >
+        <slot name="body"></slot>
+        <!-- </div> -->
+      </div>
+      <div class="action-wrapper" :isSmallScreenMode="isSmallScreenMode">
         <slot name="action"></slot>
       </div>
     </div>
@@ -31,12 +35,11 @@ export default {
         return ["dark", "premium", "light"].includes(value);
       }
     },
-    logo: { type: String }
+    logo: { type: String },
+    isSmallScreenMode: { type: Boolean, default: true }
   },
   data() {
-    return {
-      isMounted: false
-    };
+    return {};
   },
   computed: {
     navLogo() {
@@ -52,13 +55,9 @@ export default {
   },
   watch: {},
   beforeCreated() {},
-  created() {
-    console.log("created hook", this.$slots);
-  },
+  created() {},
   beforeMount() {},
-  mounted() {
-    this.isMounted = true;
-  },
+  mounted() {},
   beforeUpdate() {},
   updated() {},
   beforeDestroy() {},
@@ -80,6 +79,12 @@ export default {
 
   &.dark {
     background-color: #371d92;
+    color: $white;
+  }
+
+  &.premium {
+    background-color: $color-premium;
+    color: $white;
   }
 
   .container {
@@ -92,29 +97,46 @@ export default {
     margin: 0 $space-m 0 $space-m;
     justify-content: space-between;
 
-    .content {
+    // .content {
+    //   display: flex;
+    //   flex-flow: row nowrap;
+    //   align-items: center;
+    //   height: 100%;
+    //   max-height: 100%;
+    //   width: 100%;
+
+    .image-wrapper {
       display: flex;
-      flex-flow: row nowrap;
       align-items: center;
-      height: 100%;
-      max-height: 100%;
+      cursor: pointer;
+      z-index: 4;
 
-      .image-wrapper {
-        display: flex;
+      .image {
+        height: 30px;
+      }
+      // }
+    }
+    .body-wrapper {
+      display: flex;
+      width: 100%;
+      height: 60%;
+      // align-self: flex-end;
+      align-items: flex-start;
+      margin-left: $space-l;
+      padding: 0 0 0 $space-l;
+      border-left: 1px solid #371d92;
+
+      &.isSmallScreenMode {
         align-items: center;
-        cursor: pointer;
-
-        .image {
-          height: 30px;
-        }
+      }
+      &.dark {
+        border-left: 1px solid $white;
       }
 
-      .body-wrapper {
-        height: 60%;
-        margin-left: $space-l;
-        padding: 0 $space-l;
-        border-left: 1px solid #898ea2;
-      }
+      // &.small-screen {
+      //   display: flex;
+      //   align-items: flex-start;
+      // }
     }
   }
   .avatar-container {
