@@ -39,7 +39,7 @@ export default {
 .user-navbar-card {
   display: flex;
   font-family: "Montserrat", sans-serif !important;
-  padding: 0.6rem 1.2rem;
+  // padding: 0.6rem 1.2rem;
   align-items: center;
 
   .avatar-container {
