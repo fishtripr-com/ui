@@ -1,67 +1,50 @@
 <template>
   <div :class="['navbar', theme]">
-    <div class="container">
-      <!-- <div class="content"> -->
-      <div :class="['image-wrapper', theme]">
-        <img class="image" :src="navLogo" alt="logo" @click="goHome" />
+
+    <div class="wrapper">
+
+      <div 
+        :class="['logo', theme]"
+        @click="logoClicked" 
+        >
+        <img class="image" :src="logoUrl" alt="logo" />
       </div>
-      <div
-        class="body-wrapper"
-        :class="[theme, {'isSmallScreenMode':isSmallScreenMode}]"
-        :isSmallScreenMode="isSmallScreenMode"
-      >
-        <slot name="body"></slot>
-        <!-- </div> -->
+
+      <div :class="['body', theme]">
+
+        <slot name="body"/>
+
       </div>
-      <div class="action-wrapper" :isSmallScreenMode="isSmallScreenMode">
-        <slot name="action"></slot>
+
+      <div class="actions">
+
+        <slot name="actions"/>
+
       </div>
+
     </div>
+
   </div>
 </template>
 
 <script>
-// import Foo from 'bar/foo'
-
 export default {
-  name: "navbar",
-  mixins: [],
-  components: {},
+  name: 'navbar',
   props: {
     theme: {
       type: String,
-      validator: value => {
-        console.log("valid navbar", value);
-        return ["dark", "premium", "light"].includes(value);
-      }
+      default: 'light',
+      validator: value => ['dark', 'premium', 'light'].includes(value)
     },
-    logo: { type: String },
-    isSmallScreenMode: { type: Boolean, default: true }
+    logoUrl: { type: String },
+    mobile: { type: Boolean, default: false }
   },
-  data() {
-    return {};
-  },
-  computed: {
-    navLogo() {
-      return this.theme === "dark" || this.theme === "premium"
-        ? "https://picsum.photos/200/400"
-        : "https://picsum.photos/400/200";
-    }
-  },
+ 
   methods: {
-    goHome() {
-      this.$emit("home");
+    logoClicked() {
+      this.$emit('click')
     }
-  },
-  watch: {},
-  beforeCreated() {},
-  created() {},
-  beforeMount() {},
-  mounted() {},
-  beforeUpdate() {},
-  updated() {},
-  beforeDestroy() {},
-  destroyed() {}
+  }
 };
 </script>
 
@@ -69,77 +52,55 @@ export default {
 @import "../../assets/style/main";
 
 .navbar {
-  display: flex;
-  box-sizing: border-box;
-  background-color: #ffff;
   width: 100%;
   height: $height-navbar;
-  margin: 0;
-  padding: 0;
 
+  &.light {
+    background-color: $color-background-light;
+    color: $color-text;
+  }
   &.dark {
-    background-color: #371d92;
+    background-color: $color-background-dark;
     color: $white;
   }
-
   &.premium {
-    background-color: $color-premium;
+    background-color: $color-background-premium;
     color: $white;
   }
 
-  .container {
+  .wrapper {
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
     height: 100%;
-    max-height: 100%;
-    width: 100%;
-    margin: 0 $space-m 0 $space-m;
+    align-items: center;
     justify-content: space-between;
+    margin: 0 20px;
 
-    // .content {
-    //   display: flex;
-    //   flex-flow: row nowrap;
-    //   align-items: center;
-    //   height: 100%;
-    //   max-height: 100%;
-    //   width: 100%;
-
-    .image-wrapper {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      z-index: 4;
+    .logo {
+      width: 100px;
+      height: 50px;
+      max-height: 50px;
+      overflow: hidden;
+      margin-right: 20px;
 
       .image {
-        height: 30px;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        opacity: 0.5;
       }
-      // }
     }
-    .body-wrapper {
-      display: flex;
-      width: 100%;
-      height: 60%;
-      // align-self: flex-end;
-      align-items: flex-start;
-      margin-left: $space-l;
-      padding: 0 0 0 $space-l;
-      border-left: 1px solid #371d92;
 
-      &.isSmallScreenMode {
-        align-items: center;
-      }
-      &.dark {
-        border-left: 1px solid $white;
-      }
-
-      // &.small-screen {
-      //   display: flex;
-      //   align-items: flex-start;
-      // }
+    .body {
+      flex-grow: 1;
     }
-  }
-  .avatar-container {
+    .actions {
+      margin-left: 20px;
+    }
+
   }
 }
 </style>
