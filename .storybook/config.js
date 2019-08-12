@@ -20,6 +20,7 @@ import MarketingThumb from '../src/components/marketing-thumb';
 import Navbar from '../src/components/navbar';
 import Navigation from '../src/components/navigation';
 import ExperienceCard from '../src/components/cards/experience-card';
+import PartnerCard from '../src/components/cards/partner-card';
 
 
 
@@ -41,6 +42,8 @@ Vue.component('marketing-thumb', MarketingThumb);
 Vue.component('navbar', Navbar);
 Vue.component('navigation', Navigation);
 Vue.component('experience-card', ExperienceCard);
+Vue.component('partner-card', PartnerCard);
+
 
 function loadStories() {
   // You can require as many stories as you need.
