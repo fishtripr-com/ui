@@ -89,6 +89,24 @@ storiesOf('Cards', module)
           user-role="Fishing Guide"
           />
       </div>`
+  )
+  .add(
+    'Experience Card',
+    () =>
+      `<experience-card
+      image="https://picsum.photos/200/300"
+      title = "Experience Three Fishing Adventures in Dalarna"
+      hat = "Approx. 6 Days | From €560"
+    > 
+      <template #type>
+        <text-type-bloc 
+          className = "guide_hosting" 
+          textType = "Guide & Host" 
+          text = "Nigeria"
+          uppercase
+        />
+      </template>
+    </experience-card>`
   );
 storiesOf("Text Type bloc", module)
   .add("Light", () =>
