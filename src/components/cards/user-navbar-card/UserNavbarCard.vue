@@ -3,7 +3,7 @@
     <div :class="['avatar-container', size, {'clickable':isClickable}]">
       <avatar :size="size" :image="avatar" hasBorder />
     </div>
-    <div class="body">
+    <div v-if="deviceSize > deviceSizes.m" class="body">
       <p class="header">
         <span class="user-name">{{ userFirstName }}</span>
         <span class="user-role">({{ userRole.toUpperCase() }})</span>
@@ -14,8 +14,11 @@
 
 <script>
 import Avatar from "../../avatar/Avatar";
+import { responsiveHandler } from "../../../mixins/responsiveHandler";
+
 export default {
   name: "user-navbar-card",
+  mixins: [responsiveHandler],
   components: { Avatar },
   props: {
     avatar: { type: String },
