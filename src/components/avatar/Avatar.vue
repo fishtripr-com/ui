@@ -70,6 +70,16 @@ export default {
   &.l { @include dimensions(64) }
   &.xl { @include dimensions(72) }
   &.xxl { @include dimensions(86) }
-  &.border { border: 2px solid #958ce4 }
+  &.border {
+    &.light {
+      border: 2px solid $steel;
+    }
+    &.dark {
+      border: 2px solid $steel;
+    }
+    &.premium {
+      border: 2px solid #958ce4;
+    }
+  }
 }
 </style>
