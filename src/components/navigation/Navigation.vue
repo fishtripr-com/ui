@@ -3,7 +3,7 @@
     :class="[
       'navigation', 
       theme,
-      { 'mobile': mobile }
+      deviceSize < deviceSizes.l ? 'mobile' : ''
     ]"
     >
 
@@ -29,16 +29,18 @@
 </template>
 
 <script>
+import { responsiveHandler } from "../../mixins/responsiveHandler";
+
 export default {
-  name: 'navigation',
+  name: "navigation",
+  mixins: [responsiveHandler],
   props: {
     items: { type: Array, required: true },
     theme: {
       type: String,
-      default: 'light',
-      validator: value => ['light', 'dark', 'premium'].includes(value)
-    },
-    mobile: { type: Boolean, default: false },
+      default: "light",
+      validator: value => ["light", "dark", "premium"].includes(value)
+    }
   },
   methods: {
     onClicked(id) {
@@ -74,11 +76,12 @@ export default {
 
   &.mobile .wrapper {
     flex-direction: column;
+    padding: $space-l 0 0 $space-m;
   }
 
   &.light {
     background-color: $color-background-light;
-    color: black
+    color: black;
   }
   &.dark {
     background-color: $color-background-dark;
