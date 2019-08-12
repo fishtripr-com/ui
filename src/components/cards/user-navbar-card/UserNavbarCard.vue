@@ -1,12 +1,12 @@
 <template functionnal>
-  <div class="user-navbar-card">
+  <div :class="['user-navbar-card', theme]">
     <div :class="['avatar-container', size, {'clickable':isClickable}]">
-      <avatar :size="size" :image="avatar" hasBorder />
+      <avatar :class="[theme]" :size="size" :image="avatar" hasBorder />
     </div>
     <div v-if="deviceSize > deviceSizes.m" class="body">
       <p class="header">
-        <span class="user-name">{{ userFirstName }}</span>
-        <span class="user-role">({{ userRole.toUpperCase() }})</span>
+        <span :class="['user-name', theme]">{{ userFirstName }}</span>
+        <span :class="['user-role', theme]">({{ userRole.toUpperCase() }})</span>
       </p>
     </div>
   </div>
@@ -31,6 +31,11 @@ export default {
     size: {
       type: String,
       default: "s"
+    },
+    theme: {
+      type: String,
+      default: "light",
+      validator: value => ["light", "dark", "premium"].includes(value)
     }
   }
 };
@@ -65,13 +70,32 @@ export default {
         font-weight: 700;
         font-size: 0.9rem;
         color: #f8f7fb;
+
+        &.light {
+          color: #353745;
+        }
+        &.dark {
+          color: $pale-grey;
+        }
+        &.premium {
+          color: $white;
+        }
       }
 
       .user-role {
         font-size: 0.8rem;
         font-weight: 700;
-        color: #958ce4;
         margin-left: 5px;
+
+        &.light {
+          color: $steel;
+        }
+        &.dark {
+          color: $steel;
+        }
+        &.premium {
+          color: #958ce4;
+        }
       }
     }
   }
