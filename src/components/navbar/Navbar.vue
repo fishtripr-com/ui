@@ -83,7 +83,6 @@ export default {
         min-height: 100%;
         max-height: 100%;
         object-fit: contain;
-        opacity: 0.5;
       }
     }
 
