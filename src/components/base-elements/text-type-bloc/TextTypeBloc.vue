@@ -61,7 +61,6 @@ export default {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: $space-m;
   text-align: left;
   font-size:$font-size-xs;
   font-weight: $semibold;
