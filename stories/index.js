@@ -83,6 +83,7 @@ storiesOf('Cards', module)
     () =>
       `<div style="background-color: #301A87">
         <user-navbar-card
+        theme="dark"
           avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
           user-first-name="Max"
           user-role="Fishing Guide"
