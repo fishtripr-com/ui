@@ -7,7 +7,7 @@ import Avatar from '../src/components/avatar';
 import ImageContainer from '../src/components/image-container';
 import ConversationCard from '../src/components/cards/conversation-card';
 import FishtriprLoader from '../src/components/loaders/fishtripr-loader';
-import OfferCard from '../src/components/cards/offer-card';
+import OfferCard from '../src/components/offer-card';
 import ChatMessageCard from '../src/components/cards/chat-message-card';
 import AppCard from '../src/components/cards/app-card';
 import EmployeeCard from '../src/components/cards/employee-card';
