@@ -5,7 +5,7 @@ import ChatMessageCard from './components/cards/chat-message-card';
 import CheckBoxCard from './components/check-box-card';
 import ImageContainer from './components/image-container';
 import MarketingThumb from './components/marketing-thumb';
-import OfferCard from './components/cards/offer-card';
+import OfferCard from './components/offer-card';
 import TipCard from './components/tip-card';
 
 export {
