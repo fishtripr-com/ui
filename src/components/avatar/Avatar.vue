@@ -1,6 +1,6 @@
 <template>
-  <div class="avatar" :class="[size, { border: hasBorder }]">
-    <image-container :image="image || getRandomFallback()" :height="100" class="image"/>
+  <div class="avatar" :class="[size, theme, { border: hasBorder }]">
+    <image-container :image="image || getRandomFallback()" :height="100" class="image" />
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
     hasBorder: {
       type: Boolean,
       default: false
+    },
+    theme: {
+      type: String,
+      default: "light",
+      validator: value => ["light", "dark", "premium"].includes(value)
     }
   },
   components: { ImageContainer },
@@ -41,6 +46,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/style/main";
+
 @mixin dimensions($size) {
   width: #{$size}px;
   min-width: #{$size}px;
@@ -63,6 +70,16 @@ export default {
   &.l { @include dimensions(64) }
   &.xl { @include dimensions(72) }
   &.xxl { @include dimensions(86) }
-  &.border { border: 2px solid #958ce4 }
+  &.border {
+    &.light {
+      border: 2px solid $steel;
+    }
+    &.dark {
+      border: 2px solid $steel;
+    }
+    &.premium {
+      border: 2px solid #958ce4;
+    }
+  }
 }
 </style>

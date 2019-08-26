@@ -17,6 +17,10 @@ import TextTypeBloc from '../src/components/base-elements/text-type-bloc';
 import CheckBoxCard from '../src/components/check-box-card/CheckBoxCard';
 import TipCard from '../src/components/tip-card';
 import MarketingThumb from '../src/components/marketing-thumb';
+import Navbar from '../src/components/navbar';
+import Navigation from '../src/components/navigation';
+import ExperienceCard from '../src/components/cards/experience-card';
+
 
 
 // Register custom components.
@@ -34,6 +38,9 @@ Vue.component('text-type-bloc', TextTypeBloc);
 Vue.component('check-box-card', CheckBoxCard);
 Vue.component('tip-card', TipCard);
 Vue.component('marketing-thumb', MarketingThumb);
+Vue.component('navbar', Navbar);
+Vue.component('navigation', Navigation);
+Vue.component('experience-card', ExperienceCard);
 
 function loadStories() {
   // You can require as many stories as you need.

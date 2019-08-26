@@ -1,4 +1,7 @@
-import { storiesOf } from '@storybook/vue';
+import { storiesOf } from '@storybook/vue'
+
+import './navigation/index'
+import './navbar/index'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -80,11 +83,30 @@ storiesOf('Cards', module)
     () =>
       `<div style="background-color: #301A87">
         <user-navbar-card
+        theme="dark"
           avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
           user-first-name="Max"
           user-role="Fishing Guide"
           />
       </div>`
+  )
+  .add(
+    'Experience Card',
+    () =>
+      `<experience-card
+      image="https://picsum.photos/200/300"
+      title = "Experience Three Fishing Adventures in Dalarna"
+      hat = "Approx. 6 Days | From €560"
+    > 
+      <template #type>
+        <text-type-bloc 
+          className = "guide_hosting" 
+          textType = "Guide & Host" 
+          text = "Nigeria"
+          uppercase
+        />
+      </template>
+    </experience-card>`
   );
 storiesOf("Text Type bloc", module)
   .add("Light", () =>
@@ -121,7 +143,7 @@ storiesOf("Text Type bloc", module)
             />
         </div>`
   );
-  
+
 storiesOf("Check Box Card", module)
   .add('Unchecked', () =>
     `<check-box-card
@@ -153,7 +175,8 @@ storiesOf("Check Box Card", module)
       text="Free"
     />`
   );
-  
+
+
 storiesOf("Tip Card", module)
   .add("Default", () =>
     `<tip-card
@@ -170,4 +193,5 @@ storiesOf("Marketing Thumb", module)
       title="Search and compare"
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
-  )
+  );
+
