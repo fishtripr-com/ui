@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/index";
+@import "../../assets/style/index";
 
 .offer-card {
   display: flex;
