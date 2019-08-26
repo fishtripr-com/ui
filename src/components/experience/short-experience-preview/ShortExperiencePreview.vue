@@ -82,7 +82,7 @@ export default {
       }
     }
 
-    .el-rate { margin-top: 10px }
+    .el-rate { margin-top: 2px }
   }
 
   .image-container {
