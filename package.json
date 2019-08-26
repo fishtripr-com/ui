@@ -32,7 +32,8 @@
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
-    "@fishtripr/constants": "0.0.9",
+    "@fishtripr/constants": "^0.0.12",
+    "@fishtripr/js-functions": "^0.0.17",
     "vue": "^2.6.8",
     "vue-styled-components": "^1.4.4"
   },
