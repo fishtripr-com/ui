@@ -1,0 +1,176 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+// 1. Font
+// ==========================================================================
+
+// font system
+$ff                : 'Montserrat', sans-serif;
+
+// line-height
+$lh                : 1.5;
+
+// Font-size for titles
+$fs-title: (
+  1: 64px,
+  2: 48px,
+  3: 40px,
+  4: 32px,
+  5: 24px
+);
+
+// Font size for texts
+$fs-text: (
+  1: 24px,
+  2: 18px,
+  3: 16px,
+  4: 14px,
+  5: 12px
+);
+
+// Line height for titles
+$lh-title: (
+  1: 70px,
+  2: 54px,
+  3: 46px,
+  4: 38px,
+  5: 30px
+);
+
+// Line height for texts
+$lh-text: (
+  1 : 30px,
+  2 : 24px,
+  3 : 24px,
+  4 : 20px,
+  5 : 19px
+);
+
+// font-weight
+$fw-l              : 700;
+$fw-m              : 400;
+
+// 2. Colors
+// ==========================================================================
+
+// system colors
+$white        : #FFFFFF;
+$light-grey   : #F2F2F2;
+$light-steel  : #DBDCE4;
+$steel        : #898EA2;
+$charcoal     : #353745;
+$black        : #000000;
+
+// theme colors
+$pale-teal      : #00D2B4;
+// $seafoam-blue   : #56D2AB;
+
+$watermelon     : #FF4961;
+$aqua-marine    : #30DEA0;
+$apricot        : #FFC06A;
+$azure          : #1E9FF2;
+
+$tag-guideNHost : #666EE8;
+$tag-guide      : #BE7A0B;
+$tag-host       : #36BEFB;
+$tag-fishery    : #7C8E72;
+$tag-charter    : #A52A2A;
+
+$cloudy-blue    : #c0c4d1;
+
+// Aplly theme with colors
+// $clr-primary     : $seafoam-blue;
+// $clr-secondary   : $gray-600;
+// $clr-success     : $aqua-marine;
+// $clr-info        : $azure;
+// $clr-warning     : $apricot;
+// $clr-danger      : $watermelon;
+// $clr-text-basic  : $charcoal-grey;
+// $clr-text-dark   : $black;
+// $clr-text-light  : $steel;
+$colors: (
+
+  text: $black,
+  text-light: $light-steel,
+  text-white: $white,
+
+  link: $pale-teal,
+  link-hover: $pale-teal,
+  link-light: $light-steel,
+  link-hover-light: $pale-teal,
+  link-white: $white,
+  link-hover-white: $white,
+
+  border: $light-steel,
+  border-light: $steel,
+  border-white: $white,
+
+  primary: $pale-teal,
+  success: $aqua-marine,
+  danger: $watermelon,
+  warning: $apricot,
+  info: $azure,
+
+  background-dark: $charcoal,
+  background-light: $light-steel,
+  background-white: $white
+
+);
+
+// 3. Media queries
+// ==========================================================================
+
+// Media Query Ranges
+$breakpoint-xl: 1920px;
+$breakpoint-l: 1200px;
+$breakpoint-m: 992px;
+$breakpoint-s: 768px;
+
+$screen-l: "only screen and (max-width : #{$breakpoint-l})";
+$screen-m: "only screen and (max-width : #{$breakpoint-m})";
+$screen-s: "only screen and (max-width : #{$breakpoint-s})";
+
+// 4. Layout
+// ==========================================================================
+
+$layout-body-width: 60%;
+$layout-body-width-l: 70%;
+$layout-body-width-m: 80%;
+$layout-body-width-s: 90%;
+
+$layout-body-max-width: $breakpoint-l - 20px;
+$layout-body-max-width-l: $breakpoint-l - 20px;
+$layout-body-max-width-m: $breakpoint-m - 20px;
+$layout-body-max-width-s: $breakpoint-s - 20px;
+
+$layout-body-min-width: $breakpoint-l - 20px;
+$layout-body-min-width-l: $breakpoint-m - 20px;
+$layout-body-min-width-m: $breakpoint-s - 20px;
+$layout-body-min-width-s: 20px;
+
+// 5. Spacing
+// ==========================================================================
+
+$spacer: 1rem;
+
+$spacers: (
+  0: 0,
+  1: ($spacer * .15),
+  2: ($spacer * .25),
+  3: ($spacer * .5),
+  4: ($spacer * .75),
+  5: $spacer,
+  6: ($spacer * 1.25),
+  7: ($spacer * 1.75),
+  8: ($spacer * 2),
+  9: ($spacer * 2.5),
+  10: ($spacer * 3),
+  11: ($spacer * 4),
+  12: ($spacer * 5),
+  13: ($spacer * 6),
+  14: ($spacer * 8),
+  15: ($spacer * 10)
+);
