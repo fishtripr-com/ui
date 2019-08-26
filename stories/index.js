@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/vue'
 
 import './navigation/index'
 import './navbar/index'
+import './experience/short-experience-preview/index'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -97,11 +98,11 @@ storiesOf('Cards', module)
       image="https://picsum.photos/200/300"
       title = "Experience Three Fishing Adventures in Dalarna"
       hat = "Approx. 6 Days | From €560"
-    > 
+    >
       <template #type>
-        <text-type-bloc 
-          className = "guide_hosting" 
-          textType = "Guide & Host" 
+        <text-type-bloc
+          className = "guide_hosting"
+          textType = "Guide & Host"
           text = "Nigeria"
           uppercase
         />
@@ -114,12 +115,12 @@ storiesOf('Cards', module)
       `<partner-card
       imageUrl="https://picsum.photos/200/300"
       title = "Emilio e Giorgio"
-    > 
+    >
       <template #type>
-        <text-type-bloc 
-        className="guide" 
-        textType="Guide" 
-        text="Belgium" 
+        <text-type-bloc
+        className="guide"
+        textType="Guide"
+        text="Belgium"
         separator="|"
         />
       </template>
@@ -127,35 +128,35 @@ storiesOf('Cards', module)
   );;
 storiesOf("Text Type bloc", module)
   .add("Light", () =>
-    `<text-type-bloc 
-        className="guide_hosting" 
-        textType="Guide & Host" 
-        text="Nigeria" 
+    `<text-type-bloc
+        className="guide_hosting"
+        textType="Guide & Host"
+        text="Nigeria"
         />`
   )
   .add("Light & Uppercase", () =>
-    `<text-type-bloc 
-        className="guide_hosting" 
-        textType="Guide & Host" 
+    `<text-type-bloc
+        className="guide_hosting"
+        textType="Guide & Host"
         text="Nigeria"
-        uppercase 
+        uppercase
         />`
   )
   .add("Light with other separator", () =>
-    `<text-type-bloc 
-        className="guide" 
-        textType="Guide" 
-        text="Belgium" 
+    `<text-type-bloc
+        className="guide"
+        textType="Guide"
+        text="Belgium"
         separator="|"
         />`
   )
   .add("Dark",
     () =>
       `<div style="background-color: #5F5F5F; height: 50px">
-          <text-type-bloc 
-            className="guide_hosting" 
-            textType="Guide & Host" 
-            text="Nigeria" 
+          <text-type-bloc
+            className="guide_hosting"
+            textType="Guide & Host"
+            text="Nigeria"
             dark
             />
         </div>`
