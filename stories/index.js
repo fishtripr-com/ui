@@ -107,7 +107,24 @@ storiesOf('Cards', module)
         />
       </template>
     </experience-card>`
-  );
+  )
+  .add(
+    'Partner Card',
+    () =>
+      `<partner-card
+      imageUrl="https://picsum.photos/200/300"
+      title = "Emilio e Giorgio"
+    > 
+      <template #type>
+        <text-type-bloc 
+        className="guide" 
+        textType="Guide" 
+        text="Belgium" 
+        separator="|"
+        />
+      </template>
+    </partner-card>`
+  );;
 storiesOf("Text Type bloc", module)
   .add("Light", () =>
     `<text-type-bloc 
