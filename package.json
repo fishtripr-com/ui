@@ -34,6 +34,7 @@
   "dependencies": {
     "@fishtripr/constants": "^0.0.12",
     "@fishtripr/js-functions": "^0.0.17",
+    "element-ui": "^2.11.1",
     "vue": "^2.6.8",
     "vue-styled-components": "^1.4.4"
   },
