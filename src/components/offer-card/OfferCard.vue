@@ -1,6 +1,6 @@
 <template functionnal>
-  <div 
-    class="offer-card" 
+  <div
+    class="offer-card"
     @click="onClick"
     >
 
@@ -25,13 +25,13 @@
       </div>
 
       <div class="arrow">
-        <img 
-          class="image" 
+        <img
+          class="image"
           :src="arrowIcon"
           />
       </div>
     </template>
-    
+
     <p v-else>Loading...</p>
 
   </div>
@@ -39,9 +39,11 @@
 
 <script>
 import { IMG } from '@fishtripr/constants'
+import { responsiveHandler } from '../../mixins/responsiveHandler'
 
 export default {
   name: 'offer-card',
+  mixins: [ responsiveHandler ],
   props: {
     isLoading: { type: Boolean },
     image: { type: String },
@@ -60,8 +62,9 @@ export default {
       this.$emit('click')
     },
     truncate(title) {
-      if (title.length > 50) {
-        return title.slice(0, 50 - 3) + "...";
+      const charLimit = this.deviceSize === this.deviceSizes.s ? 20 : 50
+      if (title.length > charLimit) {
+        return title.slice(0, charLimit - 3).trim() + "...";
       }
       return title;
     }
@@ -82,23 +85,10 @@ export default {
   height: 70px;
   flex-direction: row;
 
-  @media #{$small-and-down} {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    flex-wrap: wrap;
-    height: 177px;
-  }
-
   .img {
     width: 100px;
     height: 70px;
     padding: 0.6rem;
-
-    @media #{$small-and-down} {
-      width: 100px;
-      height: 100px;
-    }
 
     img {
       width: 100%;
@@ -115,10 +105,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    @media #{$small-and-down} {
-      padding: 0.6rem;
-    }
 
     .title {
       font-weight: $bold;
@@ -154,10 +140,13 @@ export default {
   }
 
   .arrow {
-    width: 45px;
+    display: flex;
+    width: 20px;
+    margin-right: 20px;
 
-    @media #{$small-and-down} {
-      display: none;
+    .image {
+      width: 100%;
+      height: 100%;
     }
   }
 }
