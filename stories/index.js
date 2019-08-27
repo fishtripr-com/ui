@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/vue'
 import './navigation/index'
 import './navbar/index'
 import './experience/short-experience-preview/index'
+import './offer/offerCard'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -37,17 +38,6 @@ storiesOf('Loader', module)
   .add('Basic', () => '<fishtripr-loader/>');
 
 storiesOf('Cards', module)
-  .add(
-    'Offer Card',
-    () =>
-      `<offer-card
-        image="https://picsum.photos/200/300"
-        title="An unforgettable father-and-son fishing experience in Jura"
-        hat="1 Guest - Jun 07, 2019 - €200"
-        status="Pending"
-        mode="warning"
-        />`
-  )
   .add(
     'Chat Message Card',
     () =>
