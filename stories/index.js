@@ -161,6 +161,15 @@ storiesOf("Check Box Card", module)
       subtext="Now"
     />`
   )
+  .add('Disabled', () =>
+    `<check-box-card
+      title="People are eyeing this experience."
+      text="€370.00"
+      subtitle="12 others are looking at it for these dates."
+      subtext="Now"
+      disabled
+    />`
+  )
   .add('Checked', () =>
     `<check-box-card
       checked

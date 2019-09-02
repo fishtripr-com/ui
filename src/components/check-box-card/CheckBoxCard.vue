@@ -1,16 +1,17 @@
 <template>
-  <div 
-    class="check-box-card" 
+  <div
+    class="check-box-card"
+    :class="{ 'disabled': disabled }"
     @click="onClick"
     >
-    <div 
+    <div
       :class="[
         'wrapper',
         { 'checked': checked }
       ]"
       >
 
-      <div 
+      <div
         class="radio"
         :class="{ 'checked': checked }"
         />
@@ -26,7 +27,7 @@
           <p class="title">{{ text }}</p>
           <p v-if="subtext" class="text">{{ subtext }}</p>
         </div>
-        
+
       </div>
 
     </div>
@@ -41,14 +42,15 @@ export default {
     title: { type: String },
     text: { type: String },
     subtitle: { type: String },
-    subtext: { type: String }
+    subtext: { type: String },
+    disabled: { type: Boolean, default: false }
   },
   methods: {
     onClick() {
-      this.$emit('click');
+      !this.disabled && this.$emit('click')
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -61,6 +63,8 @@ export default {
   box-sizing: border-box;
   border: $border-card solid transparent;
   cursor: pointer;
+
+  &.disabled { opacity: 0.4 }
 
   .wrapper {
     display: flex;
