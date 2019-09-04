@@ -18,7 +18,7 @@
         </p>
         <p
           class="light"
-          :class="isSmallOrDown ? 'txt-5' : 'txt-5'"
+          :class="isSmallOrDown ? 'txt-6' : 'txt-5'"
           >
           <template v-if="isSmallOrDown" >
             <span class="premium">Inquiry Sent</span>
