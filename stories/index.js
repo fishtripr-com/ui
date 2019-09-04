@@ -100,6 +100,16 @@ storiesOf('Cards', module)
     </experience-card>`
   )
   .add(
+    'Experience Listing Card',
+    () =>
+      `<experience-listing-card
+        image="https://picsum.photos/200/300"
+        title = "Experience Three Fishing Adventures in Dalarna"
+        country = "Georgia"
+      >
+    </experience-listing-card>`
+  )
+  .add(
     'Partner Card',
     () =>
       `<partner-card
