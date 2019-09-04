@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/style/main";
+
 .chat-message-card {
   display: flex;
   font-family: 'Montserrat', sans-serif !important;
@@ -62,12 +64,20 @@ export default {
 
       .nameAction {
         font-weight: 700;
-        font-size: .9rem;
+        font-size: $font-size-m;
+
+        @media #{$small-and-down} {
+          font-size: $font-size-s;
+        }
       }
 
       .time {
-        font-size: .7rem;
-        color: #898EA2;
+        font-size: $font-size-s;
+        color: #898ea2;
+
+        @media #{$small-and-down} {
+          font-size: $font-size-xs;
+        }
       }
     }
 
