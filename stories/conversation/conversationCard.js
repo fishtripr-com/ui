@@ -13,4 +13,6 @@ storiesOf('Conversation card', module)
       statusClass="success"
     />
   `)
-  // .add('Loading mode', () => '<conversation-card :loading="true"/>');
+  .add('Loading mode', () => `
+    <conversation-card loading/>
+  `)
