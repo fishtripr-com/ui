@@ -2,7 +2,7 @@
   <div class="conversation-card" @click="onClick">
 
     <div class="avatar-container">
-      <avatar :image="image"/>
+      <avatar :image="image" />
     </div>
 
     <template v-if="!loading">
@@ -10,13 +10,29 @@
         <p class="txt-4 bold">
           {{ userName }}
         </p>
-        <p class="txt-5 light">
+        <p
+          v-if="isSmallOrDown"
+          class="last-message txt-5"
+          >
+          {{ lastMessage }}
+        </p>
+        <p
+          class="light"
+          :class="isSmallOrDown ? 'txt-5' : 'txt-5'"
+          >
+          <template v-if="isSmallOrDown" >
+            <span class="premium">Inquiry Sent</span>
+            <span class="bull">&bull;</span>
+          </template>
           {{ time }}
         </p>
       </div>
 
-      <div class="second">
-        <p class="txt-4">
+      <div
+        v-if="!isSmallOrDown"
+        class="second"
+        >
+        <p class="last-message txt-4">
           {{ lastMessage }}
         </p>
         <p class="txt-5 light">
@@ -24,7 +40,10 @@
         </p>
       </div>
 
-      <div class="third">
+      <div
+        v-if="!isSmallOrDown"
+        class="third"
+        >
         <p class="txt-4">
           {{ price }}
         </p>
@@ -44,9 +63,11 @@
 
 <script>
 import Avatar from '../avatar'
+import { responsiveHandler } from '../../mixins/responsiveHandler'
 
 export default {
   name: 'conversation-card',
+  mixins: [ responsiveHandler ],
   components: { Avatar },
   props: {
     image: { type: String, default: '' },
@@ -82,7 +103,26 @@ export default {
   padding: map-get($spacers, 5);
   cursor: pointer;
 
-  .avatar-container { margin-right: map-get($spacers, 5) }
+  @media #{$screen-s} {
+    border: none;
+    padding: map-get($spacers, 3) map-get($spacers, 0);
+  }
+
+  .last-message {
+    width: 100%;
+    max-width: 450px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @media #{$screen-s} { max-width: 200px }
+  }
+
+  .avatar-container {
+    margin-right: map-get($spacers, 5);
+
+    @media #{$screen-s} { margin-right: map-get($spacers, 4) }
+  }
   .first { flex-grow: 0.3 }
   .second { flex-grow: 1 }
   .third { flex-grow: 0.15 }
