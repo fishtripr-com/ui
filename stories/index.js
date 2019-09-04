@@ -106,6 +106,7 @@ storiesOf('Cards', module)
         image="https://picsum.photos/200/300"
         title = "Experience Three Fishing Adventures in Dalarna"
         country = "Georgia"
+        isListed
       >
     </experience-listing-card>`
   )
