@@ -5,7 +5,7 @@ import Vue from 'vue';
 // Import your custom components.
 import Avatar from '../src/components/avatar';
 import ImageContainer from '../src/components/image-container';
-import ConversationCard from '../src/components/cards/conversation-card';
+import ConversationCard from '../src/components/conversation-card';
 import FishtriprLoader from '../src/components/loaders/fishtripr-loader';
 import OfferCard from '../src/components/offer-card';
 import ChatMessageCard from '../src/components/cards/chat-message-card';

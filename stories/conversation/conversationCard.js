@@ -1,0 +1,10 @@
+import { storiesOf } from '@storybook/vue'
+
+storiesOf('Conversation card', module)
+  .add('Basic', () => `
+    <conversation-card
+      image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
+      user-name="Vincent Battaglia"
+    />
+  `)
+  // .add('Loading mode', () => '<conversation-card :loading="true"/>');
