@@ -67,6 +67,7 @@ $black        : #000000;
 // theme colors
 $pale-teal      : #00D2B4;
 // $seafoam-blue   : #56D2AB;
+$purple         : #666EE8;
 
 $watermelon     : #FF4961;
 $aqua-marine    : #30DEA0;
@@ -109,6 +110,7 @@ $colors: (
   border-white: $white,
 
   primary: $pale-teal,
+  premium: $purple,
   success: $aqua-marine,
   danger: $watermelon,
   warning: $apricot,
