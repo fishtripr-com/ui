@@ -11,8 +11,8 @@
       </div>
 
       <div class="message flex-row-ctr">
-        <p class="txt-5 pl-5">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error inventore...
+        <p class="txt-5 pl-5 link">
+          Link
         </p>
       </div>
     </template>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Avatar from '../../avatar'
+import Avatar from '../avatar'
 
 export default {
   name: 'conversation-card',
@@ -42,5 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/style/default";
+
 .conversation-card { cursor: pointer }
 </style>
