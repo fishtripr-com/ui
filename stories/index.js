@@ -211,4 +211,10 @@ storiesOf("Marketing Thumb", module)
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
   );
-
+storiesOf("Messages", module)
+  .add('Header', () =>
+    `<messages-container-header
+      userName="Michael Jackson"
+      onlineStatus
+    />`
+  )
