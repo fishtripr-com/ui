@@ -1,18 +1,38 @@
 <template>
-  <div class="conversation-card bordered my-5 py-5 px-5 flex-row" @click="onClick">
+  <div class="conversation-card" @click="onClick">
 
-    <div class="avatar">
-      <avatar :image="avatar"/>
+    <div class="avatar-container">
+      <avatar :image="image"/>
     </div>
 
     <template v-if="!loading">
-      <div class="user flex-row-ctr">
-        <p class="txt-4 bold mx-5">{{ userName }}</p>
+      <div class="first">
+        <p class="txt-4 bold">
+          {{ userName }}
+        </p>
+        <p class="txt-5 light">
+          {{ time }}
+        </p>
       </div>
 
-      <div class="message flex-row-ctr">
-        <p class="txt-5 pl-5 link">
-          Link
+      <div class="second">
+        <p class="txt-4">
+          {{ lastMessage }}
+        </p>
+        <p class="txt-5 light">
+          {{ additionnalInfo }}
+        </p>
+      </div>
+
+      <div class="third">
+        <p class="txt-4">
+          {{ price }}
+        </p>
+        <p
+          class="txt-5 bold"
+          :class="statusClass"
+          >
+          {{ status }}
         </p>
       </div>
     </template>
@@ -29,9 +49,20 @@ export default {
   name: 'conversation-card',
   components: { Avatar },
   props: {
-    avatar: { type: String, default: '' },
+    image: { type: String, default: '' },
     userName: { type: String, default: '' },
-    loading: { type: Boolean, default: false }
+    time: { type: String, default: '' },
+    lastMessage: { type: String, default: '' },
+    additionnalInfo: { type: String, default: '' },
+    price: { type: String, default: '' },
+    status: { type: String, default: 'Pending' },
+    statusClass: {
+      type: String,
+      default: 'black',
+      validator: value => ['success', 'warning', 'black'].includes(value)
+    },
+    loading: { type: Boolean, default: false },
+    read: { type: Boolean, default: false }
   },
   methods: {
     onClick() {
@@ -44,5 +75,16 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/default";
 
-.conversation-card { cursor: pointer }
+.conversation-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid map-get($colors, 'border');
+  padding: map-get($spacers, 5);
+  cursor: pointer;
+
+  .avatar-container { margin-right: map-get($spacers, 5) }
+  .first { flex-grow: 0.3 }
+  .second { flex-grow: 1 }
+  .third { flex-grow: 0.15 }
+}
 </style>
