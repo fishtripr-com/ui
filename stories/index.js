@@ -214,7 +214,7 @@ storiesOf("Marketing Thumb", module)
 storiesOf("Messages", module)
   .add('Header', () =>
     `<messages-container-header
-      userName="Michael Jackson"
+      userName="Michael"
       onlineStatus
     />`
   )
