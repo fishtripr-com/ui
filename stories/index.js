@@ -211,4 +211,10 @@ storiesOf("Marketing Thumb", module)
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
   );
+storiesOf("Mobile Payment Link", module)
+  .add("Basic", () =>
+    `<mobile-payment-link
+      link="https://www.imdb.com/title/tt0068646/?ref_=ttls_li_tt"
+      />`
+  );
 
