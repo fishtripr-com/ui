@@ -1,12 +1,12 @@
 <template>
-  <div class="conversation-receiver-header">
+  <header class="conversation-receiver-header">
     <p class="nameHeader">{{ userName }}</p>
     <div class="body">
       <span class="status">{{ statusIndicator }}</span>
       <span class="bull">|</span>
       <span class="text">Avg. response time 6 Hrs.</span>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
