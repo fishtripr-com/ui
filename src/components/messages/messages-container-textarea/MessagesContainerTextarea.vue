@@ -107,7 +107,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style";
+@import "../../../assets/style/index";
 @import "../../../../node_modules/element-ui/lib/theme-chalk/input.css";
 
 .send-message-container {
