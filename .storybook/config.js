@@ -22,7 +22,7 @@ import Navigation from '../src/components/navigation';
 import ExperienceCard from '../src/components/cards/experience-card';
 import PartnerCard from '../src/components/cards/partner-card';
 import ShortExperiencePreview from '../src/components/experience/short-experience-preview/ShortExperiencePreview';
-import MessagesContainerTextarea from '../src/components/messages/messages-container-textarea';
+import ConversationTextarea from '../src/components/conversation/conversation-textarea';
 // Register custom components.
 Vue.component('avatar', Avatar);
 Vue.component('image-container', ImageContainer);
@@ -43,7 +43,7 @@ Vue.component('navigation', Navigation);
 Vue.component('experience-card', ExperienceCard);
 Vue.component('partner-card', PartnerCard);
 Vue.component('short-experience-preview', ShortExperiencePreview);
-Vue.component('messages-container-textarea', MessagesContainerTextarea);
+Vue.component('send-message-textarea', ConversationTextarea);
 
 function loadStories() {
   // You can require as many stories as you need.
