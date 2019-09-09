@@ -14,7 +14,7 @@
         <p class="country" v-if="deviceSize > deviceSizes.s">{{ country }}</p>
         <div class="actions" v-if="deviceSize <= deviceSizes.s">
           <div class="listingAction">
-            <a>{{ listingAction }}</a>
+            <a>{{ actionOnItem }}</a>
           </div>
           <template>
             <div class="separator">&bull;</div>
@@ -68,8 +68,8 @@ export default {
         ? (this.listedStateText = "Listed")
         : (this.listedStateText = "Unlisted");
     },
-    listingAction() {
-      return this.isListed ? 'Unlist' : 'List';
+    actionOnItem() {
+      return this.isListed ? "Unlist" : "List";
     }
   },
   methods: {
