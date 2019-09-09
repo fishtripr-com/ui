@@ -46,14 +46,14 @@
 </template>
 
 <script>
-import { responsiveHandler } from "../../../mixins/responsiveHandler";
+import { responsiveHandler } from '../../../mixins/responsiveHandler'
 
 export default {
-  name: "experience-listing-card",
+  name: 'experience-listing-card',
   mixins: [responsiveHandler],
   data() {
     return {
-      status: ""
+      status: ''
     };
   },
   props: {
@@ -64,25 +64,25 @@ export default {
   },
   computed: {
     checkListed() {
-      return this.isListed ? (status = "Listed") : (status = "Unlisted");
+      return this.isListed ? (status = 'Listed') : (status = 'Unlisted');
     },
     listingAction() {
-      return this.isListed ? "Unlist" : "List";
+      return this.isListed ? 'Unlist' : 'List';
     }
   },
   methods: {
     openExperiencePage() {
-      this.$emit("click");
+      this.$emit('click');
     },
     goToEditExperience() {
-      this.$emit("click");
+      this.$emit('click');
     }
   }
 };
 </script>
 
 <style lang='scss' scoped>
-@import "../../../assets/style/main";
+@import '../../../assets/style/main';
 
 .experience-listing-card {
   display: flex;
