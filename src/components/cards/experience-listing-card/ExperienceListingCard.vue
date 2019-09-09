@@ -14,12 +14,12 @@
         <p class="country" v-if="deviceSize > deviceSizes.s">{{ country }}</p>
         <div class="actions" v-if="deviceSize <= deviceSizes.s">
           <div class="listingAction">
-            <a>{{ actionOnItem }}</a>
+            <a @click="actionItem">{{ actionOnItem }}</a>
           </div>
           <template>
             <div class="separator">&bull;</div>
             <div>
-              <a>View</a>
+              <a @click="viewItem">View</a>
             </div>
           </template>
         </div>
@@ -28,12 +28,12 @@
       <div class="wrapper" v-if="deviceSize > deviceSizes.s">
         <div class="actions">
           <div class="listingAction">
-            <a>edit</a>
+            <a @click="editItem">edit</a>
           </div>
           <template v-if="isListed">
             <div class="separator">&bull;</div>
             <div class="listingAction">
-              <a>preview</a>
+              <a @click="viewItem">preview</a>
             </div>
           </template>
         </div>
@@ -73,11 +73,14 @@ export default {
     }
   },
   methods: {
-    openExperiencePage() {
-      this.$emit('click');
+    viewItem() {
+      this.$emit("click");
     },
-    goToEditExperience() {
-      this.$emit('click');
+    editItem() {
+      this.$emit("click");
+    },
+    actionItem() {
+      this.$emit("click");
     }
   }
 };
