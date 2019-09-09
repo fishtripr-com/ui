@@ -2,13 +2,13 @@
   <div class="send-message-container">
     <el-form>
       <el-input
+        class="inputArea"
         v-model="message"
         :rows="2"
         :disabled="isLoading"
         size="mini"
         id="chat-textarea-container"
         resize="none"
-        style="box-shadow: 0 1px 5px 0 rgba(0,0,0,.1)"
         type="textarea"
       />
 
@@ -111,6 +111,10 @@ export default {
 @import "../../../../node_modules/element-ui/lib/theme-chalk/input.css";
 
 .send-message-container {
+  .inputArea {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+
   .btn-group {
     display: flex;
     justify-content: space-between;
