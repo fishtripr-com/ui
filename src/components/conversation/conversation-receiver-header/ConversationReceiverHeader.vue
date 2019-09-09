@@ -28,11 +28,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style";
+@import "../../../assets/style/main";
 
 .conversation-receiver-header {
   display: flex;
   flex-flow: column wrap;
+  font-family: $font-family;
   border: 1px solid $color-border;
   padding: $space-xs $space-xxs;
   cursor: pointer;
