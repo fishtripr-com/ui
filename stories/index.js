@@ -4,6 +4,7 @@ import './navigation/index'
 import './navbar/index'
 import './experience/short-experience-preview/index'
 import './offer/offerCard'
+import './conversation/receiver-header'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -211,10 +212,4 @@ storiesOf("Marketing Thumb", module)
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
   );
-storiesOf("Conversation", module)
-  .add('Receiver Header', () =>
-    `<conversation-receiver-header
-      userName="Michael"
-      onlineStatus
-    />`
-  )
+
