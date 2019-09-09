@@ -7,6 +7,7 @@ import ImageContainer from './components/image-container';
 import MarketingThumb from './components/marketing-thumb';
 import OfferCard from './components/offer-card';
 import TipCard from './components/tip-card';
+import ConversationCard from './components/conversation/conversation-card'
 
 export {
   AppCard,
@@ -14,7 +15,7 @@ export {
   BaseButton,
   ChatMessageCard,
   CheckBoxCard,
-  // ConversationCard,
+  ConversationCard,
   // EmployeeCard,
   // FishtriprLoader,
   ImageContainer,
