@@ -34,7 +34,7 @@ export default {
 .mobile-payment-link {
   display: flex;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: $font-family;
   font-size: $font-size-s;
 
   .wrapper {
