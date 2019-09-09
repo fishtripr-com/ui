@@ -76,3 +76,16 @@
 .bold {
   font-weight: $fw-l;
 }
+
+//  5. Class font color
+// ==========================================================================
+
+.primary { color: map-get($colors, 'primary') }
+.premium { color: map-get($colors, 'premium') }
+.black { color: map-get($colors, 'text') }
+.light { color: map-get($colors, 'text-light') }
+.white { color: map-get($colors, 'text-white') }
+.success { color: map-get($colors, 'success') }
+.danger { color: map-get($colors, 'danger') }
+.warning { color: map-get($colors, 'warning') }
+.info { color: map-get($colors, 'info') }
