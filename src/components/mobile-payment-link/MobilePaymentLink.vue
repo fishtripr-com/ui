@@ -1,6 +1,6 @@
 <template>
   <div class="mobile-payment-link">
-    <div class="header">
+    <div class="wrapper">
       <span class="headerText">Payment link</span>
       <span class="copyButton" @click.stop.prevent="copyLink">Copy</span>
     </div>
@@ -37,7 +37,7 @@ export default {
   font-family: "Montserrat", sans-serif !important;
   font-size: $font-size-s;
 
-  .header {
+  .wrapper {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
