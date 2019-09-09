@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue';
 
-storiesOf('Short Experience Preview', module)
+storiesOf('Experience/Short Experience Preview', module)
   .add(
     'Default',
     () =>
@@ -12,5 +12,4 @@ storiesOf('Short Experience Preview', module)
           is-listed
         />
       </div>`
-  );
-
+  )

@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/vue'
 
+import './experience/experience-listing-card'
+import './experience/short-experience-preview/index'
 import './navigation/index'
 import './navbar/index'
-import './experience/short-experience-preview/index'
 import './offer/offerCard'
 import './conversation/conversationCard'
 
@@ -95,17 +96,6 @@ storiesOf('Cards', module)
         />
       </template>
     </experience-card>`
-  )
-  .add(
-    'Experience Listing Card',
-    () =>
-      `<experience-listing-card
-        image="https://picsum.photos/200/300"
-        title = "Experience Three Fishing Adventures in Dalarna"
-        country = "Georgia"
-        isListed
-      >
-    </experience-listing-card>`
   )
   .add(
     'Partner Card',
