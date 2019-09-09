@@ -62,8 +62,8 @@
 </template>
 
 <script>
-import Avatar from '../avatar'
-import { responsiveHandler } from '../../mixins/responsiveHandler'
+import Avatar from '../../avatar'
+import { responsiveHandler } from '../../../mixins/responsiveHandler'
 
 export default {
   name: 'conversation-card',
@@ -94,7 +94,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/default";
+@import "../../../assets/style/default";
 
 .conversation-card {
   display: flex;
