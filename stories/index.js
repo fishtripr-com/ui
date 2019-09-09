@@ -4,6 +4,7 @@ import './navigation/index'
 import './navbar/index'
 import './experience/short-experience-preview/index'
 import './offer/offerCard'
+import './conversation/textarea'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -211,8 +212,4 @@ storiesOf("Marketing Thumb", module)
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
   );
-storiesOf("Messages", module)
-  .add("Textarea", () =>
-    `<messages-container-textarea
-      />`
-  );
+
