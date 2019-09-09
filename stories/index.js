@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/vue'
 
+import './experience/experience-listing-card'
+import './experience/short-experience-preview/index'
 import './navigation/index'
 import './navbar/index'
-import './experience/short-experience-preview/index'
 import './offer/offerCard'
 import './conversation/conversationCard'
 

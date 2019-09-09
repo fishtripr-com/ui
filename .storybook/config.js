@@ -22,6 +22,7 @@ import Navigation from '../src/components/navigation';
 import ExperienceCard from '../src/components/cards/experience-card';
 import PartnerCard from '../src/components/cards/partner-card';
 import ShortExperiencePreview from '../src/components/experience/short-experience-preview/ShortExperiencePreview';
+import ExperienceListingCard from '../src/components/experience/experience-listing-card';
 
 // Register custom components.
 Vue.component('avatar', Avatar);
@@ -43,6 +44,7 @@ Vue.component('navigation', Navigation);
 Vue.component('experience-card', ExperienceCard);
 Vue.component('partner-card', PartnerCard);
 Vue.component('short-experience-preview', ShortExperiencePreview);
+Vue.component('experience-listing-card', ExperienceListingCard)
 
 function loadStories() {
   // You can require as many stories as you need.
