@@ -7,7 +7,7 @@
 
       <div class="body">
         <p
-          :class="['status', isListed ? 'isListed' : '']"
+          :class="['listedStateText', isListed ? 'isListed' : '']"
           v-if="deviceSize <= deviceSizes.s"
         >{{ checkListed }}</p>
         <p class="title">{{ title }}</p>
@@ -37,7 +37,7 @@
             </div>
           </template>
         </div>
-        <div :class="['status', isListed ? 'isListed' : '']">
+        <div :class="['listedStateText', isListed ? 'isListed' : '']">
           <p>{{ checkListed }}</p>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default {
   mixins: [responsiveHandler],
   data() {
     return {
-      status: ''
+      listedStateText: ""
     };
   },
   props: {
@@ -64,7 +64,9 @@ export default {
   },
   computed: {
     checkListed() {
-      return this.isListed ? (status = 'Listed') : (status = 'Unlisted');
+      return this.isListed
+        ? (this.listedStateText = "Listed")
+        : (this.listedStateText = "Unlisted");
     },
     listingAction() {
       return this.isListed ? 'Unlist' : 'List';
@@ -148,7 +150,7 @@ export default {
         font-size: $font-size-xs;
         color: $color-heading-light;
       }
-      .status {
+      .listedStateText {
         margin: $space-xxxs 0 0 0;
         font-weight: $semibold;
         font-size: $font-size-xs;
@@ -203,7 +205,7 @@ export default {
         }
       }
 
-      .status {
+      .listedStateText {
         display: flex;
         justify-content: flex-end;
         margin: 0;
