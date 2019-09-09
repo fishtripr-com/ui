@@ -13,7 +13,7 @@
         <p class="title">{{ title }}</p>
         <p class="country" v-if="deviceSize > deviceSizes.s">{{ country }}</p>
         <div class="actions" v-if="deviceSize <= deviceSizes.s">
-          <div>
+          <div class="listingAction">
             <a>{{ listingAction }}</a>
           </div>
           <template>
@@ -27,12 +27,12 @@
 
       <div class="wrapper" v-if="deviceSize > deviceSizes.s">
         <div class="actions">
-          <div>
+          <div class="listingAction">
             <a>edit</a>
           </div>
           <template v-if="isListed">
             <div class="separator">&bull;</div>
-            <div>
+            <div class="listingAction">
               <a>preview</a>
             </div>
           </template>
