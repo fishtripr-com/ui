@@ -1,31 +1,51 @@
 <template>
   <div class="experience-listing-card">
     <div class="container">
+
       <div class="image">
         <img :src="image" />
       </div>
 
       <div class="body">
+
         <p
-          :class="['listedStateText', isListed ? 'isListed' : '']"
           v-if="deviceSize <= deviceSizes.s"
-        >{{ checkListed }}</p>
+          :class="['listedStateText', isListed ? 'isListed' : '']"
+          >
+          {{ checkListed }}
+        </p>
+
         <p class="title">{{ title }}</p>
-        <p class="country" v-if="deviceSize > deviceSizes.s">{{ country }}</p>
-        <div class="actions" v-if="deviceSize <= deviceSizes.s">
+
+        <p
+          v-if="deviceSize > deviceSizes.s"
+          class="country"
+          >
+          {{ country }}
+        </p>
+
+        <div
+          v-if="deviceSize <= deviceSizes.s"
+          class="actions"
+          >
+
           <div class="listingAction">
             <a @click="actionItem">{{ actionOnItem }}</a>
           </div>
+
           <template>
             <div class="separator">&bull;</div>
             <div>
               <a @click="viewItem">View</a>
             </div>
           </template>
+
         </div>
+
       </div>
 
       <div class="wrapper" v-if="deviceSize > deviceSizes.s">
+
         <div class="actions">
           <div class="listingAction">
             <a @click="editItem">edit</a>
@@ -37,10 +57,13 @@
             </div>
           </template>
         </div>
+
         <div :class="['listedStateText', isListed ? 'isListed' : '']">
           <p>{{ checkListed }}</p>
         </div>
+
       </div>
+
     </div>
   </div>
 </template>
@@ -50,11 +73,11 @@ import { responsiveHandler } from '../../../mixins/responsiveHandler'
 
 export default {
   name: 'experience-listing-card',
-  mixins: [responsiveHandler],
+  mixins: [ responsiveHandler ],
   data() {
     return {
-      listedStateText: ""
-    };
+      listedStateText: ''
+    }
   },
   props: {
     image: { type: String },
@@ -65,22 +88,22 @@ export default {
   computed: {
     checkListed() {
       return this.isListed
-        ? (this.listedStateText = "Listed")
-        : (this.listedStateText = "Unlisted");
+        ? (this.listedStateText = 'Listed')
+        : (this.listedStateText = 'Unlisted')
     },
     actionOnItem() {
-      return this.isListed ? "Unlist" : "List";
+      return this.isListed ? 'Unlist' : 'List'
     }
   },
   methods: {
     viewItem() {
-      this.$emit("click");
+      this.$emit('view')
     },
     editItem() {
-      this.$emit("click");
+      this.$emit('edit')
     },
     actionItem() {
-      this.$emit("click");
+      this.$emit('list')
     }
   }
 };
@@ -102,13 +125,8 @@ export default {
     padding: $space-l $space-xl;
     border: 1px solid $pale-grey;
 
-    @media #{$medium-and-down} {
-      flex-wrap: wrap;
-    }
-
-    @media #{$small-and-down} {
-      padding: $space-xs $space-xs;
-    }
+    @media #{$medium-and-down} { flex-wrap: wrap }
+    @media #{$small-and-down} { padding: $space-xs $space-xs }
 
     .image {
       width: 50px;
@@ -134,13 +152,8 @@ export default {
       justify-content: center;
       padding-right: $space-m;
 
-      @media #{$medium-and-down} {
-        min-width: 50%;
-      }
-
-      @media #{$small-and-down} {
-        padding-right: 0;
-      }
+      @media #{$medium-and-down} { min-width: 50% }
+      @media #{$small-and-down} { padding-right: 0 }
 
       .title {
         margin: $space-xs 0;
@@ -159,9 +172,7 @@ export default {
         font-size: $font-size-xs;
         color: $color-text-light;
 
-        &.isListed {
-          color: $aqua-marine;
-        }
+        &.isListed { color: $aqua-marine }
       }
       .actions {
         margin: 0 0 $space-xxxs 0;
@@ -172,9 +183,7 @@ export default {
         font-size: $font-size-xs;
       }
 
-      .separator {
-        margin: 0 $space-xxxs;
-      }
+      .separator { margin: 0 $space-xxxs }
     }
 
     .wrapper {
@@ -199,13 +208,9 @@ export default {
         font-size: $font-size-s;
         color: $color-link;
 
-        @media #{$medium-and-down} {
-          order: 2;
-        }
+        @media #{$medium-and-down} { order: 2 }
 
-        .separator {
-          margin: 0 $space-xxxs;
-        }
+        .separator { margin: 0 $space-xxxs }
       }
 
       .listedStateText {
@@ -215,9 +220,7 @@ export default {
         font-weight: $semibold;
         font-size: $font-size-s;
 
-        &.isListed {
-          color: $aqua-marine;
-        }
+        &.isListed { color: $aqua-marine }
 
         @media #{$medium-and-down} {
           order: 1;
