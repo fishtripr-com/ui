@@ -211,9 +211,9 @@ storiesOf("Marketing Thumb", module)
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
   );
-storiesOf("Messages", module)
-  .add('Header', () =>
-    `<messages-container-header
+storiesOf("Conversation", module)
+  .add('Receiver Header', () =>
+    `<conversation-receiver-header
       userName="Michael"
       onlineStatus
     />`

@@ -22,7 +22,7 @@ import Navigation from '../src/components/navigation';
 import ExperienceCard from '../src/components/cards/experience-card';
 import PartnerCard from '../src/components/cards/partner-card';
 import ShortExperiencePreview from '../src/components/experience/short-experience-preview/ShortExperiencePreview';
-import MessagesContainerHeader from '../src/components/messages/messages-container-header';
+import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header';
 
 // Register custom components.
 Vue.component('avatar', Avatar);
@@ -44,7 +44,7 @@ Vue.component('navigation', Navigation);
 Vue.component('experience-card', ExperienceCard);
 Vue.component('partner-card', PartnerCard);
 Vue.component('short-experience-preview', ShortExperiencePreview);
-Vue.component('messages-container-header', MessagesContainerHeader);
+Vue.component('conversation-receiver-header', ConversationReceiverHeader);
 
 function loadStories() {
   // You can require as many stories as you need.

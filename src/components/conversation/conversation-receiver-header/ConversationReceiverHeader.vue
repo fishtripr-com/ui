@@ -1,5 +1,5 @@
 <template>
-  <div class="messages-container-header">
+  <div class="conversation-receiver-header">
     <p class="nameHeader">{{ userName }}</p>
     <div class="body">
       <span class="status">{{ statusIndicator }}</span>
@@ -13,7 +13,7 @@
 import { responsiveHandler } from "../../../mixins/responsiveHandler";
 
 export default {
-  name: "messages-container-header",
+  name: "conversation-receiver-header",
   mixins: [responsiveHandler],
   props: {
     userName: { type: String, default: "" },
@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../../assets/style";
 
-.messages-container-header {
+.conversation-receiver-header {
   display: flex;
   flex-flow: column wrap;
   border: 1px solid $color-border;
