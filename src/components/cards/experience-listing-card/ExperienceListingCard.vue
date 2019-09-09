@@ -17,7 +17,7 @@
             <a>{{ listingAction }}</a>
           </div>
           <template>
-            &nbsp;&bull;&nbsp;
+            <div class="separator">&bull;</div>
             <div>
               <a>View</a>
             </div>
@@ -31,7 +31,7 @@
             <a>edit</a>
           </div>
           <template v-if="isListed">
-            &nbsp;&bull;&nbsp;
+            <div class="separator">&bull;</div>
             <div>
               <a>preview</a>
             </div>
@@ -170,6 +170,10 @@ export default {
         font-weight: $normal;
         font-size: $font-size-xs;
       }
+
+      .separator {
+        margin: 0 $space-xxxs;
+      }
     }
 
     .wrapper {
@@ -196,6 +200,10 @@ export default {
 
         @media #{$medium-and-down} {
           order: 2;
+        }
+
+        .separator {
+          margin: 0 $space-xxxs;
         }
       }
 
