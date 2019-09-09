@@ -11,10 +11,9 @@
       ]"
       >
 
-      <div
-        class="radio"
-        :class="{ 'checked': checked }"
-        />
+      <div class="radio">
+        <div class="bullet" v-if="checked"/>
+      </div>
 
       <div class="body">
 
@@ -77,19 +76,24 @@ export default {
 
     &.checked {
       border: 1px solid $seafoam-blue;
-      color: $seafoam-blue;
     }
 
     .radio {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 35px;
       height: 35px;
       border: 2px solid $color-border;
       border-radius: 50%;
 
-      &.checked {
-        border: 12px solid $seafoam-blue;
-
-        &:hover { border: 12px solid $seafoam-blue }
+      .bullet {
+        background-color: $seafoam-blue;
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
