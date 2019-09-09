@@ -210,4 +210,11 @@ storiesOf("Marketing Thumb", module)
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
   );
-
+storiesOf("Mobile Offer Header", module)
+  .add("Basic", () =>
+    `<mobile-offer-header
+      text="offer to"
+      userName="john"
+      userSurname="Travolta"
+      />`
+  );
