@@ -44,10 +44,6 @@
     </div>
   </div>
 </template>
-      </div>
-    </div>
-  </div>
-</template>
 
 <script>
 import { responsiveHandler } from "../../../mixins/responsiveHandler";
