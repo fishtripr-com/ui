@@ -214,7 +214,7 @@ storiesOf("Marketing Thumb", module)
 storiesOf("Mobile Payment Link", module)
   .add("Basic", () =>
     `<mobile-payment-link
-      link="https://www.imdb.com/title/tt0068646/?ref_=ttls_li_tt"
+      link="https://www.example.com/title/experience/fishing/isgoodtt0068646/?ref_=ttls_li_tt"
       />`
   );
 
