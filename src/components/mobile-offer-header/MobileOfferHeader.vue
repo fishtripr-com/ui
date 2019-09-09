@@ -25,7 +25,7 @@ export default {
 .mobile-offer-header {
   display: flex;
   flex-flow: column;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: $font-family;
   font-size: $font-size-xs;
   font-weight: $semibold;
   color: $watermelon;
