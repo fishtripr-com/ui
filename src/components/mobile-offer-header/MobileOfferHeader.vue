@@ -1,11 +1,11 @@
 <template>
-  <div class="mobile-offer-header">
+  <header class="mobile-offer-header">
     <span>{{ text.toUpperCase() }}</span>
     <div class="wrapper">
       <p>{{ userName.charAt(0).toUpperCase() + userName.slice(1) }} &nbsp;</p>
       <p>{{ userSurname.charAt(0) }}.</p>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
