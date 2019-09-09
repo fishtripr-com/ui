@@ -5,6 +5,7 @@ import './experience/short-experience-preview/index'
 import './navigation/index'
 import './navbar/index'
 import './offer/offerCard'
+import './conversation/receiver-header'
 import './conversation/conversationCard'
 
 storiesOf('Button', module)
