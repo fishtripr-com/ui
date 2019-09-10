@@ -104,7 +104,7 @@ export default {
   .body {
     flex: 1;
     height: 100%;
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: $font-family;
     max-height: 60px;
     display: flex;
     flex-direction: column;
