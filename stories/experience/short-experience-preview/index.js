@@ -1,12 +1,14 @@
 import { storiesOf } from '@storybook/vue';
 
+import data from '../../_utils/mockData'
+
 storiesOf('Experience/Short Experience Preview', module)
   .add(
     'Default',
     () => ({
       data() {
         return {
-          title: "Fishing with father and son"
+          title: data.experience.title
         }
       },
       template: `<div style="width:350px;">
