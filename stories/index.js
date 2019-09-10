@@ -1,10 +1,16 @@
 import { storiesOf } from '@storybook/vue'
 
+import './experience/experience-listing-card'
+import './experience/short-experience-preview/index'
 import './navigation/index'
 import './navbar/index'
-import './experience/short-experience-preview/index'
 import './offer/offerCard'
+<<<<<<< HEAD
 import './conversation/textarea'
+=======
+import './conversation/receiver-header'
+import './conversation/conversationCard'
+>>>>>>> development
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -30,10 +36,6 @@ storiesOf('Avatar', module)
 storiesOf('Images', module)
   .add('with URL', () => '<image-container image="https://i.ytimg.com/vi/OJcvzRnPHCI/maxresdefault.jpg" :height="80" />')
   .add('without URL', () => '<image-container/>');
-
-storiesOf('Conversation card', module)
-  .add('Basic', () => '<conversation-card image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80" user-name="Vincent Battaglia" />')
-  .add('Loading mode', () => '<conversation-card :loading="true"/>');
 
 storiesOf('Loader', module)
   .add('Basic', () => '<fishtripr-loader/>');
@@ -212,4 +214,18 @@ storiesOf("Marketing Thumb", module)
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
   );
+storiesOf("Mobile Payment Link", module)
+  .add("Basic", () =>
+    `<mobile-payment-link
+      link="https://www.example.com/title/experience/fishing/isgoodtt0068646/?ref_=ttls_li_tt"
+      />`
+  );
 
+storiesOf("Mobile Offer Header", module)
+  .add("Basic", () =>
+    `<mobile-offer-header
+      text="offer to"
+      userName="john"
+      userSurname="Travolta"
+      />`
+  );

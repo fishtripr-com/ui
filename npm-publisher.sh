@@ -9,7 +9,7 @@
   then
     echo "Building and deploying the $branch branch to NPM..."
 
-    yarn build && npm publish --access public
+    yarn build:prod && npm publish --access public
 
     echo "Finished deploying to NPM."
   else
