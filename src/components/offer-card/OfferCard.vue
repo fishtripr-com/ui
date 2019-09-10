@@ -18,17 +18,12 @@
           {{ hat }}
         </p>
 
-        <p class="status" :class="mode">
-          {{ status }}
-        </p>
 
+        <p class="status" :class="mode">{{ actionStatus() }}</p>
       </div>
 
-      <div class="arrow">
-        <img
-          class="image"
-          :src="arrowIcon"
-          />
+      <div v-if="deviceSize > deviceSizes.s" class="arrow">
+        <img class="image" :src="arrowIcon" />
       </div>
     </template>
 
@@ -67,9 +62,14 @@ export default {
         return title.slice(0, charLimit - 3).trim() + "...";
       }
       return title;
+    },
+    actionStatus() {
+      return this.deviceSize <= this.deviceSizes.s
+        ? "See details"
+        : this.status;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -123,6 +123,10 @@ export default {
       font-weight: $semibold;
       line-height: $line-height-xs;
       margin: 0;
+
+      @media #{$small-and-down} {
+        color: $tag-guideNHost !important;
+      }
 
       &.success {
         color: #30DEA0
