@@ -80,6 +80,7 @@ export default {
     }
   },
   props: {
+    id: { type: String },
     image: { type: String },
     isListed: { type: Boolean },
     title: { type: String },
@@ -97,13 +98,13 @@ export default {
   },
   methods: {
     viewItem() {
-      this.$emit('view')
+      this.$emit('view', this.id)
     },
     editItem() {
-      this.$emit('edit')
+      this.$emit('edit', this.id)
     },
     actionItem() {
-      this.$emit('list')
+      this.$emit('list', this.id)
     }
   }
 };
