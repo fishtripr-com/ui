@@ -14,10 +14,8 @@
           {{ truncate(title) }}
         </p>
 
-        <p class="hat">
-          {{ hat }}
-        </p>
 
+        <p class="hat">{{ truncate(hat) }}</p>
 
         <p class="status" :class="mode">{{ actionStatus() }}</p>
       </div>
