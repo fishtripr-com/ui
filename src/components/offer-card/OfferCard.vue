@@ -86,7 +86,13 @@ export default {
   .img {
     width: 100px;
     height: 70px;
-    padding: 0.6rem;
+    padding: $space-xs;
+
+    @media #{$small-and-down} {
+      width: 80px;
+      height: 65px;
+      padding: $space-xxs;
+    }
 
     img {
       width: 100%;
@@ -115,6 +121,10 @@ export default {
       line-height: $line-height-xs;
       margin: 0;
       color: #898EA2;
+
+       @media #{$small-and-down} {
+        font-size: $font-size-xxs;
+      }
     }
     .status {
       font-size: $font-size-xs;
