@@ -54,12 +54,12 @@ export default {
     onClick() {
       this.$emit('click')
     },
-    truncate(title) {
-      const charLimit = this.deviceSize === this.deviceSizes.s ? 20 : 50
-      if (title.length > charLimit) {
-        return title.slice(0, charLimit - 3).trim() + "...";
+    truncate(text) {
+      const charLimit = this.deviceSize === this.deviceSizes.s ? 20 : 50;
+      if (text.length > charLimit) {
+        return text.slice(0, charLimit - 3).trim() + "...";
       }
-      return title;
+      return text;
     },
     actionStatus() {
       return this.deviceSize <= this.deviceSizes.s
