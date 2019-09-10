@@ -5,12 +5,9 @@ import './experience/short-experience-preview/index'
 import './navigation/index'
 import './navbar/index'
 import './offer/offerCard'
-<<<<<<< HEAD
 import './conversation/textarea'
-=======
 import './conversation/receiver-header'
 import './conversation/conversationCard'
->>>>>>> development
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
