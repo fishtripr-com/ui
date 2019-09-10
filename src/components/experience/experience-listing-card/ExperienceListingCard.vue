@@ -44,7 +44,7 @@
 
       </div>
 
-      <div class="wrapper" v-if="deviceSize > deviceSizes.s">
+      <div class="actions-wrapper" v-if="deviceSize > deviceSizes.s">
 
         <div class="actions">
           <div class="listingAction">
@@ -143,6 +143,12 @@ export default {
         border-radius: 0;
         margin-right: $space-s;
       }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     .body {
@@ -186,7 +192,7 @@ export default {
       .separator { margin: 0 $space-xxxs }
     }
 
-    .wrapper {
+    .actions-wrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -211,6 +217,7 @@ export default {
         @media #{$medium-and-down} { order: 2 }
 
         .separator { margin: 0 $space-xxxs }
+        > div { cursor: pointer }
       }
 
       .listedStateText {
