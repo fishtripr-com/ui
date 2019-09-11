@@ -76,7 +76,7 @@ export default {
 
     .bar {
       width: 50%;
-      background-image: linear-gradient(#988ff9, #4e45b9);
+      background-image: linear-gradient(#aaa2fb, #4e45b9);
       margin-bottom: $space-xxs;
 
       &.noSales {
