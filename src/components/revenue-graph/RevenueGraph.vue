@@ -1,15 +1,13 @@
 <template>
   <div class="revenue-graph">
     <div v-for="month in revenue" :key="month.month" class="wrapper">
-      <div class="bar" :style="{height:barHeight(month.revenue)+'%'}"></div>
+      <div :class="['bar',barHeight(month.revenue)]" :style="{height:barHeight(month.revenue)+'%'}"></div>
       <div :class="['month', month.month === currentMonth() ? 'current' : '']">{{month.month}}</div>
     </div>
   </div>
 </template>
 
 <script>
-// import Foo from 'bar/foo'
-
 export default {
   name: "revenue-graph",
   mixins: [],
@@ -52,7 +50,7 @@ export default {
         })
       );
       let monthlyIndex = (100 * monthly) / maxRevenue;
-      return monthlyIndex;
+      return monthlyIndex === 0 ? "noSales" : monthlyIndex;
     }
   }
 };
@@ -80,6 +78,10 @@ export default {
       width: 50%;
       background-image: linear-gradient(#988ff9, #4e45b9);
       margin-bottom: $space-xxs;
+
+      &.noSales {
+        border-bottom: 3px solid $pale-grey;
+      }
     }
     .month {
       font-size: $font-size-m;
