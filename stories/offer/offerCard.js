@@ -1,15 +1,28 @@
 import { storiesOf } from '@storybook/vue';
 
-storiesOf('Offer card', module)
-  .add(
-    'Default',
-    () =>
-      `<offer-card
-        image="https://picsum.photos/200/300"
-        title="An unforgettable father-and-son fishing experience in Jura"
-        hat="1 Guest - Jun 07, 2019 - €200"
-        status="Pending"
-        mode="warning"
-        />`
-  );
+import data from '../_utils/mockData'
 
+
+storiesOf('Offer card', module)
+.add(
+  'Default',
+  () => ({
+    data() {
+      return {
+        title: data.offer.title,
+        image: data.offer.image,
+        hat: data.offer.hat,
+        status: data.offer.status
+      }
+    },
+    template: `<div style="width:100%;">
+    <offer-card
+        :image="image"
+        :title="title"
+        :hat="hat"
+        :status="status"
+        mode="warning"
+      />
+  </div>`
+  })
+)
