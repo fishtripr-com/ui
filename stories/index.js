@@ -232,7 +232,7 @@ storiesOf("Revenue Graph", module)
       :revenue=
       "[{month: 'Jan', revenue: 200},
         {month: 'Feb', revenue: 300},
-        {month: 'Mar', revenue: 400},
+        {month: 'Mar', revenue: 0},
         {month: 'Apr', revenue: 200},
         {month: 'May', revenue: 500},
         {month: 'Jun', revenue: 700},
