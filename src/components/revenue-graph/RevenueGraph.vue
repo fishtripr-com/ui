@@ -41,8 +41,6 @@ export default {
       return thisMonth;
     },
     barHeight(monthly) {
-      console.log(this.revenue);
-      console.log(monthly);
       let maxRevenue = Math.max.apply(
         Math,
         this.revenue.map(function(obj) {
