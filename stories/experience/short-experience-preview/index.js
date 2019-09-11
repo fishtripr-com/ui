@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue';
 
-import data from '../../_utils/mockData'
+import data from '../../_utils/mockData/index'
 
 storiesOf('Experience/Short Experience Preview', module)
   .add(

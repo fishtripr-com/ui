@@ -44,7 +44,7 @@
 
       </div>
 
-      <div class="wrapper" v-if="deviceSize > deviceSizes.s">
+      <div class="actions-wrapper" v-if="deviceSize > deviceSizes.s">
 
         <div class="actions">
           <div class="listingAction">
@@ -80,6 +80,7 @@ export default {
     }
   },
   props: {
+    id: { type: String },
     image: { type: String },
     isListed: { type: Boolean },
     title: { type: String },
@@ -97,13 +98,13 @@ export default {
   },
   methods: {
     viewItem() {
-      this.$emit('view')
+      this.$emit('view', this.id)
     },
     editItem() {
-      this.$emit('edit')
+      this.$emit('edit', this.id)
     },
     actionItem() {
-      this.$emit('list')
+      this.$emit('list', this.id)
     }
   }
 };
@@ -142,6 +143,12 @@ export default {
         min-height: 100%;
         border-radius: 0;
         margin-right: $space-s;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
@@ -186,7 +193,7 @@ export default {
       .separator { margin: 0 $space-xxxs }
     }
 
-    .wrapper {
+    .actions-wrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -211,6 +218,7 @@ export default {
         @media #{$medium-and-down} { order: 2 }
 
         .separator { margin: 0 $space-xxxs }
+        > div { cursor: pointer }
       }
 
       .listedStateText {
