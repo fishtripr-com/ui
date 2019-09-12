@@ -1,15 +1,15 @@
 <template>
   <div class="booking-card">
-    <div class="wrapper p-5">
+    <div class="wrapper py-6 px-8">
 
-      <div class="main-info" @click="switchDetail">
+      <div class="main-info">
 
         <div class="head">
           <div class="primary-info">
             <p class="date txt-1 bold">{{ bookingDate }}</p>
             <p class="source txt-4" :class="channel.type">{{ channel.text }}</p>
           </div>
-          <div class="arrow">
+          <div class="arrow" @click="switchDetail">
             <img
               class="image"
               :class="isDetailOpen ? 'up' : 'down'"
@@ -19,26 +19,27 @@
           </div>
         </div>
 
-        <div class="body">
+        <div class="body mt-5">
 
           <div class="experience-info col">
             <avatar
+              class="mr-5"
               :image="experienceCover"
               size="s"
-              />
+            />
             <div class="title-loc">
-              <p class="title txt-4">{{ experienceTitleTroncated }}</p>
+              <p class="title txt-4 mb-3">{{ experienceTitleTroncated }}</p>
               <p class="location txt-5 light">{{ experienceAddress }}</p>
             </div>
           </div>
 
           <div class="customer-info col">
-            <p class="guests-duration txt-4">{{ guestsAndDuration }}</p>
-            <p class="contact txt-4">Contact guest</p>
+            <p class="guests-duration txt-4 mb-3">{{ guestsAndDuration }}</p>
+            <p class="contact txt-5 light underlined">Contact guest</p>
           </div>
 
           <div class="payment-info col">
-            <p class="price txt-4 bold">{{ price }}</p>
+            <p class="price txt-4 semibold mb-3">{{ price }}</p>
             <p class="status txt-4" :class="statusType">{{ statusText }}</p>
           </div>
 
@@ -48,36 +49,36 @@
 
       <div
         v-if="isDetailOpen"
-        class="details-info pt-5"
+        class="details-info pt-8 mt-8"
         >
 
         <div class="trip-info col">
 
-          <div class="row">
-            <h3 class="section-title">
+          <div class="row mb-5">
+            <h3 class="section-title txt-2 semibold">
               Trip details
             </h3>
           </div>
 
-          <div class="row">
+          <div class="row mb-5">
             <div class="section">
-              <p class="title">Arrival date</p>
-              <p class="value">{{ startDate }}</p>
+              <p class="title txt-5 light">Arrival date</p>
+              <p class="value txt-5 semibold">{{ startDate }}</p>
             </div>
             <div class="section">
-              <p class="title">Departure date</p>
-              <p class="value">{{ endDate }}</p>
+              <p class="title txt-5 light">Departure date</p>
+              <p class="value txt-5 semibold">{{ endDate }}</p>
             </div>
           </div>
 
           <div class="row">
             <div class="section">
-              <p class="title">Days</p>
-              <p class="value">{{ duration }}</p>
+              <p class="title txt-5 light">Days</p>
+              <p class="value txt-5 semibold">{{ duration }}</p>
             </div>
             <div class="section">
-              <p class="title">Guests</p>
-              <p class="value">{{ guests }}</p>
+              <p class="title txt-5 light">Guests</p>
+              <p class="value txt-5 semibold">{{ guests }}</p>
             </div>
           </div>
 
@@ -85,23 +86,23 @@
 
         <div class="customer-info col">
 
-          <div class="row">
-            <h3 class="section-title">
+          <div class="row mb-5">
+            <h3 class="section-title txt-2 semibold">
               Booked by
             </h3>
           </div>
 
-          <div class="row">
+          <div class="row mb-5">
             <div class="section">
-              <p class="title">Name</p>
-              <p class="value">{{ customerFullName }}</p>
+              <p class="title txt-5 light">Name</p>
+              <p class="value txt-5 semibold">{{ customerFullName }}</p>
             </div>
           </div>
 
           <div class="row">
             <div class="section">
-              <p class="title">Email</p>
-              <p class="value">{{ customerEmail }}</p>
+              <p class="title txt-5 light">Email</p>
+              <p class="value txt-5 semibold">{{ customerEmail }}</p>
             </div>
           </div>
 
@@ -109,14 +110,30 @@
 
         <div class="payment-info col">
 
-          <div class="row">
-            <h3 class="section-title">
+          <div class="row mb-5">
+            <h3 class="section-title txt-2 semibold">
               Payments
             </h3>
           </div>
 
-          <div class="row">
+          <div class="row payment">
+            <p class="label txt-5">{{ calculationPricePerGuest }}</p>
+            <p class="value txt-5">{{ price }}</p>
+          </div>
 
+          <div class="row payment">
+            <p class="label txt-5">Deposit</p>
+            <p class="value txt-5">{{ depositPrice }}</p>
+          </div>
+
+          <div class="row payment">
+            <p class="label txt-5">Due amount</p>
+            <p class="value txt-5">{{ dueAmount }}</p>
+          </div>
+
+          <div class="row payment">
+            <p class="label txt-5 semibold">Total</p>
+            <p class="value txt-5 semibold">{{ price }}</p>
           </div>
 
         </div>
@@ -141,16 +158,17 @@ export default {
     experienceCover: { type: String },
     experienceTitle: { type: String },
     experienceAddress: { type: String },
-    guests: { type: String },
-    duration: { type: String },
+    guests: { type: Number },
+    duration: { type: Number },
     conversationId: { type: String },
     customerFullName: { type: String },
     customerEmail: { type: String },
     statusText: { type: String },
     statusType: { type: String },
-    totalPrice: { type: String },
-    deposit: { type: String },
-    currency: { type: String }
+    totalPrice: { type: Number },
+    deposit: { type: Number },
+    currency: { type: String },
+    currencySymbol: { type: String }
   },
   data() {
     return {
@@ -178,7 +196,18 @@ export default {
       return `${this.guests} guest${this.guests > 1 ? 's' : ''} - ${this.duration} day${this.duration > 1 ? 's' : ''}`
     },
     price() {
-      return `${this.currency} ${this.totalPrice}`
+      return `${this.currencySymbol} ${this.totalPrice}`
+    },
+    calculationPricePerGuest() {
+      const pricePerGuest = (this.totalPrice / this.guests).toFixed(2)
+      return `${pricePerGuest} x ${this.guests} guest${this.guests > 1 ? 's' : ''}`
+    },
+    depositPrice() {
+      return `${this.currencySymbol} ${this.deposit}`
+    },
+    dueAmount() {
+      const dueAmount = this.deposit ? (this.totalPrice - this.deposit).toFixed(2) : 0
+      return `${this.currencySymbol} ${dueAmount}`
     }
   },
   methods: {
@@ -202,20 +231,21 @@ export default {
     .main-info {
       display: flex;
       flex-direction: column;
-      cursor: pointer;
 
       .head {
         display: flex;
         justify-content: space-between;
 
-        // .primary-info {}
         .arrow {
-          width: 20px;
-          height: 20px;
+          display: flex;
+          justify-content: flex-end;
+          min-width: 50px;
+          height: auto;
+          cursor: pointer;
 
           .image {
-            width: 100%;
-            height: 100%;
+            width: 20px;
+            height: 20px;
             object-fit: contain;
             transition: all 0.3s;
 
@@ -230,12 +260,17 @@ export default {
 
         .col {
           &.experience-info {
-            flex: 2;
+            flex: 3;
             display: flex;
             align-items: center;
           }
-          &.customer-info { flex: 3 }
-          &.payment-info { flex: 1 }
+          &.customer-info { flex: 2 }
+          &.payment-info {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+          }
         }
 
       }
@@ -243,19 +278,31 @@ export default {
 
     .details-info {
       display: flex;
+      border-top: 1px solid map-get($colors, 'border');
 
       .col {
         display: flex;
         flex-direction: column;
 
-        &.trip-info { flex: 2 }
-        &.customer-info { flex: 3 }
-        &.payment-info { flex: 1 }
+        &.trip-info { flex: 3 }
+        &.customer-info { flex: 2 }
+        &.payment-info { flex: 1.5 }
 
         .row {
           display: flex;
 
+          &.payment {
+            padding-bottom: map-get($spacers, 5);
+            justify-content: space-between;
+
+            &:not(:last-child) {
+              border-bottom: 1px solid map-get($colors, 'border');
+              margin-bottom: map-get($spacers, 5);
+            }
+          }
+
           .section {
+            flex: 1;
             display: flex;
             flex-direction: column;
           }

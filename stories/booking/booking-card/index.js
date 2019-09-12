@@ -24,26 +24,28 @@ storiesOf('Booking/Booking card', module)
           statusType: data.booking.statusType,
           totalPrice: data.booking.totalPrice,
           deposit: data.booking.deposit,
-          currency: data.booking.currency
+          currency: data.booking.currency,
+          currencySymbol: data.booking.currencySymbol
         }
       },
       template: `<booking-card
-        :startDate="startDate"
-        :endDate="endDate"
+        :start-date="startDate"
+        :end-date="endDate"
         :source="source"
-        :experienceCover="experienceCover"
-        :experienceTitle="experienceTitle"
-        :experienceAddress="experienceAddress"
+        :experience-cover="experienceCover"
+        :experience-title="experienceTitle"
+        :experience-address="experienceAddress"
         :guests="guests"
         :duration="duration"
-        :conversationId="conversationId"
-        :customerFullNam="customerFullName"
-        :customerEmail="customerEmail"
-        :statusText="statusText"
-        :statusType="statusType"
-        :totalPrice="totalPrice"
+        :conversation-id="conversationId"
+        :customer-full-name="customerFullName"
+        :customer-email="customerEmail"
+        :status-text="statusText"
+        :status-type="statusType"
+        :total-price="totalPrice"
         :deposit="deposit"
         :currency="currency"
+        :currency-symbol="currencySymbol"
       />`
     })
   )
