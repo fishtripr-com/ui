@@ -1,6 +1,6 @@
 <template>
   <div class="booking-card">
-    <div class="wrapper">
+    <div class="wrapper p-5">
 
       <div class="main-info" @click="switchDetail">
 
@@ -198,7 +198,6 @@ export default {
     display: flex;
     flex-direction: column;
     border: 1px solid map-get($colors, 'border');
-    padding: map-get($spacers, 5);
 
     .main-info {
       display: flex;
