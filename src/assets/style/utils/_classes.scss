@@ -23,7 +23,8 @@
 
 @each $size in map-keys($fs-text) {
   .txt-#{$size} {
-    @include typo-base($fw-m, map-get($fs-text, $size), map-get($lh-text, $size))
+    @include typo-base($fw-m, map-get($fs-text, $size), map-get($lh-text, $size));
+    letter-spacing: 0.02rem;
   }
 }
 
@@ -63,18 +64,24 @@
 .light {
   color: map-get($colors, "text-light");
 }
+.lighter {
+  color: map-get($colors, "text-lighter");
+}
 .white {
   color: map-get($colors, "text-white");
 }
 
-//  4. Class bold
+//  4. Class font-weight
 // ==========================================================================
 
 .thin {
   font-weight: $fw-m;
 }
-.bold {
+.semibold {
   font-weight: $fw-l;
+}
+.bold {
+  font-weight: $fw-xl;
 }
 
 //  5. Class font color
@@ -90,7 +97,7 @@
 .warning { color: map-get($colors, 'warning') }
 .info { color: map-get($colors, 'info') }
 
-//  1. Margin
+//  6. Margin
 // ==========================================================================
 
 @each $size in map-keys($spacers) {
@@ -135,7 +142,7 @@
 
 .mx-auto { margin: 0 auto }
 
-//  1. Padding
+//  7. Padding
 // ==========================================================================
 
 @each $size in map-keys($spacers) {
@@ -176,4 +183,11 @@
     }
 
   }
+}
+
+//  8. Decoration
+// ==========================================================================
+
+.underlined {
+  text-decoration: underline;
 }
