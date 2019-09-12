@@ -21,7 +21,7 @@
 
         <div class="body">
 
-          <div class="experience-info">
+          <div class="experience-info col">
             <avatar
               :image="experienceCover"
               size="s"
@@ -32,12 +32,12 @@
             </div>
           </div>
 
-          <div class="customer-info">
+          <div class="customer-info col">
             <p class="guests-duration txt-4">{{ guestsAndDuration }}</p>
             <p class="contact txt-4">Contact guest</p>
           </div>
 
-          <div class="payment-info">
+          <div class="payment-info col">
             <p class="price txt-4 bold">{{ price }}</p>
             <p class="status txt-4" :class="statusType">{{ statusText }}</p>
           </div>
@@ -228,17 +228,16 @@ export default {
       .body {
         display: flex;
 
-        .experience-info {
-          flex: 2;
-          display: flex;
-          align-items: center;
+        .col {
+          &.experience-info {
+            flex: 2;
+            display: flex;
+            align-items: center;
+          }
+          &.customer-info { flex: 3 }
+          &.payment-info { flex: 1 }
         }
-        .customer-info {
-          flex: 3;
-        }
-        .payment-info {
-          flex: 1;
-        }
+
       }
     }
 
