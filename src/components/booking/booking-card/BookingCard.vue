@@ -48,7 +48,7 @@
 
       <div
         v-if="isDetailOpen"
-        class="details-info"
+        class="details-info pt-5"
         >
 
         <div class="trip-info col">
@@ -247,6 +247,10 @@ export default {
       .col {
         display: flex;
         flex-direction: column;
+
+        &.trip-info { flex: 2 }
+        &.customer-info { flex: 3 }
+        &.payment-info { flex: 1 }
 
         .row {
           display: flex;
