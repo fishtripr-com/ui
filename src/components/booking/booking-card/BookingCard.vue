@@ -28,18 +28,18 @@
               size="s"
             />
             <div class="title-loc">
-              <p class="title txt-4 mb-3">{{ experienceTitleTroncated }}</p>
+              <p class="title txt-4 mb-2">{{ experienceTitleTroncated }}</p>
               <p class="location txt-5 light">{{ isSmallOrDown ? mobileBookingInfo : experienceAddress }}</p>
             </div>
           </div>
 
           <div v-if="!isSmallOrDown" class="customer-info col">
-            <p class="guests-duration txt-4 mb-3">{{ guestsAndDuration }}</p>
-            <p class="contact txt-5 light underlined">Contact guest</p>
+            <p class="guests-duration txt-4 mb-2">{{ guestsAndDuration }}</p>
+            <p class="contact txt-5 light underlined" @click="emitContact">Contact guest</p>
           </div>
 
           <div v-if="!isSmallOrDown" class="payment-info col">
-            <p class="price txt-4 semibold mb-3">{{ price }}</p>
+            <p class="price txt-4 semibold mb-2">{{ price }}</p>
             <p class="status txt-4" :class="statusType">{{ statusText }}</p>
           </div>
 
@@ -200,18 +200,18 @@ export default {
       return `${this.guests} guest${this.guests > 1 ? 's' : ''} - ${this.duration} day${this.duration > 1 ? 's' : ''}`
     },
     price() {
-      return `${this.currencySymbol} ${this.totalPrice}`
+      return `${this.currencySymbol} ${this.totalPrice.toFixed(2)}`
     },
     calculationPricePerGuest() {
       const pricePerGuest = (this.totalPrice / this.guests).toFixed(2)
       return `${pricePerGuest} x ${this.guests} guest${this.guests > 1 ? 's' : ''}`
     },
     depositPrice() {
-      return `${this.currencySymbol} ${this.deposit}`
+      return `${this.currencySymbol} ${this.deposit.toFixed(2)}`
     },
     dueAmount() {
       const dueAmount = this.deposit ? (this.totalPrice - this.deposit).toFixed(2) : 0
-      return `${this.currencySymbol} ${dueAmount}`
+      return `${this.currencySymbol} ${dueAmount.toFixed(2)}`
     },
     mobileBookingInfo() {
       const guest = `${this.guests} guest${this.guests > 1 ? 's' : ''}`
@@ -228,7 +228,6 @@ export default {
     },
     emitContact() {
       this.$emit('contactCustomer')
-      console.log('ok')
     }
   }
 }
@@ -238,6 +237,7 @@ export default {
 @import "../../../assets/style/default";
 
 .booking-card {
+  width: 100%;
 
   .wrapper {
     display: flex;
@@ -280,7 +280,11 @@ export default {
             display: flex;
             align-items: center;
           }
-          &.customer-info { flex: 2 }
+          &.customer-info {
+            flex: 2;
+
+            .contact { cursor: pointer }
+          }
           &.payment-info {
             flex: 1.5;
             display: flex;
@@ -288,7 +292,6 @@ export default {
             align-items: flex-end;
           }
         }
-
       }
     }
 
