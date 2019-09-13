@@ -50,7 +50,7 @@ export default {
         })
       );
       let monthlyIndex = (100 * monthly) / maxRevenue;
-      return monthlyIndex === 0 ? "noSales" : monthlyIndex;
+      return monthlyIndex === 0 ? 1 : monthlyIndex;
     }
   }
 };
@@ -78,10 +78,6 @@ export default {
       width: 50%;
       background-image: linear-gradient(#aaa2fb, #4e45b9);
       margin-bottom: $space-xxs;
-
-      &.noSales {
-        border-bottom: 3px solid $pale-grey;
-      }
     }
     .month {
       font-size: $font-size-m;
