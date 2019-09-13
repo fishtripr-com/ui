@@ -7,7 +7,7 @@
         <div class="head">
           <div class="primary-info">
             <p class="date txt-1 bold">{{ bookingDate }}</p>
-            <p v-if="!isSmallOrDown" class="source txt-4" :class="channel.type">{{ channel.text }}</p>
+            <p v-if="!isSmallOrDown" class="source txt-5">{{ channel.text }}</p>
           </div>
           <div v-if="!isSmallOrDown" class="arrow" @click="switchDetail">
             <img
