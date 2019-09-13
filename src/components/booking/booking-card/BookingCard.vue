@@ -1,15 +1,15 @@
 <template>
   <div class="booking-card">
-    <div class="wrapper py-6 px-8">
+    <div :class="`wrapper ${isSmallOrDown ? 'p-5' : 'py-6 px-8'}`" @click="mobileEmit">
 
       <div class="main-info">
 
         <div class="head">
           <div class="primary-info">
             <p class="date txt-1 bold">{{ bookingDate }}</p>
-            <p class="source txt-4" :class="channel.type">{{ channel.text }}</p>
+            <p v-if="!isSmallOrDown" class="source txt-4" :class="channel.type">{{ channel.text }}</p>
           </div>
-          <div class="arrow" @click="switchDetail">
+          <div v-if="!isSmallOrDown" class="arrow" @click="switchDetail">
             <img
               class="image"
               :class="isDetailOpen ? 'up' : 'down'"
@@ -29,16 +29,16 @@
             />
             <div class="title-loc">
               <p class="title txt-4 mb-3">{{ experienceTitleTroncated }}</p>
-              <p class="location txt-5 light">{{ experienceAddress }}</p>
+              <p class="location txt-5 light">{{ isSmallOrDown ? mobileBookingInfo : experienceAddress }}</p>
             </div>
           </div>
 
-          <div class="customer-info col">
+          <div v-if="!isSmallOrDown" class="customer-info col">
             <p class="guests-duration txt-4 mb-3">{{ guestsAndDuration }}</p>
             <p class="contact txt-5 light underlined">Contact guest</p>
           </div>
 
-          <div class="payment-info col">
+          <div v-if="!isSmallOrDown" class="payment-info col">
             <p class="price txt-4 semibold mb-3">{{ price }}</p>
             <p class="status txt-4" :class="statusType">{{ statusText }}</p>
           </div>
@@ -48,7 +48,7 @@
       </div>
 
       <div
-        v-if="isDetailOpen"
+        v-if="isDetailOpen && !isSmallOrDown"
         class="details-info pt-8 mt-8"
         >
 
@@ -146,10 +146,12 @@
 
 <script>
 import { IMG } from '@fishtripr/constants'
+import { responsiveHandler } from '../../../mixins/responsiveHandler'
 import Avatar from '../../avatar/Avatar'
 
 export default {
   name: 'booking-card',
+  mixins: [ responsiveHandler ],
   components: { Avatar },
   props: {
     startDate: { type: String },
@@ -173,7 +175,8 @@ export default {
   data() {
     return {
       isDetailOpen: false,
-      experienceTitleMaxLength: 35
+      experienceTitleMaxLength: 35,
+      experienceTitleMaxLengthMobile: 25
     }
   },
   computed: {
@@ -190,7 +193,8 @@ export default {
       }
     },
     experienceTitleTroncated() {
-      return this.experienceTitle.length > this.experienceTitleMaxLength ? `${this.experienceTitle.slice(0, this.experienceTitleMaxLength)}...` : this.experienceTitle
+      const limit = this.isSmallOrDown ? this.experienceTitleMaxLengthMobile : this.experienceTitleMaxLength
+      return this.experienceTitle.length > limit ? `${this.experienceTitle.slice(0, limit)}...` : this.experienceTitle
     },
     guestsAndDuration() {
       return `${this.guests} guest${this.guests > 1 ? 's' : ''} - ${this.duration} day${this.duration > 1 ? 's' : ''}`
@@ -208,11 +212,23 @@ export default {
     dueAmount() {
       const dueAmount = this.deposit ? (this.totalPrice - this.deposit).toFixed(2) : 0
       return `${this.currencySymbol} ${dueAmount}`
+    },
+    mobileBookingInfo() {
+      const guest = `${this.guests} guest${this.guests > 1 ? 's' : ''}`
+      const duration = `${this.duration} day${this.duration > 1 ? 's' : ''}`
+      return `${guest} - ${duration} - ${this.price}`
     }
   },
   methods: {
     switchDetail() {
       this.isDetailOpen = !this.isDetailOpen
+    },
+    mobileEmit() {
+      this.isSmallOrDown && this.emitContact()
+    },
+    emitContact() {
+      this.$emit('contactCustomer')
+      console.log('ok')
     }
   }
 }
