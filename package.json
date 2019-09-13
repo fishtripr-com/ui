@@ -23,6 +23,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-vue": "^2.0.2",
     "file-loader": "^4.2.0",
+    "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "svg-inline-loader": "^0.8.0",
@@ -35,7 +36,7 @@
   "dependencies": {
     "@fishtripr/constants": "^0.0.12",
     "@fishtripr/js-functions": "^0.0.17",
-    "element-ui": "^2.11.1",
+    "element-ui": "^2.12.0",
     "vue": "^2.6.8",
     "vue-styled-components": "^1.4.4"
   },
