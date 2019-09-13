@@ -69,7 +69,7 @@ export default {
     flex-flow: column nowrap;
     color: $color-text;
     width: 8%;
-    height: 200px;
+    height: 100px;
     align-items: center;
     justify-content: flex-end;
     margin-right: $space-xxs;
