@@ -1,7 +1,9 @@
 <template>
   <div class="revenue-graph">
     <div v-for="month in revenue" :key="month.month" class="wrapper">
-      <div :class="['bar',barHeight(month.revenue)]" :style="{height:barHeight(month.revenue)+'%'}"></div>
+      <div
+        class="bar" :style="{height: `${barHeight(month.revenue)}%`}"
+      ></div>
       <div :class="['month', month.month === currentMonth() ? 'current' : '']">{{month.month}}</div>
     </div>
   </div>
