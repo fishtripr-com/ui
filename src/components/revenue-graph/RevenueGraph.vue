@@ -8,8 +8,9 @@
     </div>
   </div>
 </template>
-
 <script>
+import moment from 'moment'
+
 export default {
   name: "revenue-graph",
   mixins: [],
@@ -24,23 +25,8 @@ export default {
   computed: {},
   methods: {
     currentMonth() {
-      let months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ];
-      let now = new Date();
-      let thisMonth = months[now.getMonth()];
-      return thisMonth;
+      console.log(moment().month())
+      return moment().month();
     },
     barHeight(monthly) {
       let maxRevenue = Math.max.apply(
