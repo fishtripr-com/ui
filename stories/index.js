@@ -8,6 +8,7 @@ import './navbar/index'
 import './offer/offerCard'
 import './conversation/receiver-header'
 import './conversation/conversationCard'
+import './dashboard/insight-graph'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')

@@ -10,6 +10,7 @@ import ImageContainer from './components/image-container'
 import MarketingThumb from './components/marketing-thumb'
 import OfferCard from './components/offer-card'
 import TipCard from './components/tip-card'
+import InsigthGraph from './components/insight-graph'
 
 export {
   AppCard,
@@ -24,4 +25,5 @@ export {
   MarketingThumb,
   OfferCard,
   TipCard,
+  InsigthGraph
 }

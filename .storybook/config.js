@@ -27,6 +27,7 @@ import MobileOfferHeader from '../src/components/mobile-offer-header';
 import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header';
 import ExperienceListingCard from '../src/components/experience/experience-listing-card';
 import BookingCard from '../src/components/booking/booking-card';
+import InsightGraph from '../src/components/insight-graph';
 
 // Register custom components.
 Vue.component('avatar', Avatar);
@@ -53,6 +54,8 @@ Vue.component('mobile-offer-header', MobileOfferHeader);
 Vue.component('conversation-receiver-header', ConversationReceiverHeader);
 Vue.component('experience-listing-card', ExperienceListingCard)
 Vue.component('booking-card', BookingCard)
+Vue.component('experience-listing-card', ExperienceListingCard);
+Vue.component('insight-graph', InsightGraph);
 
 function loadStories() {
   // You can require as many stories as you need.
