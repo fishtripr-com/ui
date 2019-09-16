@@ -27,10 +27,14 @@ import MobileOfferHeader from '../src/components/mobile-offer-header';
 import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header';
 import ExperienceListingCard from '../src/components/experience/experience-listing-card';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import RevenueGraph from '../src/components/revenue-graph';
 =======
 import DashboardSummary from '../src/components/cards/dashboard-summary'
 >>>>>>> feature/dashboard-summary-card
+=======
+import MobileDashboardHeader from '../src/components/mobile-dashboard-header';
+>>>>>>> feature/mobile-dashboard-header
 
 // Register custom components.
 Vue.component('avatar', Avatar);
@@ -55,12 +59,17 @@ Vue.component('short-experience-preview', ShortExperiencePreview);
 Vue.component('mobile-payment-link', MobilePaymentLink);
 Vue.component('mobile-offer-header', MobileOfferHeader);
 Vue.component('conversation-receiver-header', ConversationReceiverHeader);
+<<<<<<< HEAD
 Vue.component('experience-listing-card', ExperienceListingCard);
 <<<<<<< HEAD
 Vue.component('revenue-graph', RevenueGraph);
 =======
 Vue.component('dashboard-summary', DashboardSummary);
 >>>>>>> feature/dashboard-summary-card
+=======
+Vue.component('experience-listing-card', ExperienceListingCard)
+Vue.component('mobile-dashboard-header', MobileDashboardHeader)
+>>>>>>> feature/mobile-dashboard-header
 
 function loadStories() {
   // You can require as many stories as you need.
