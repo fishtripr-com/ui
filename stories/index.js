@@ -225,3 +225,12 @@ storiesOf("Mobile Offer Header", module)
       userSurname="Travolta"
       />`
   );
+
+storiesOf("Mobile Dashboard Header", module)
+  .add("Basic", () =>
+    `<mobile-offer-header
+      text="Revenue total"
+      revenue="23.000.00"
+      currency="USD"
+      />`
+  );
