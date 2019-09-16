@@ -237,7 +237,6 @@ storiesOf("Mobile Offer Header", module)
       />`
   );
 
-<<<<<<< HEAD
 storiesOf("Revenue Graph", module)
   .add("Basic", () =>
     `<revenue-graph
@@ -256,13 +255,14 @@ storiesOf("Revenue Graph", module)
         {month: 'Dec', revenue: 0}]"
       currency="EUR"
       :multiplication="0.5"
-=======
+      />
+      />`
+  );
 storiesOf("Mobile Dashboard Header", module)
   .add("Basic", () =>
     `<mobile-dashboard-header
       text="Revenue total"
       :revenue=2300.50
       currency="USD"
->>>>>>> feature/mobile-dashboard-header
       />`
   );

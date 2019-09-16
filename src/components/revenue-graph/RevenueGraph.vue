@@ -1,17 +1,13 @@
 <template>
   <div class="revenue-graph">
     <div v-for="month in revenue" :key="month.month" class="wrapper">
-      <div
-        class="bar" :style="{height: `${barHeight(month.revenue)}%`}"
-      ></div>
+      <div class="bar" :style="{height: `${barHeight(month.revenue)}%`}"></div>
       <div :class="['month', month.month === currentMonth() ? 'current' : '']">{{month.month}}</div>
     </div>
   </div>
 </template>
 
 <script>
-import moment from 'moment'
-
 export default {
   name: "revenue-graph",
   props: {
@@ -21,7 +17,7 @@ export default {
   },
   methods: {
     currentMonth() {
-      return moment().month();
+      // return moment().month();
     },
     barHeight(monthly) {
       let maxRevenue = Math.max.apply(
@@ -29,9 +25,9 @@ export default {
         this.revenue.map(function(obj) {
           return obj.revenue;
         })
-      )
-      let monthlyIndex = (100 * monthly) / maxRevenue
-      return monthlyIndex === 0 ? 1 : monthlyIndex
+      );
+      let monthlyIndex = (100 * monthly) / maxRevenue;
+      return monthlyIndex === 0 ? 1 : monthlyIndex;
     }
   }
 };
@@ -64,9 +60,13 @@ export default {
     .month {
       font-size: $font-size-m;
 
-      @media #{$small-and-down} { font-size: $font-size-xs }
+      @media #{$small-and-down} {
+        font-size: $font-size-xs;
+      }
 
-      &.current { font-weight: $bold }
+      &.current {
+        font-weight: $bold;
+      }
     }
   }
 }
