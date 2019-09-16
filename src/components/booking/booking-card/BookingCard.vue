@@ -4,9 +4,9 @@
 
       <div class="main-info">
 
-        <div class="head">
+        <header class="head">
           <div class="primary-info">
-            <p class="date txt-1 bold">{{ bookingDate }}</p>
+            <strong class="date txt-1 bold">{{ bookingDate }}</strong>
             <p v-if="!isSmallOrDown" class="source txt-5">{{ channel.text }}</p>
           </div>
           <div v-if="!isSmallOrDown" class="arrow" @click="switchDetail">
@@ -17,7 +17,7 @@
               alt="Arrow bottom"
             >
           </div>
-        </div>
+        </header>
 
         <div class="body mt-5">
 
@@ -61,25 +61,25 @@
           </div>
 
           <div class="row mb-5">
-            <div class="section">
+            <section class="section">
               <p class="title txt-5 light">Arrival date</p>
               <p class="value txt-5 semibold">{{ startDate }}</p>
-            </div>
-            <div class="section">
+            </section>
+            <section class="section">
               <p class="title txt-5 light">Departure date</p>
               <p class="value txt-5 semibold">{{ endDate }}</p>
-            </div>
+            </section>
           </div>
 
           <div class="row">
-            <div class="section">
+            <section class="section">
               <p class="title txt-5 light">Days</p>
               <p class="value txt-5 semibold">{{ duration }}</p>
-            </div>
-            <div class="section">
+            </section>
+            <section class="section">
               <p class="title txt-5 light">Guests</p>
               <p class="value txt-5 semibold">{{ guests }}</p>
-            </div>
+            </section>
           </div>
 
         </div>
@@ -93,17 +93,17 @@
           </div>
 
           <div class="row mb-5">
-            <div class="section">
+            <section class="section">
               <p class="title txt-5 light">Name</p>
               <p class="value txt-5 semibold">{{ customerFullName }}</p>
-            </div>
+            </section>
           </div>
 
           <div class="row">
-            <div class="section">
+            <section class="section">
               <p class="title txt-5 light">Email</p>
               <p class="value txt-5 semibold">{{ customerEmail }}</p>
-            </div>
+            </section>
           </div>
 
         </div>
