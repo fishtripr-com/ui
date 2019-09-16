@@ -114,7 +114,18 @@ storiesOf('Cards', module)
         />
       </template>
     </partner-card>`
-  );;
+  )
+  .add(
+    'Dashboard Summary Card',
+    () =>
+      `<dashboard-summary
+        :summaryValue=27
+        star
+        :averageValue=4.6
+        text="Global evaluation"
+        subtext="Compare with other similar"
+        />`
+  );
 storiesOf("Text Type bloc", module)
   .add("Light", () =>
     `<text-type-bloc
