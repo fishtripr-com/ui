@@ -7,6 +7,7 @@ import './navbar/index'
 import './offer/offerCard'
 import './conversation/receiver-header'
 import './conversation/conversationCard'
+import './dashboard/insight-graph'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -223,26 +224,5 @@ storiesOf("Mobile Offer Header", module)
       text="offer to"
       userName="john"
       userSurname="Travolta"
-      />`
-  );
-
-storiesOf("Revenue Graph", module)
-  .add("Basic", () =>
-    `<revenue-graph
-      :revenue=
-      "[{month: 'Jan', revenue: 200},
-        {month: 'Feb', revenue: 300},
-        {month: 'Mar', revenue: 0},
-        {month: 'Apr', revenue: 200},
-        {month: 'May', revenue: 500},
-        {month: 'Jun', revenue: 700},
-        {month: 'Jul', revenue: 400},
-        {month: 'Aug', revenue: 800},
-        {month: 'Sep', revenue: 400},
-        {month: 'Oct', revenue: 200},
-        {month: 'Nov', revenue: 0},
-        {month: 'Dec', revenue: 0}]"
-      currency="EUR"
-      :multiplication="0.5"
       />`
   );

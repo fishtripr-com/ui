@@ -26,7 +26,7 @@ import MobilePaymentLink from '../src/components/mobile-payment-link';
 import MobileOfferHeader from '../src/components/mobile-offer-header';
 import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header';
 import ExperienceListingCard from '../src/components/experience/experience-listing-card';
-import RevenueGraph from '../src/components/revenue-graph';
+import InsightGraph from '../src/components/insight-graph';
 
 // Register custom components.
 Vue.component('avatar', Avatar);
@@ -52,7 +52,7 @@ Vue.component('mobile-payment-link', MobilePaymentLink);
 Vue.component('mobile-offer-header', MobileOfferHeader);
 Vue.component('conversation-receiver-header', ConversationReceiverHeader);
 Vue.component('experience-listing-card', ExperienceListingCard);
-Vue.component('revenue-graph', RevenueGraph);
+Vue.component('insight-graph', InsightGraph);
 
 function loadStories() {
   // You can require as many stories as you need.
