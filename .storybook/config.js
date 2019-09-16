@@ -26,7 +26,7 @@ import MobilePaymentLink from '../src/components/mobile-payment-link';
 import MobileOfferHeader from '../src/components/mobile-offer-header';
 import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header';
 import ExperienceListingCard from '../src/components/experience/experience-listing-card';
-import MobileDashboardHeader from '../src/components/mobile-offer-header';
+import MobileDashboardHeader from '../src/components/mobile-dashboard-header';
 
 // Register custom components.
 Vue.component('avatar', Avatar);

@@ -228,7 +228,7 @@ storiesOf("Mobile Offer Header", module)
 
 storiesOf("Mobile Dashboard Header", module)
   .add("Basic", () =>
-    `<mobile-offer-header
+    `<mobile-dashboard-header
       text="Revenue total"
       revenue="23.000.00"
       currency="USD"
