@@ -1,9 +1,7 @@
 <template>
   <header class="mobile-dashboard-header">
-    <div class="wrapper">
-      <p>Hello11</p>
-      <span>{{ text1 }}</span>
-    </div>
+    <p>{{ this.formatNumber() }}</p>
+    <span>{{ text }}</span>
   </header>
 </template>
 
