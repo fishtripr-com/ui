@@ -10,7 +10,7 @@ export default {
   name: "mobile-dashboard-header",
   props: {
     text: { type: String, default: "" },
-    revenue: { type: Number, default: "0" },
+    revenue: { type: Number, default: 0 },
     currency: { type: String, default: "EUR" }
   }
 };
