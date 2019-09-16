@@ -37,6 +37,12 @@ export default {
         return currency_symbols[this.currency];
       }
     },
+    formatNumber() {
+      return (
+        this.currencySymbol() +
+        this.revenue.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+      );
+    }
   }
 };
 </script>
