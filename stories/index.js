@@ -230,7 +230,7 @@ storiesOf("Mobile Dashboard Header", module)
   .add("Basic", () =>
     `<mobile-dashboard-header
       text="Revenue total"
-      revenue="23.000.00"
+      :revenue=2300.50
       currency="USD"
       />`
   );
