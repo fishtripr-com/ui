@@ -28,7 +28,7 @@
               size="s"
             />
             <div class="title-loc">
-              <p class="title txt-4 mb-2">{{ experienceTitleTroncated }}</p>
+              <p class="title txt-4 mb-2">{{ experienceTitleTruncated }}</p>
               <p class="location txt-5 light">{{ isSmallOrDown ? mobileBookingInfo : experienceAddress }}</p>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default {
         type: 'success'
       }
     },
-    experienceTitleTroncated() {
+    experienceTitleTruncated() {
       const limit = this.isSmallOrDown ? this.experienceTitleMaxLengthMobile : this.experienceTitleMaxLength
       return this.experienceTitle.length > limit ? `${this.experienceTitle.slice(0, limit)}...` : this.experienceTitle
     },
