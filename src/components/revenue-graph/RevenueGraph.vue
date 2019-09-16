@@ -8,24 +8,19 @@
     </div>
   </div>
 </template>
+
 <script>
 import moment from 'moment'
 
 export default {
   name: "revenue-graph",
-  mixins: [],
   props: {
     revenue: { type: Array },
     currency: { type: String, default: "EUR" },
     multiplication: { type: Number, default: 1 }
   },
-  data() {
-    return {};
-  },
-  computed: {},
   methods: {
     currentMonth() {
-      console.log(moment().month())
       return moment().month();
     },
     barHeight(monthly) {
@@ -34,9 +29,9 @@ export default {
         this.revenue.map(function(obj) {
           return obj.revenue;
         })
-      );
-      let monthlyIndex = (100 * monthly) / maxRevenue;
-      return monthlyIndex === 0 ? 1 : monthlyIndex;
+      )
+      let monthlyIndex = (100 * monthly) / maxRevenue
+      return monthlyIndex === 0 ? 1 : monthlyIndex
     }
   }
 };
@@ -65,16 +60,13 @@ export default {
       background-image: linear-gradient(#aaa2fb, #4e45b9);
       margin-bottom: $space-xxs;
     }
+
     .month {
       font-size: $font-size-m;
 
-      @media #{$small-and-down} {
-        font-size: $font-size-xs;
-      }
+      @media #{$small-and-down} { font-size: $font-size-xs }
 
-      &.current {
-        font-weight: $bold;
-      }
+      &.current { font-weight: $bold }
     }
   }
 }
