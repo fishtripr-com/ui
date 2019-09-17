@@ -238,8 +238,6 @@ storiesOf("Mobile Offer Header", module)
       userSurname="Travolta"
       />`
   );
-<<<<<<< HEAD
-=======
 
 storiesOf("Revenue Graph", module)
   .add("Basic", () =>
@@ -270,4 +268,4 @@ storiesOf("Mobile Dashboard Header", module)
       currency="USD"
       />`
   );
->>>>>>> test/dashboard
+
