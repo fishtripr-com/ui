@@ -1,3 +1,4 @@
+// Vue omponents
 import AppCard from './components/cards/app-card'
 import Avatar from './components/avatar'
 import BaseButton from './components/button'
@@ -15,7 +16,11 @@ import CopyableLink from './components/copyable-link'
 import MobileOfferHeader from './components/mobile-offer-header'
 import InsightCard from './components/dashboard/insight-card'
 
+// Mixins
+import { responsiveHandler } from './mixins/responsiveHandler'
+
 export {
+  // Vue components
   AppCard,
   Avatar,
   BaseButton,
@@ -31,5 +36,8 @@ export {
   InsightGraph,
   CopyableLink,
   MobileOfferHeader,
-  InsightCard
+  InsightCard,
+
+  // Mixins
+  responsiveHandler,
 }
