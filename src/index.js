@@ -11,8 +11,6 @@ import MarketingThumb from './components/marketing-thumb'
 import OfferCard from './components/offer-card'
 import TipCard from './components/tip-card'
 import InsightGraph from './components/insight-graph'
-import MobileDashboardHeader from './components/mobile-dashboard-header'
-import InsigthGraph from './components/insight-graph'
 import CopyableLink from './components/copyable-link'
 import MobileOfferHeader from './components/mobile-offer-header'
 import InsightCard from './components/dashboard/insight-card'
@@ -31,8 +29,6 @@ export {
   OfferCard,
   TipCard,
   InsightGraph,
-  MobileDashboardHeader,
-  InsigthGraph,
   CopyableLink,
   MobileOfferHeader,
   InsightCard

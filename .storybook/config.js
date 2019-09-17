@@ -28,7 +28,6 @@ import ConversationReceiverHeader from '../src/components/conversation/conversat
 import ExperienceListingCard from '../src/components/experience/experience-listing-card';
 import BookingCard from '../src/components/booking/booking-card';
 import InsightGraph from '../src/components/insight-graph';
-import MobileDashboardHeader from '../src/components/mobile-dashboard-header';
 import InsightCard from '../src/components/dashboard/insight-card'
 
 
@@ -60,7 +59,6 @@ Vue.component('booking-card', BookingCard)
 Vue.component('experience-listing-card', ExperienceListingCard);
 Vue.component('insight-graph', InsightGraph);
 Vue.component('experience-listing-card', ExperienceListingCard)
-Vue.component('mobile-dashboard-header', MobileDashboardHeader)
 Vue.component('insight-card', InsightCard)
 
 function loadStories() {
