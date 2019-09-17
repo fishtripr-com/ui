@@ -10,6 +10,8 @@ import MarketingThumb from './components/marketing-thumb'
 import OfferCard from './components/offer-card'
 import TipCard from './components/tip-card'
 import RevenueGraph from './components/revenue-graph'
+import DashboardSummary from './components/cards/dashboard-summary'
+import MobileDashboardHeader from './components/mobile-dashboard-header';
 
 export {
   AppCard,
@@ -23,5 +25,7 @@ export {
   MarketingThumb,
   OfferCard,
   TipCard,
-  RevenueGraph
+  RevenueGraph,
+  DashboardSummary,
+  MobileDashboardHeader
 }
