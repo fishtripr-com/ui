@@ -11,19 +11,19 @@
 
 <script>
 export default {
-  name: "copyable-link",
+  name: 'copyable-link',
   props: {
     label: { type: String, required: true },
     link: { type: String, required: true }
   },
   methods: {
     copyLink() {
-      let textToCopy = document.querySelector("#linkToCopy");
-      textToCopy.setAttribute("type", "text");
-      textToCopy.select();
-      document.execCommand("copy");
-      textToCopy.setAttribute("type", "hidden");
-      window.getSelection().removeAllRanges();
+      const textToCopy = document.querySelector('#linkToCopy')
+      textToCopy.setAttribute('type', 'text')
+      textToCopy.select()
+      document.execCommand('copy')
+      textToCopy.setAttribute('type', 'hidden')
+      window.getSelection().removeAllRanges()
     }
   }
 };
