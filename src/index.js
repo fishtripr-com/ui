@@ -11,6 +11,10 @@ import MarketingThumb from './components/marketing-thumb'
 import OfferCard from './components/offer-card'
 import TipCard from './components/tip-card'
 import InsigthGraph from './components/insight-graph'
+import RevenueGraph from './components/revenue-graph'
+import DashboardSummary from './components/cards/dashboard-summary'
+import MobileDashboardHeader from './components/mobile-dashboard-header';
+
 
 export {
   AppCard,
@@ -26,4 +30,7 @@ export {
   OfferCard,
   TipCard,
   InsigthGraph
+  RevenueGraph,
+  DashboardSummary,
+  MobileDashboardHeader
 }
