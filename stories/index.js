@@ -9,6 +9,7 @@ import './offer/offerCard'
 import './conversation/receiver-header'
 import './conversation/conversationCard'
 import './dashboard/insight-graph'
+import './copyable-link/copyableLink'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -210,12 +211,6 @@ storiesOf("Marketing Thumb", module)
       image="https://picsum.photos/65/65"
       title="Search and compare"
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
-      />`
-  );
-storiesOf("Mobile Payment Link", module)
-  .add("Basic", () =>
-    `<mobile-payment-link
-      link="https://www.example.com/title/experience/fishing/isgoodtt0068646/?ref_=ttls_li_tt"
       />`
   );
 
