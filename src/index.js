@@ -10,7 +10,7 @@ import ImageContainer from './components/image-container'
 import MarketingThumb from './components/marketing-thumb'
 import OfferCard from './components/offer-card'
 import TipCard from './components/tip-card'
-import InsigthGraph from './components/insight-graph'
+import InsightGraph from './components/insight-graph'
 import DashboardSummary from './components/cards/dashboard-summary'
 import MobileDashboardHeader from './components/mobile-dashboard-header';
 
@@ -28,7 +28,7 @@ export {
   MarketingThumb,
   OfferCard,
   TipCard,
-  InsigthGraph
+  InsightGraph,
   DashboardSummary,
   MobileDashboardHeader
 }
