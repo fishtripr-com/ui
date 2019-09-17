@@ -12,8 +12,10 @@ import OfferCard from './components/offer-card'
 import TipCard from './components/tip-card'
 import InsightGraph from './components/insight-graph'
 import DashboardSummary from './components/cards/dashboard-summary'
-import MobileDashboardHeader from './components/mobile-dashboard-header';
-
+import MobileDashboardHeader from './components/mobile-dashboard-header'
+import InsigthGraph from './components/insight-graph'
+import CopyableLink from './components/copyable-link'
+import MobileOfferHeader from './components/mobile-offer-header'
 
 export {
   AppCard,
@@ -30,5 +32,8 @@ export {
   TipCard,
   InsightGraph,
   DashboardSummary,
-  MobileDashboardHeader
+  MobileDashboardHeader,
+  InsigthGraph,
+  CopyableLink,
+  MobileOfferHeader
 }
