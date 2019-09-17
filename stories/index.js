@@ -116,7 +116,18 @@ storiesOf('Cards', module)
         />
       </template>
     </partner-card>`
-  );;
+  )
+  .add(
+    'Dashboard Summary Card',
+    () =>
+      `<dashboard-summary
+        summaryValue="27"
+        star
+        averageValue="4.6"
+        text="Global evaluation"
+        subtext="Compare with other similar"
+        />`
+  );
 storiesOf("Text Type bloc", module)
   .add("Light", () =>
     `<text-type-bloc
@@ -227,3 +238,36 @@ storiesOf("Mobile Offer Header", module)
       userSurname="Travolta"
       />`
   );
+<<<<<<< HEAD
+=======
+
+storiesOf("Revenue Graph", module)
+  .add("Basic", () =>
+    `<revenue-graph
+      :revenue=
+      "[{month: 'Jan', revenue: 200},
+        {month: 'Feb', revenue: 300},
+        {month: 'Mar', revenue: 0},
+        {month: 'Apr', revenue: 200},
+        {month: 'May', revenue: 500},
+        {month: 'Jun', revenue: 700},
+        {month: 'Jul', revenue: 400},
+        {month: 'Aug', revenue: 800},
+        {month: 'Sep', revenue: 400},
+        {month: 'Oct', revenue: 200},
+        {month: 'Nov', revenue: 0},
+        {month: 'Dec', revenue: 0}]"
+      currency="EUR"
+      :multiplication="0.5"
+      />
+      />`
+  );
+storiesOf("Mobile Dashboard Header", module)
+  .add("Basic", () =>
+    `<mobile-dashboard-header
+      text="Revenue total"
+      :revenue=2300.50
+      currency="USD"
+      />`
+  );
+>>>>>>> test/dashboard
