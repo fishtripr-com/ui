@@ -13,11 +13,12 @@
 export default {
   name: "dashboard-summary",
   props: {
-    summaryValue: { type: Number, default: 0 },
+    summaryValue: { type: String, default: '' },
     star: { type: Boolean, default: false },
-    averageValue: { type: Number, default: 0 },
-    text: { type: String, default: "" },
-    subtext: { type: String, default: "" }
+    averageValue: { type: String, default: '' },
+    text: { type: String, default: '' },
+    subtext: { type: String, default: '' }
+  },
   methods: {
     subtextModifier(){
       return `${this.subtext} ${this.averageValue ? ` - ${this.averageValue}` : ""}`
