@@ -1,9 +1,9 @@
 <template>
-  <div class="mobile-payment-link">
-    <div class="wrapper">
-      <span class="headerText">Payment link</span>
-      <span class="copyButton" @click.stop.prevent="copyLink">Copy</span>
-    </div>
+  <div class="copyable-link">
+    <header class="wrapper">
+      <span class="header-text">Payment link</span>
+      <span class="copy-button" @click.stop.prevent="copyLink">Copy</span>
+    </header>
     <a class="link" :href="link">{{ link }}</a>
     <input type="hidden" id="linkToCopy" :value="link" />
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "mobile-payment-link",
+  name: "copyable-link",
   props: {
     link: { type: String, default: "" }
   },
@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/main";
 
-.mobile-payment-link {
+.copyable-link {
   display: flex;
   flex-direction: column;
   font-family: $font-family;
@@ -45,7 +45,7 @@ export default {
     font-weight: $semibold;
     color: $color-text;
 
-    .copyButton {
+    .copy-button {
       color: $color-text-info;
     }
   }
