@@ -5,7 +5,7 @@
       <div v-if="star" class="star">&#9733;</div>
     </div>
     <p class="text">{{ text }}</p>
-    <p class="subtext">{{ subtext+" - "+averageValue }}</p>
+    <p class="subtext">{{ subtextModifier() }}</p>
   </div>
 </template>
 
@@ -18,6 +18,10 @@ export default {
     averageValue: { type: Number, default: 0 },
     text: { type: String, default: "" },
     subtext: { type: String, default: "" }
+  methods: {
+    subtextModifier(){
+      return `${this.subtext} ${this.averageValue ? ` - ${this.averageValue}` : ""}`
+    }
   }
 };
 </script>
