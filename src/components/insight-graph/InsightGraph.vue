@@ -64,7 +64,7 @@ export default {
     align-items: center;
     justify-content: flex-end;
 
-    @media #{$small-and-down} { height: 200px; }
+    @media #{$small-and-down} { height: 150px; }
 
     .column {
       min-height: 5px;
