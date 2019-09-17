@@ -214,11 +214,11 @@ storiesOf("Marketing Thumb", module)
       />`
   );
 
-storiesOf("Mobile Offer Header", module)
-  .add("Basic", () =>
+storiesOf("Offer/Mobile Offer Header", module)
+  .add("Default", () =>
     `<mobile-offer-header
       text="offer to"
-      userName="john"
-      userSurname="Travolta"
-      />`
+      first-name="john"
+      last-name="Travolta"
+    />`
   );
