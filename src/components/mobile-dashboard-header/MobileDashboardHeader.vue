@@ -61,7 +61,7 @@ export default {
 
 p {
   margin: 0 0 $space-xxxs 0;
-  font-size: $font-size-l;
+  font-size: $font-size-xl;
   font-weight: $bold;
 }
 </style>

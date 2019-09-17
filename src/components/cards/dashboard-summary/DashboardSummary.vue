@@ -44,7 +44,7 @@ export default {
     flex-flow: row nowrap;
     align-items: flex-start;
     font-weight: $bold;
-    font-size: $font-size-l;
+    font-size: $font-size-xl;
 
     .star {
       margin-left: $space-xxxs;
@@ -60,6 +60,8 @@ export default {
     font-weight: $semibold;
     display: flex;
     flex-flow: row;
+    margin-top: $space-xxxs;
+    line-height: $line-height-xxs;
   }
 }
 </style>
