@@ -1,5 +1,5 @@
 <template>
-  <div class="revenue-graph">
+  <div class="insight-graph">
 
     <div
       v-for="(item, i) in data"
@@ -25,7 +25,7 @@
 import { responsiveHandler } from '../../mixins/responsiveHandler'
 
 export default {
-  name: 'revenue-graph',
+  name: 'insight-graph',
   mixins: [ responsiveHandler ],
   props: {
     data: { type: Array },
@@ -51,7 +51,7 @@ export default {
 @import "../../assets/style/index";
 @import "../../assets/style/default";
 
-.revenue-graph {
+.insight-graph {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
