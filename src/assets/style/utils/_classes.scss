@@ -58,6 +58,16 @@
   }
 }
 
+.link-premium {
+  color: map-get($colors, "link-premium") !important;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: map-get($colors, "link-hover-premium") !important;
+  }
+}
+
 //  3. Class light (For reverse theme)
 // ==========================================================================
 
