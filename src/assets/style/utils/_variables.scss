@@ -2,7 +2,7 @@
 // Variables
 // ==========================================================================
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 
 // 1. Font
 // ==========================================================================
@@ -60,7 +60,8 @@ $lh-text: (
 );
 
 // font-weight
-$fw-l              : 700;
+$fw-xl             : 700;
+$fw-l              : 600;
 $fw-m              : 400;
 
 // 2. Colors
@@ -105,7 +106,8 @@ $cloudy-blue    : #c0c4d1;
 $colors: (
 
   text: $black,
-  text-light: $light-steel,
+  text-light: $steel,
+  text-lighter: $light-steel,
   text-white: $white,
 
   link: $pale-teal,
