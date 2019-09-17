@@ -119,9 +119,9 @@ storiesOf('Cards', module)
     'Dashboard Summary Card',
     () =>
       `<dashboard-summary
-        :summaryValue=27
+        summaryValue="27"
         star
-        :averageValue=4.6
+        averageValue="4.6"
         text="Global evaluation"
         subtext="Compare with other similar"
         />`
