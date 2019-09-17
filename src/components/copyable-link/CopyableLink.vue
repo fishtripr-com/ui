@@ -1,7 +1,7 @@
 <template>
   <div class="copyable-link">
     <header class="wrapper">
-      <span class="header-text">Payment link</span>
+      <span class="header-text">{{ label }}</span>
       <span class="copy-button" @click.stop.prevent="copyLink">Copy</span>
     </header>
     <a class="link" :href="link">{{ link }}</a>
@@ -13,7 +13,8 @@
 export default {
   name: "copyable-link",
   props: {
-    link: { type: String, default: "" }
+    label: { type: String, required: true },
+    link: { type: String, required: true }
   },
   methods: {
     copyLink() {
