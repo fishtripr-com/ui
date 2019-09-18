@@ -1,3 +1,4 @@
+// Vue omponents
 import AppCard from './components/cards/app-card'
 import Avatar from './components/avatar'
 import BaseButton from './components/button'
@@ -10,11 +11,16 @@ import ImageContainer from './components/image-container'
 import MarketingThumb from './components/marketing-thumb'
 import OfferCard from './components/offer-card'
 import TipCard from './components/tip-card'
-import InsigthGraph from './components/insight-graph'
+import InsightGraph from './components/insight-graph'
 import CopyableLink from './components/copyable-link'
 import MobileOfferHeader from './components/mobile-offer-header'
+import InsightCard from './components/dashboard/insight-card'
+
+// Mixins
+import { responsiveHandler } from './mixins/responsiveHandler'
 
 export {
+  // Vue components
   AppCard,
   Avatar,
   BaseButton,
@@ -27,7 +33,11 @@ export {
   MarketingThumb,
   OfferCard,
   TipCard,
-  InsigthGraph,
+  InsightGraph,
   CopyableLink,
-  MobileOfferHeader
+  MobileOfferHeader,
+  InsightCard,
+
+  // Mixins
+  responsiveHandler,
 }

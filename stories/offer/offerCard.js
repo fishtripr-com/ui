@@ -1,9 +1,8 @@
-import { storiesOf } from '@storybook/vue';
+import { storiesOf } from '@storybook/vue'
 
 import data from '../_utils/mockData'
 
-
-storiesOf('Offer card', module)
+storiesOf('Offer/Offer card', module)
 .add(
   'Default',
   () => ({
@@ -16,13 +15,13 @@ storiesOf('Offer card', module)
       }
     },
     template: `<div style="width:100%;">
-    <offer-card
-        :image="image"
-        :title="title"
-        :hat="hat"
-        :status="status"
-        mode="warning"
-      />
-  </div>`
+      <offer-card
+          :image="image"
+          :title="title"
+          :hat="hat"
+          :status="status"
+          mode="warning"
+        />
+    </div>`
   })
 )

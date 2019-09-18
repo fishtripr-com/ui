@@ -6,9 +6,11 @@ import './experience/short-experience-preview/index'
 import './navigation/index'
 import './navbar/index'
 import './offer/offerCard'
+import './offer/offerMobileHeader'
 import './conversation/receiver-header'
 import './conversation/conversationCard'
 import './dashboard/insight-graph'
+import './dashboard/insight-card'
 import './copyable-link/copyableLink'
 
 storiesOf('Button', module)
@@ -117,7 +119,8 @@ storiesOf('Cards', module)
         />
       </template>
     </partner-card>`
-  );;
+  )
+
 storiesOf("Text Type bloc", module)
   .add("Light", () =>
     `<text-type-bloc
@@ -212,13 +215,4 @@ storiesOf("Marketing Thumb", module)
       title="Search and compare"
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
       />`
-  );
-
-storiesOf("Offer/Mobile Offer Header", module)
-  .add("Default", () =>
-    `<mobile-offer-header
-      text="offer to"
-      first-name="john"
-      last-name="Travolta"
-    />`
   );
