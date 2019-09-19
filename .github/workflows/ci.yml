@@ -1,0 +1,2 @@
+name: Continious Integration for the UI package
+on: push
