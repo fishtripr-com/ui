@@ -37,7 +37,6 @@ export {
   CopyableLink,
   MobileOfferHeader,
   InsightCard,
-
   // Mixins
   responsiveHandler,
 }

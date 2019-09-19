@@ -1,60 +1,43 @@
 <template>
   <nav
-    :class="[
-      'navigation', 
-      theme,
-      deviceSize < deviceSizes.l ? 'mobile' : ''
-    ]"
-    >
-
+    :class="['navigation', theme, deviceSize < deviceSizes.l ? 'mobile' : '']"
+  >
     <ul class="wrapper">
-
-      <li 
-        class="item"
-        v-for="item in items"
-        :key="item.id"
-        >
-        <a 
-          class="link"
-          :href="item.path"
-          @click.prevent="onClicked(item.id)"
-          >
+      <li class="item" v-for="item in items" :key="item.id">
+        <a class="link" :href="item.path" @click.prevent="onClicked(item.id)">
           {{ item.label }}
         </a>
       </li>
-
     </ul>
-    
   </nav>
 </template>
 
 <script>
-import { responsiveHandler } from "../../mixins/responsiveHandler";
+import { responsiveHandler } from '../../mixins/responsiveHandler'
 
 export default {
-  name: "navigation",
+  name: 'navigation',
   mixins: [responsiveHandler],
   props: {
     items: { type: Array, required: true },
     theme: {
       type: String,
-      default: "light",
-      validator: value => ["light", "dark", "premium"].includes(value)
-    }
+      default: 'light',
+      validator: value => ['light', 'dark', 'premium'].includes(value),
+    },
   },
   methods: {
     onClicked(id) {
       this.$emit('itemClicked', id)
-    }
-  }
-};
+    },
+  },
+}
 </script>
 
-<style lang='scss' scoped>
-@import "../../assets/style/main";
+<style lang="scss" scoped>
+@import '../../assets/style/main';
 
 .navigation {
-
   .wrapper {
     list-style: none;
     margin: 0;
@@ -62,7 +45,6 @@ export default {
     display: flex;
 
     .item {
-
       .link {
         display: block;
         text-decoration: none;

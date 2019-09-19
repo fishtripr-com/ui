@@ -1,13 +1,12 @@
 <template>
-  <div 
+  <div
     class="image-container"
-    :style='{ 
-    backgroundImage: coverImg,
-    paddingTop: verticalSize
-    }'>
-
-    <slot/>
-
+    :style="{
+      backgroundImage: coverImg,
+      paddingTop: verticalSize,
+    }"
+  >
+    <slot />
   </div>
 </template>
 
@@ -19,15 +18,15 @@ export default {
   props: {
     image: {
       type: String,
-      default: FALLBACK_FISHTRIPR_COVER
+      default: FALLBACK_FISHTRIPR_COVER,
     },
     height: {
       type: Number,
       default: 40,
       validator: value => {
-        return typeof value === "number" && value > 1
-      }
-    }
+        return typeof value === 'number' && value > 1
+      },
+    },
   },
   computed: {
     coverImg() {
@@ -35,12 +34,12 @@ export default {
     },
     verticalSize() {
       return `${this.height}%`
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .image-container {
   display: flex;
   overflow: hidden;

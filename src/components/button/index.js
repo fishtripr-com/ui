@@ -1,2 +1,2 @@
-import BaseButton from './BaseButton';
-export default BaseButton;
+import BaseButton from './BaseButton'
+export default BaseButton

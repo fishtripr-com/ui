@@ -1,2 +1,2 @@
-import ConversationCard from './ChatMessageCard';
-export default ConversationCard;
+import ConversationCard from './ChatMessageCard'
+export default ConversationCard

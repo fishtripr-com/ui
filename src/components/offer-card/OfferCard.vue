@@ -1,19 +1,14 @@
 <template functionnal>
-  <div
-    class="offer-card"
-    @click="onClick"
-    >
-
+  <div class="offer-card" @click="onClick">
     <template v-if="!isLoading">
       <div class="img">
-        <img :src="image"/>
+        <img :src="image" />
       </div>
 
       <div class="body">
         <p class="title">
           {{ truncate(title) }}
         </p>
-
 
         <p class="hat">{{ truncate(hat) }}</p>
 
@@ -26,7 +21,6 @@
     </template>
 
     <p v-else>Loading...</p>
-
   </div>
 </template>
 
@@ -36,7 +30,7 @@ import { responsiveHandler } from '../../mixins/responsiveHandler'
 
 export default {
   name: 'offer-card',
-  mixins: [ responsiveHandler ],
+  mixins: [responsiveHandler],
   props: {
     isLoading: { type: Boolean },
     image: { type: String },
@@ -48,35 +42,33 @@ export default {
   computed: {
     arrowIcon() {
       return IMG.ICON.ARROW_RIGHT
-    }
+    },
   },
   methods: {
     onClick() {
       this.$emit('click')
     },
     truncate(text) {
-      const charLimit = this.deviceSize === this.deviceSizes.s ? 20 : 50;
+      const charLimit = this.deviceSize === this.deviceSizes.s ? 20 : 50
       if (text.length > charLimit) {
-        return text.slice(0, charLimit - 3).trim() + "...";
+        return text.slice(0, charLimit - 3).trim() + '...'
       }
-      return text;
+      return text
     },
     actionStatus() {
-      return this.deviceSize <= this.deviceSizes.s
-        ? "See details"
-        : this.status;
-    }
-  }
-};
+      return this.deviceSize <= this.deviceSizes.s ? 'See details' : this.status
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/index";
+@import '../../assets/style/index';
 
 .offer-card {
   display: flex;
   align-items: center;
-  border: 1px solid #E4E5EC;
+  border: 1px solid #e4e5ec;
   width: 100%;
   cursor: pointer;
   background-color: white;
@@ -120,9 +112,9 @@ export default {
       font-size: $font-size-xs;
       line-height: $line-height-xs;
       margin: 0;
-      color: #898EA2;
+      color: #898ea2;
 
-       @media #{$small-and-down} {
+      @media #{$small-and-down} {
         font-size: $font-size-xxs;
       }
     }
@@ -137,16 +129,16 @@ export default {
       }
 
       &.success {
-        color: #30DEA0
+        color: #30dea0;
       }
       &.danger {
-        color: #FF4961
+        color: #ff4961;
       }
       &.warning {
-        color: #FFC06A
+        color: #ffc06a;
       }
       &.info {
-        color: #1E9FF2
+        color: #1e9ff2;
       }
     }
   }

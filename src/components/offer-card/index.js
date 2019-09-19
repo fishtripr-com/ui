@@ -1,2 +1,2 @@
-import OfferCard from './OfferCard';
-export default OfferCard;
+import OfferCard from './OfferCard'
+export default OfferCard

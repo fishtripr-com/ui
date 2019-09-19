@@ -23,7 +23,11 @@ storiesOf('Button', module)
   .add('Medium', () => '<base-button size="m">Click me</base-button>')
 
 storiesOf('Avatar', module)
-  .add('with URL', () => '<avatar image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"/>')
+  .add(
+    'with URL',
+    () =>
+      '<avatar image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"/>',
+  )
   .add('without URL (fallback)', () => '<avatar/>')
   .add('Size xxs', () => '<avatar size="xxs"/>')
   .add('Size xs', () => '<avatar size="xs"/>')
@@ -32,14 +36,21 @@ storiesOf('Avatar', module)
   .add('Size l', () => '<avatar size="l"/>')
   .add('Size xl', () => '<avatar size="xl"/>')
   .add('Size xxl', () => '<avatar size="xxl"/>')
-  .add('With border', () => '<avatar hasBorder size="s" image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"/>');
+  .add(
+    'With border',
+    () =>
+      '<avatar hasBorder size="s" image="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"/>',
+  )
 
 storiesOf('Images', module)
-  .add('with URL', () => '<image-container image="https://i.ytimg.com/vi/OJcvzRnPHCI/maxresdefault.jpg" :height="80" />')
-  .add('without URL', () => '<image-container/>');
+  .add(
+    'with URL',
+    () =>
+      '<image-container image="https://i.ytimg.com/vi/OJcvzRnPHCI/maxresdefault.jpg" :height="80" />',
+  )
+  .add('without URL', () => '<image-container/>')
 
-storiesOf('Loader', module)
-  .add('Basic', () => '<fishtripr-loader/>');
+storiesOf('Loader', module).add('Basic', () => '<fishtripr-loader/>')
 
 storiesOf('Cards', module)
   .add(
@@ -49,7 +60,7 @@ storiesOf('Cards', module)
         avatar="https://s.gravatar.com/avatar/a3895a2d6f26155968be47fc03dddc40?s=80"
         message-header="Kevin Tassi"
         message-time="Jun 20, 6:44pm"
-        />`
+        />`,
   )
   .add(
     'App Card',
@@ -62,7 +73,7 @@ storiesOf('Cards', module)
         status="on"
         status-mode="success"
         icon="check"
-        />`
+        />`,
   )
   .add(
     'Employee Card',
@@ -71,7 +82,7 @@ storiesOf('Cards', module)
         first-name="Kevin"
         last-name="Tassi"
         role="Co-founder&CEO"
-        />`
+        />`,
   )
   .add(
     'User Navbar Card',
@@ -83,7 +94,7 @@ storiesOf('Cards', module)
           user-first-name="Max"
           user-role="Fishing Guide"
           />
-      </div>`
+      </div>`,
   )
   .add(
     'Experience Card',
@@ -101,7 +112,7 @@ storiesOf('Cards', module)
           uppercase
         />
       </template>
-    </experience-card>`
+    </experience-card>`,
   )
   .add(
     'Partner Card',
@@ -118,34 +129,41 @@ storiesOf('Cards', module)
         separator="|"
         />
       </template>
-    </partner-card>`
+    </partner-card>`,
   )
 
-storiesOf("Text Type bloc", module)
-  .add("Light", () =>
-    `<text-type-bloc
+storiesOf('Text Type bloc', module)
+  .add(
+    'Light',
+    () =>
+      `<text-type-bloc
         className="guide_hosting"
         textType="Guide & Host"
         text="Nigeria"
-        />`
+        />`,
   )
-  .add("Light & Uppercase", () =>
-    `<text-type-bloc
+  .add(
+    'Light & Uppercase',
+    () =>
+      `<text-type-bloc
         className="guide_hosting"
         textType="Guide & Host"
         text="Nigeria"
         uppercase
-        />`
+        />`,
   )
-  .add("Light with other separator", () =>
-    `<text-type-bloc
+  .add(
+    'Light with other separator',
+    () =>
+      `<text-type-bloc
         className="guide"
         textType="Guide"
         text="Belgium"
         separator="|"
-        />`
+        />`,
   )
-  .add("Dark",
+  .add(
+    'Dark',
     () =>
       `<div style="background-color: #5F5F5F; height: 50px">
           <text-type-bloc
@@ -154,65 +172,76 @@ storiesOf("Text Type bloc", module)
             text="Nigeria"
             dark
             />
-        </div>`
-  );
+        </div>`,
+  )
 
-storiesOf("Check Box Card", module)
-  .add('Unchecked', () =>
-    `<check-box-card
+storiesOf('Check Box Card', module)
+  .add(
+    'Unchecked',
+    () =>
+      `<check-box-card
       title="People are eyeing this experience."
       text="€370.00"
       subtitle="12 others are looking at it for these dates."
       subtext="Now"
-    />`
+    />`,
   )
-  .add('Disabled', () =>
-    `<check-box-card
+  .add(
+    'Disabled',
+    () =>
+      `<check-box-card
       title="People are eyeing this experience."
       text="€370.00"
       subtitle="12 others are looking at it for these dates."
       subtext="Now"
       disabled
-    />`
+    />`,
   )
-  .add('Checked', () =>
-    `<check-box-card
+  .add(
+    'Checked',
+    () =>
+      `<check-box-card
       checked
       title="People are eyeing this experience."
       text="€370.00"
       subtitle="12 others are looking at it for these dates."
       subtext="Now"
-    />`
+    />`,
   )
-  .add('Checked without additionnal text', () =>
-    `<check-box-card
+  .add(
+    'Checked without additionnal text',
+    () =>
+      `<check-box-card
       checked
       title="People are eyeing this experience."
       text="Free"
-    />`
+    />`,
   )
-  .add('Unchecked without additionnal text', () =>
-    `<check-box-card
+  .add(
+    'Unchecked without additionnal text',
+    () =>
+      `<check-box-card
       title="People are eyeing this experience."
       text="Free"
-    />`
-  );
+    />`,
+  )
 
-
-storiesOf("Tip Card", module)
-  .add("Default", () =>
+storiesOf('Tip Card', module).add(
+  'Default',
+  () =>
     `<tip-card
       image="https://picsum.photos/200/300"
       title="People are eyeing this experience."
       text="12 others are looking at it for these dates."
-    />`
-  );
+    />`,
+)
 
-storiesOf("Marketing Thumb", module)
-  .add("Basic", () =>
+storiesOf('Marketing Thumb', module).add(
+  'Basic',
+  () =>
     `<marketing-thumb
       image="https://picsum.photos/65/65"
       title="Search and compare"
       text="hundreds of fishing experiences around the world handpicked by Fishtripr."
-      />`
-  );
+      />`,
+)

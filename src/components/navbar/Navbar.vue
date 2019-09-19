@@ -1,48 +1,49 @@
 <template>
   <div :class="['navbar', theme]">
     <div :class="['wrapper', theme]">
-      <div :class="['logo', theme, deviceSize < deviceSizes.l ? 'mobile': '']" @click="logoClicked">
+      <div
+        :class="['logo', theme, deviceSize < deviceSizes.l ? 'mobile' : '']"
+        @click="logoClicked"
+      >
         <img class="image" :src="logoUrl" alt="logo" />
       </div>
 
-      <div :class="['body', theme, deviceSize < deviceSizes.l ? 'mobile': '']">
+      <div :class="['body', theme, deviceSize < deviceSizes.l ? 'mobile' : '']">
         <slot name="body" :theme="theme" />
       </div>
 
       <div :class="['actions', theme]">
         <slot name="actions" :theme="theme" />
       </div>
-
     </div>
-
   </div>
 </template>
 
 <script>
-import { responsiveHandler } from "../../mixins/responsiveHandler";
+import { responsiveHandler } from '../../mixins/responsiveHandler'
 
 export default {
-  name: "navbar",
+  name: 'navbar',
   mixins: [responsiveHandler],
   props: {
     theme: {
       type: String,
       default: 'light',
-      validator: value => ['dark', 'premium', 'light'].includes(value)
+      validator: value => ['dark', 'premium', 'light'].includes(value),
     },
-    logoUrl: { type: String }
+    logoUrl: { type: String },
   },
- 
+
   methods: {
     logoClicked() {
       this.$emit('click')
-    }
-  }
-};
+    },
+  },
+}
 </script>
 
-<style lang='scss' scoped>
-@import "../../assets/style/main";
+<style lang="scss" scoped>
+@import '../../assets/style/main';
 
 .navbar {
   width: 100%;
@@ -123,7 +124,6 @@ export default {
     .actions {
       margin-left: 20px;
     }
-
   }
 }
 </style>

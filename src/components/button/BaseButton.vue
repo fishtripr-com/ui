@@ -1,25 +1,18 @@
 <template>
-  <div 
-    :class='[
-      "base-button", 
-      size, 
-      type, 
-      { "disabled": disabled, "white": white }
-    ]'  
-    @click='onClick'
-    >
-
-    <span class='base-button_text'>
-
+  <div
+    :class="['base-button', size, type, { disabled: disabled, white: white }]"
+    @click="onClick"
+  >
+    <span class="base-button_text">
       <!-- <clip-loader class='base-button_loader'
                    :loading='loading'
                    :color='colorLoader'
                    size='15px'/> -->
-      <div 
-        v-if="loading"
-        class="lds-ring"
-        >
-        <div></div><div></div><div></div><div></div>
+      <div v-if="loading" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
 
       <!-- <fly-icon v-if='(icon !== "none") && !loading'
@@ -29,57 +22,65 @@
                 :height='15'
                 :class='label || $slots.default ? "base-button_loader" : "base-button_loader-alone"'/> -->
 
-      <template v-if='label && !$slots.default'>
+      <template v-if="label && !$slots.default">
         {{ label }}
       </template>
 
-      <slot v-if='!label && $slots.default'/>
-
+      <slot v-if="!label && $slots.default" />
     </span>
-
   </div>
 </template>
 
 <script>
-  // import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
+// import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 
-  export default {
-    name: 'base-button',
-    props: {
-      label: {
-        type: String,
-        default: ''
+export default {
+  name: 'base-button',
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    type: {
+      type: String,
+      default: 'primary',
+      validator: value => {
+        return [
+          'text',
+          'plain',
+          'primary',
+          'success',
+          'danger',
+          'info',
+          'warning',
+          'premium',
+        ].includes(value)
       },
-      type: {
-        type: String,
-        default: 'primary',
-        validator: value => {
-          return ['text', 'plain', 'primary', 'success', 'danger', 'info', 'warning', 'premium'].includes(value)
-        }
+    },
+    size: {
+      type: String,
+      default: 'custom',
+      validator: value => {
+        return ['s', 'm', 'custom'].includes(value)
       },
-      size: {
-        type: String,
-        default: 'custom',
-        validator: value => {
-          return ['s', 'm', 'custom'].includes(value)
-        }
-      },
-      white: {
-        type: Boolean,
-        default: false
-      },
-      loading: {
-        type: Boolean,
-        default: false
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      icon: {
-        type: String,
-        validator: value => {
-          return [
+    },
+    white: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    icon: {
+      type: String,
+      validator: value => {
+        return (
+          [
             'none',
             'discover',
             'plan',
@@ -106,36 +107,37 @@
             'correct',
             'error',
             'padlock',
-            'burgerNav'
+            'burgerNav',
           ].includes(value) && false
-        }
+        )
+      },
+    },
+  },
+  computed: {
+    colorLoader() {
+      if (this.type === 'text') {
+        return '#56D2AB'
+      } else if (this.type === 'plain') {
+        return '#353745'
+      } else {
+        return 'white'
       }
     },
-    computed: {
-      colorLoader() {
-        if (this.type === 'text') {
-          return '#56D2AB'
-        } else if (this.type === 'plain') {
-          return '#353745'
-        } else {
-          return 'white'
-        }
+  },
+  methods: {
+    onClick() {
+      if (!this.loading && !this.disabled) {
+        this.$emit('click')
       }
     },
-    methods: {
-      onClick() {
-        if (!this.loading && !this.disabled) {
-          this.$emit('click')
-        }
-      }
-    },
-    // components: {
-    //   ClipLoader
-    // }
-  }
+  },
+  // components: {
+  //   ClipLoader
+  // }
+}
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 @import '../../assets/style/index';
 
 /* css loader */
@@ -175,7 +177,6 @@
   }
 }
 
-
 @mixin type($bgc, $textColor: $white) {
   background-color: $bgc;
   color: $textColor;
@@ -184,7 +185,7 @@
   border-color: $bgc;
 
   &:not(.disabled):hover {
-    background-color: lighten( $bgc, 4% );
+    background-color: lighten($bgc, 4%);
   }
 }
 
@@ -211,7 +212,7 @@
     height: auto;
     width: initial;
     padding: 12px 22px;
-      .base-button_text {
+    .base-button_text {
       font-size: $font-size-s;
     }
   }
@@ -219,7 +220,7 @@
     height: auto;
     width: initial;
     padding: 15px 25px;
-      .base-button_text {
+    .base-button_text {
       font-size: $font-size-m;
     }
   }

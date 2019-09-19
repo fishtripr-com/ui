@@ -1,2 +1,2 @@
-import ExperienceListingCard from './ExperienceListingCard';
-export default ExperienceListingCard;
+import ExperienceListingCard from './ExperienceListingCard'
+export default ExperienceListingCard

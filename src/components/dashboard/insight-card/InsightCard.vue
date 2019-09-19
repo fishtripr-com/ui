@@ -7,10 +7,7 @@
     <div class="main-description">
       <p class="text txt-5">{{ mainDescription }}</p>
     </div>
-    <div
-      v-if="additionnalDescription"
-      class="additionnal-description"
-      >
+    <div v-if="additionnalDescription" class="additionnal-description">
       <p class="subtext txt-5 semibold">{{ additionnalDescription }}</p>
     </div>
   </div>
@@ -23,12 +20,11 @@ export default {
     mainData: { type: String, required: true },
     mainDescription: { type: String, required: true },
     additionnalDescription: { type: String },
-    withStar: { type: Boolean, default: false }
-  }
+    withStar: { type: Boolean, default: false },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/default";
+@import '../../../assets/style/default';
 </style>
-

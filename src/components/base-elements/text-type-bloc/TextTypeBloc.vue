@@ -1,17 +1,7 @@
 <template functionnal>
   <div class="experience-type">
-
-    <div 
-      :class="[
-        'body',
-        { 'dark': dark }
-      ]"
-      >
-
-      <i 
-        class="text-type"
-        :class="className"
-        >
+    <div :class="['body', { dark: dark }]">
+      <i class="text-type" :class="className">
         {{ textLeft }}
       </i>
 
@@ -20,28 +10,32 @@
       <i class="text">
         {{ textRight }}
       </i>
-
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: "experience-type",
+  name: 'experience-type',
   props: {
-    className: { 
-      type: String, 
-      default: '' ,
+    className: {
+      type: String,
+      default: '',
       validator: value => {
-        return ['guide_hosting', 'guide', 'hosting', 'fishery', 'outfitter'].includes(value)
-      }
+        return [
+          'guide_hosting',
+          'guide',
+          'hosting',
+          'fishery',
+          'outfitter',
+        ].includes(value)
+      },
     },
     textType: { type: String, default: '' },
     text: { type: String, default: '' },
     separator: { type: String, default: '•' },
     uppercase: { type: Boolean, default: false },
-    dark: { type: Boolean, default: false }
+    dark: { type: Boolean, default: false },
   },
   computed: {
     textLeft() {
@@ -49,8 +43,8 @@ export default {
     },
     textRight() {
       return this.uppercase ? this.text.toUpperCase() : this.text
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -62,10 +56,10 @@ export default {
   flex-direction: column;
   box-sizing: border-box;
   text-align: left;
-  font-size:$font-size-xs;
+  font-size: $font-size-xs;
   font-weight: $semibold;
-  
-  .body { 
+
+  .body {
     display: flex;
     color: $color-text-light;
 
@@ -74,24 +68,26 @@ export default {
     }
 
     .text-type {
-
-      &.guide_hosting { color: $tag-guideNHost }
-      &.guide { color: $tag-guide }
-      &.hosting { color: $tag-host }
-      &.fishery { color: $tag-fishery }
-      &.outfitter { color: #56D2AB }
+      &.guide_hosting {
+        color: $tag-guideNHost;
+      }
+      &.guide {
+        color: $tag-guide;
+      }
+      &.hosting {
+        color: $tag-host;
+      }
+      &.fishery {
+        color: $tag-fishery;
+      }
+      &.outfitter {
+        color: #56d2ab;
+      }
     }
 
     .separator {
       margin: 0 3px;
     }
-
   }
 }
 </style>
-
-
- 
-
-
-

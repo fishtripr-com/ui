@@ -1,2 +1,2 @@
-import UserNavbarCard from './UserNavbarCard';
-export default UserNavbarCard;
+import UserNavbarCard from './UserNavbarCard'
+export default UserNavbarCard

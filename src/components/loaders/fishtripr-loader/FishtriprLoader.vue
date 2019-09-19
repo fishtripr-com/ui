@@ -1,6 +1,10 @@
 <template>
   <div class="fishtripr-loader">
-    <img src="../../../assets/images/fishtripr-logo-just-fish.svg" alt="logo fishtripr" class="logo">
+    <img
+      src="../../../assets/images/fishtripr-logo-just-fish.svg"
+      alt="logo fishtripr"
+      class="logo"
+    />
   </div>
 </template>
 
@@ -10,16 +14,28 @@ export default { name: 'fishtripr-loader' }
 
 <style lang="scss" scoped>
 @-moz-keyframes spin {
-  from { -moz-transform: rotate(0deg); }
-  to { -moz-transform: rotate(360deg); }
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
 }
 @-webkit-keyframes spin {
-  from { -webkit-transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); }
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
 @keyframes spin {
-  from {transform:rotate(0deg);}
-  to {transform:rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .fishtripr-loader {
   display: flex;

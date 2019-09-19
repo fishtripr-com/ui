@@ -1,7 +1,7 @@
 <template functionnal>
   <div
     class="partner-card"
-    :style="{ 'background-image': 'url(' + imageUrl + ')'}"
+    :style="{ 'background-image': 'url(' + imageUrl + ')' }"
     @click="onClick"
   >
     <template v-if="!isLoading">
@@ -20,23 +20,23 @@
 
 <script>
 export default {
-  name: "partner-card",
+  name: 'partner-card',
   props: {
     isLoading: { type: Boolean },
     imageUrl: { type: String },
-    title: { type: String }
+    title: { type: String },
   },
   computed: {},
   methods: {
     onClick() {
-      this.$emit("click");
-    }
-  }
-};
+      this.$emit('click')
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/main";
+@import '../../../assets/style/main';
 
 .partner-card {
   display: flex;
@@ -54,7 +54,7 @@ export default {
   background-size: cover;
 
   .body {
-    font-family: "Montserrat", sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
