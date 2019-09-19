@@ -1,2 +1,2 @@
-import EmployeeCard from './EmployeeCard';
-export default EmployeeCard;
+import EmployeeCard from './EmployeeCard'
+export default EmployeeCard

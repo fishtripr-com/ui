@@ -1,2 +1,2 @@
-import CopyableLink from './CopyableLink';
-export default CopyableLink;
+import CopyableLink from './CopyableLink'
+export default CopyableLink

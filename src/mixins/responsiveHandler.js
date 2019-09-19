@@ -11,8 +11,8 @@ export const responsiveHandler = {
         s: 1,
         m: 2,
         l: 3,
-        xl: 4
-      }
+        xl: 4,
+      },
     }
   },
   computed: {
@@ -24,7 +24,7 @@ export const responsiveHandler = {
     },
     isLargeOrDown() {
       return this.deviceSize <= this.deviceSizes.l
-    }
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -43,7 +43,7 @@ export const responsiveHandler = {
       this.setDeviceSize(this.elementWidth)
     },
     setElementHeight() {
-        this.elementHeight = this.element.innerHeight
+      this.elementHeight = this.element.innerHeight
     },
     setDeviceSize(width) {
       if (width > BREAKPOINT.L) {
@@ -59,12 +59,12 @@ export const responsiveHandler = {
         // smartphone
         this.deviceSize = 1
       }
-    }
+    },
   },
   beforeDestroy() {
     if (this.element) {
       window.removeEventListener('resize', this.setElementWidth)
       window.removeEventListener('resize', this.setElementHeight)
     }
-  }
+  },
 }

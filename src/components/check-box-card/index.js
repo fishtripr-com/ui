@@ -1,2 +1,2 @@
-import CheckBoxCard from './CheckBoxCard';
-export default CheckBoxCard;
+import CheckBoxCard from './CheckBoxCard'
+export default CheckBoxCard

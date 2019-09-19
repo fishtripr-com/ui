@@ -1,2 +1,2 @@
-import ConversationReceiverHeader from './ConversationReceiverHeader';
-export default ConversationReceiverHeader;
+import ConversationReceiverHeader from './ConversationReceiverHeader'
+export default ConversationReceiverHeader

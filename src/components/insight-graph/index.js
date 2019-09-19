@@ -1,2 +1,2 @@
-import InsightGraph from './InsightGraph';
-export default InsightGraph;
+import InsightGraph from './InsightGraph'
+export default InsightGraph
