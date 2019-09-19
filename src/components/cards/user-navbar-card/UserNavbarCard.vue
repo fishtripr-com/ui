@@ -1,23 +1,25 @@
 <template functionnal>
   <div :class="['user-navbar-card', theme]">
-    <div :class="['avatar-container', size, {'clickable':isClickable}]">
+    <div :class="['avatar-container', size, { clickable: isClickable }]">
       <avatar :class="[theme]" :size="size" :image="avatar" hasBorder />
     </div>
     <div v-if="deviceSize > deviceSizes.m" class="body">
       <p class="header">
         <span :class="['user-name', theme]">{{ userFirstName }}</span>
-        <span :class="['user-role', theme]">({{ userRole.toUpperCase() }})</span>
+        <span :class="['user-role', theme]"
+          >({{ userRole.toUpperCase() }})</span
+        >
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import Avatar from "../../avatar/Avatar";
-import { responsiveHandler } from "../../../mixins/responsiveHandler";
+import Avatar from '../../avatar/Avatar'
+import { responsiveHandler } from '../../../mixins/responsiveHandler'
 
 export default {
-  name: "user-navbar-card",
+  name: 'user-navbar-card',
   mixins: [responsiveHandler],
   components: { Avatar },
   props: {
@@ -26,27 +28,27 @@ export default {
     userRole: { type: String },
     isClickable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     size: {
       type: String,
-      default: "s"
+      default: 's',
     },
     theme: {
       type: String,
-      default: "light",
-      validator: value => ["light", "dark", "premium"].includes(value)
-    }
-  }
-};
+      default: 'light',
+      validator: value => ['light', 'dark', 'premium'].includes(value),
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/main";
+@import '../../../assets/style/main';
 
 .user-navbar-card {
   display: flex;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
   align-items: center;
 
   .avatar-container {

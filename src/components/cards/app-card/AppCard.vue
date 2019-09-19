@@ -1,35 +1,21 @@
 <template>
-  <div 
-    class="app-card"
-    @click="onClick">
-
+  <div class="app-card" @click="onClick">
     <div class="wrapper">
-
       <div class="image-container">
-        <image-container 
-          :image="image"
-          :height="100"
-          />
+        <image-container :image="image" :height="100" />
       </div>
-      
+
       <div class="header-container">
         <p class="title">
           {{ title }}
         </p>
-        <img 
-          v-if="icon"
-          :src="iconSVG" 
-          alt="icon check" 
-          class="icon"
-          >
+        <img v-if="icon" :src="iconSVG" alt="icon check" class="icon" />
       </div>
 
       <p class="description">
         {{ description }}
       </p>
-
     </div>
-
   </div>
 </template>
 
@@ -44,29 +30,29 @@ export default {
     image: { type: String },
     title: { type: String },
     description: { type: String },
-    status: { 
+    status: {
       type: String,
-      validator: value => ['on', 'off', 'coming soon'].includes(value)
+      validator: value => ['on', 'off', 'coming soon'].includes(value),
     },
-    icon: { 
+    icon: {
       type: String,
-      validator: value => ['check', 'lock'].includes(value)
+      validator: value => ['check', 'lock'].includes(value),
     },
   },
   computed: {
     iconSVG() {
       if (this.icon === 'check') {
-        return 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/images/icons/success.svg' 
+        return 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/images/icons/success.svg'
       } else {
         return 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/images/icons/padlock.svg'
       }
-    }
+    },
   },
   methods: {
     onClick() {
       this.$emit('click', this.id)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -110,7 +96,7 @@ export default {
     .description {
       font-size: 14px;
       font-weight: 500;
-      color: #898EA2;
+      color: #898ea2;
       margin: 0;
       margin-bottom: 5px;
     }

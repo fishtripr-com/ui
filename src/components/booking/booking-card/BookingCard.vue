@@ -1,9 +1,10 @@
 <template>
   <div class="booking-card">
-    <div :class="`wrapper ${isSmallOrDown ? 'p-5' : 'py-6 px-8'}`" @click="mobileEmit">
-
+    <div
+      :class="`wrapper ${isSmallOrDown ? 'p-5' : 'py-6 px-8'}`"
+      @click="mobileEmit"
+    >
       <div class="main-info">
-
         <header class="head">
           <div class="primary-info">
             <strong class="date txt-1 bold">{{ bookingDate }}</strong>
@@ -15,45 +16,37 @@
               :class="isDetailOpen ? 'up' : 'down'"
               :src="arrowBottom"
               alt="Arrow bottom"
-            >
+            />
           </div>
         </header>
 
         <div class="body mt-5">
-
           <div class="experience-info col">
-            <avatar
-              class="mr-5"
-              :image="experienceCover"
-              size="s"
-            />
+            <avatar class="mr-5" :image="experienceCover" size="s" />
             <div class="title-loc">
               <p class="title txt-4 mb-2">{{ experienceTitleTruncated }}</p>
-              <p class="location txt-5 light">{{ isSmallOrDown ? mobileBookingInfo : experienceAddress }}</p>
+              <p class="location txt-5 light">
+                {{ isSmallOrDown ? mobileBookingInfo : experienceAddress }}
+              </p>
             </div>
           </div>
 
           <div v-if="!isSmallOrDown" class="customer-info col">
             <p class="guests-duration txt-4 mb-2">{{ guestsAndDuration }}</p>
-            <p class="contact txt-5 light underlined" @click="emitContact">Contact guest</p>
+            <p class="contact txt-5 light underlined" @click="emitContact">
+              Contact guest
+            </p>
           </div>
 
           <div v-if="!isSmallOrDown" class="payment-info col">
             <p class="price txt-4 semibold mb-2">{{ price }}</p>
             <p class="status txt-4" :class="statusType">{{ statusText }}</p>
           </div>
-
         </div>
-
       </div>
 
-      <div
-        v-if="isDetailOpen && !isSmallOrDown"
-        class="details-info pt-8 mt-8"
-        >
-
+      <div v-if="isDetailOpen && !isSmallOrDown" class="details-info pt-8 mt-8">
         <div class="trip-info col">
-
           <div class="row mb-5">
             <h3 class="section-title txt-2 semibold">
               Trip details
@@ -81,11 +74,9 @@
               <p class="value txt-5 semibold">{{ guests }}</p>
             </section>
           </div>
-
         </div>
 
         <div class="customer-info col">
-
           <div class="row mb-5">
             <h3 class="section-title txt-2 semibold">
               Booked by
@@ -105,11 +96,9 @@
               <p class="value txt-5 semibold">{{ customerEmail }}</p>
             </section>
           </div>
-
         </div>
 
         <div class="payment-info col">
-
           <div class="row mb-5">
             <h3 class="section-title txt-2 semibold">
               Payments
@@ -135,11 +124,8 @@
             <p class="label txt-5 semibold">Total</p>
             <p class="value txt-5 semibold">{{ price }}</p>
           </div>
-
         </div>
-
       </div>
-
     </div>
   </div>
 </template>
@@ -151,7 +137,7 @@ import Avatar from '../../avatar/Avatar'
 
 export default {
   name: 'booking-card',
-  mixins: [ responsiveHandler ],
+  mixins: [responsiveHandler],
   components: { Avatar },
   props: {
     startDate: { type: String },
@@ -170,13 +156,13 @@ export default {
     totalPrice: { type: Number },
     deposit: { type: Number },
     currency: { type: String },
-    currencySymbol: { type: String }
+    currencySymbol: { type: String },
   },
   data() {
     return {
       isDetailOpen: false,
       experienceTitleMaxLength: 35,
-      experienceTitleMaxLengthMobile: 25
+      experienceTitleMaxLengthMobile: 25,
     }
   },
   computed: {
@@ -189,35 +175,45 @@ export default {
     channel() {
       return {
         text: this.source,
-        type: 'success'
+        type: 'success',
       }
     },
     experienceTitleTruncated() {
-      const limit = this.isSmallOrDown ? this.experienceTitleMaxLengthMobile : this.experienceTitleMaxLength
-      return this.experienceTitle.length > limit ? `${this.experienceTitle.slice(0, limit)}...` : this.experienceTitle
+      const limit = this.isSmallOrDown
+        ? this.experienceTitleMaxLengthMobile
+        : this.experienceTitleMaxLength
+      return this.experienceTitle.length > limit
+        ? `${this.experienceTitle.slice(0, limit)}...`
+        : this.experienceTitle
     },
     guestsAndDuration() {
-      return `${this.guests} guest${this.guests > 1 ? 's' : ''} - ${this.duration} day${this.duration > 1 ? 's' : ''}`
+      return `${this.guests} guest${this.guests > 1 ? 's' : ''} - ${
+        this.duration
+      } day${this.duration > 1 ? 's' : ''}`
     },
     price() {
       return `${this.currencySymbol} ${this.totalPrice.toFixed(2)}`
     },
     calculationPricePerGuest() {
       const pricePerGuest = (this.totalPrice / this.guests).toFixed(2)
-      return `${pricePerGuest} x ${this.guests} guest${this.guests > 1 ? 's' : ''}`
+      return `${pricePerGuest} x ${this.guests} guest${
+        this.guests > 1 ? 's' : ''
+      }`
     },
     depositPrice() {
       return `${this.currencySymbol} ${this.deposit.toFixed(2)}`
     },
     dueAmount() {
-      const dueAmount = this.deposit ? (this.totalPrice - this.deposit).toFixed(2) : 0
+      const dueAmount = this.deposit
+        ? (this.totalPrice - this.deposit).toFixed(2)
+        : 0
       return `${this.currencySymbol} ${dueAmount.toFixed(2)}`
     },
     mobileBookingInfo() {
       const guest = `${this.guests} guest${this.guests > 1 ? 's' : ''}`
       const duration = `${this.duration} day${this.duration > 1 ? 's' : ''}`
       return `${guest} - ${duration} - ${this.price}`
-    }
+    },
   },
   methods: {
     switchDetail() {
@@ -228,13 +224,13 @@ export default {
     },
     emitContact() {
       this.$emit('contactCustomer')
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/default";
+@import '../../../assets/style/default';
 
 .booking-card {
   width: 100%;
@@ -265,8 +261,12 @@ export default {
             object-fit: contain;
             transition: all 0.3s;
 
-            &.down { transform: rotate(90deg) }
-            &.up { transform: rotate(-90deg) }
+            &.down {
+              transform: rotate(90deg);
+            }
+            &.up {
+              transform: rotate(-90deg);
+            }
           }
         }
       }
@@ -283,7 +283,9 @@ export default {
           &.customer-info {
             flex: 2;
 
-            .contact { cursor: pointer }
+            .contact {
+              cursor: pointer;
+            }
           }
           &.payment-info {
             flex: 1.5;
@@ -303,9 +305,15 @@ export default {
         display: flex;
         flex-direction: column;
 
-        &.trip-info { flex: 3 }
-        &.customer-info { flex: 2 }
-        &.payment-info { flex: 1.5 }
+        &.trip-info {
+          flex: 3;
+        }
+        &.customer-info {
+          flex: 2;
+        }
+        &.payment-info {
+          flex: 1.5;
+        }
 
         .row {
           display: flex;

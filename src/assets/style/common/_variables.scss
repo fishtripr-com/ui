@@ -40,23 +40,23 @@ $border-card: 6px;
 // ==========================================================================
 
 // Primary
-$seafoam-blue: #56D2AB;
-$white: #FFFFFF;
+$seafoam-blue: #56d2ab;
+$white: #ffffff;
 // Secondary
 $charcoal-grey: #353745;
-$steel: #898EA2;
-$pale-grey: #E4E5EC;
+$steel: #898ea2;
+$pale-grey: #e4e5ec;
 // Status
-$watermelon: #FF4961;
-$aqua-marine: #30DEA0;
-$azure: #1E9FF2;
-$apricot: #FFC06A;
-$premium: #371d92;//#666EE8;
+$watermelon: #ff4961;
+$aqua-marine: #30dea0;
+$azure: #1e9ff2;
+$apricot: #ffc06a;
+$premium: #371d92; //#666EE8;
 // Tags
-$tag-guideNHost: #666EE8;
-$tag-guide: #BE7A0B;
-$tag-host: #36BEFB;
-$tag-fishery: #7C8E72;
+$tag-guideNHost: #666ee8;
+$tag-guide: #be7a0b;
+$tag-host: #36befb;
+$tag-fishery: #7c8e72;
 
 // 4.1 Colors : Template front end marketplace (DECISIONS)
 // ==========================================================================
@@ -103,12 +103,11 @@ $color-border-light: $steel;
 $color-border-dark: $white;
 $color-border-primary: $seafoam-blue;
 
-
 // 5. Fonts
 // ==========================================================================
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
-$font-family: 'Montserrat', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700");
+$font-family: "Montserrat", sans-serif;
 $font-size-xxs: 0.55rem;
 $font-size-xs: 0.65rem;
 $font-size-s: 0.75rem;

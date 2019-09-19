@@ -6,13 +6,10 @@
         v-if="!isCopied"
         class="copy-button txt-4 semibold premium"
         @click.stop.prevent="copyLink"
-        >
+      >
         Copy
       </span>
-      <span
-        v-else
-        class="copy-button txt-4 semibold success"
-        >
+      <span v-else class="copy-button txt-4 semibold success">
         Copied!
       </span>
     </header>
@@ -20,7 +17,7 @@
       class="link-to-copy txt-4 link-premium"
       :href="link"
       @click.stop.prevent="copyLink"
-      >
+    >
       {{ link }}
     </a>
     <input type="hidden" id="linkToCopy" :value="link" />
@@ -32,11 +29,11 @@ export default {
   name: 'copyable-link',
   props: {
     label: { type: String, required: true },
-    link: { type: String, required: true }
+    link: { type: String, required: true },
   },
   data() {
     return {
-      isCopied: false
+      isCopied: false,
     }
   },
   methods: {
@@ -54,13 +51,13 @@ export default {
       setTimeout(() => {
         this.switchIsCopied()
       }, 2000)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/default";
+@import '../../assets/style/default';
 
 .copyable-link {
   display: flex;
@@ -71,7 +68,9 @@ export default {
     flex-flow: row nowrap;
     justify-content: space-between;
 
-    .copy-button { cursor: pointer }
+    .copy-button {
+      cursor: pointer;
+    }
   }
   .link-to-copy {
     overflow-wrap: break-word;

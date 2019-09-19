@@ -10,25 +10,25 @@
 </template>
 
 <script>
-import { responsiveHandler } from "../../../mixins/responsiveHandler";
+import { responsiveHandler } from '../../../mixins/responsiveHandler'
 
 export default {
-  name: "conversation-receiver-header",
+  name: 'conversation-receiver-header',
   mixins: [responsiveHandler],
   props: {
-    userName: { type: String, default: "" },
-    onlineStatus: { type: Boolean, default: false }
+    userName: { type: String, default: '' },
+    onlineStatus: { type: Boolean, default: false },
   },
   computed: {
     statusIndicator() {
-      return this.onlineStatus ? "Online" : "Offline";
-    }
-  }
-};
+      return this.onlineStatus ? 'Online' : 'Offline'
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/main";
+@import '../../../assets/style/main';
 
 .conversation-receiver-header {
   display: flex;

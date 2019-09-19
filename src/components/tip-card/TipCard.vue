@@ -1,7 +1,6 @@
 <template>
   <div class="tip-card">
     <div class="wrapper">
-
       <div class="image-container">
         <image-container :image="image" :height="100" />
       </div>
@@ -10,24 +9,23 @@
         <p class="title">{{ title }}</p>
         <p class="text">{{ text }}</p>
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "tip-card",
+  name: 'tip-card',
   props: {
     image: { type: String },
-    title: { type: String, default: "" },
-    text: { type: String, default: "" }
-  }
-};
+    title: { type: String, default: '' },
+    text: { type: String, default: '' },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/index";
+@import '../../assets/style/index';
 
 .tip-card {
   display: flex;

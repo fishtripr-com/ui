@@ -22,30 +22,30 @@
 
 <script>
 export default {
-  name: "experience-card",
+  name: 'experience-card',
   props: {
     isLoading: { type: Boolean },
     image: { type: String },
     title: { type: String },
-    hat: { type: String }
+    hat: { type: String },
   },
   computed: {},
   methods: {
     onClick() {
-      this.$emit("click");
+      this.$emit('click')
     },
     truncate(title) {
       if (title.length > 50) {
-        return title.slice(0, 50 - 3) + "...";
+        return title.slice(0, 50 - 3) + '...'
       }
-      return title;
-    }
-  }
-};
+      return title
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/main";
+@import '../../../assets/style/main';
 
 .experience-card {
   display: flex;
@@ -72,7 +72,7 @@ export default {
     flex: 1;
     height: 100%;
     min-height: 100%;
-    font-family: "Montserrat", sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
