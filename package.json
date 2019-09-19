@@ -42,6 +42,7 @@
   },
   "scripts": {
     "build:prod": "webpack --mode production",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "prettier": "prettier --write 'src/**/*.js'"
   }
 }
