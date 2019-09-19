@@ -1,20 +1,16 @@
 <template>
   <div class="copyable-link">
     <header class="wrapper-header mb-5">
-      <span class="header-text txt-4 semibold">{{ label }}</span>
+      <span class="header-text txt-5 semibold">{{ label }}</span>
       <span
         v-if="!isCopied"
-        class="copy-button txt-4 semibold premium"
+        class="copy-button txt-5 semibold premium"
         @click.stop.prevent="copyLink"
-      >
-        Copy
-      </span>
-      <span v-else class="copy-button txt-4 semibold success">
-        Copied!
-      </span>
+      >Copy</span>
+      <span v-else class="copy-button txt-5 semibold success">Copied!</span>
     </header>
     <a
-      class="link-to-copy txt-4 link-premium"
+      class="link-to-copy txt-5 link-premium"
       :href="link"
       @click.stop.prevent="copyLink"
     >
