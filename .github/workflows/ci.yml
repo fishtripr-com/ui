@@ -8,4 +8,4 @@ jobs:
     - name: Install dependencies
       run: yarn
     - name: Run prettier
-      run: prettier --check '{src,stories}/**/*.*'
+      run: node_modules/.bin/prettier --check '{src,stories}/**/*.*'
