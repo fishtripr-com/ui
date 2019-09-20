@@ -1,3 +1,5 @@
+import { BREAKPOINT } from '@fishtripr/constants'
+
 export const responsiveHandler = {
   data() {
     return {
@@ -9,8 +11,8 @@ export const responsiveHandler = {
         s: 1,
         m: 2,
         l: 3,
-        xl: 4
-      }
+        xl: 4,
+      },
     }
   },
   computed: {
@@ -22,7 +24,7 @@ export const responsiveHandler = {
     },
     isLargeOrDown() {
       return this.deviceSize <= this.deviceSizes.l
-    }
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -36,33 +38,33 @@ export const responsiveHandler = {
     })
   },
   methods: {
-    setElementWidth(event) {
+    setElementWidth() {
       this.elementWidth = this.element.innerWidth
       this.setDeviceSize(this.elementWidth)
     },
-    setElementHeight(event) {
-        this.elementHeight = this.element.innerHeight
+    setElementHeight() {
+      this.elementHeight = this.element.innerHeight
     },
     setDeviceSize(width) {
-      if (width > 1200) {
+      if (width > BREAKPOINT.L) {
         // large desktop
         this.deviceSize = 4
-      } else if (width > 991 && width <= 1200) {
+      } else if (width > BREAKPOINT.M && width <= BREAKPOINT.L) {
         // laptop
         this.deviceSize = 3
-      } else if (width > 600 && width <= 991) {
+      } else if (width > BREAKPOINT.S && width <= BREAKPOINT.M) {
         // tablet
         this.deviceSize = 2
-      } else if (width <= 600) {
+      } else if (width <= BREAKPOINT.S) {
         // smartphone
         this.deviceSize = 1
       }
-    }
+    },
   },
   beforeDestroy() {
     if (this.element) {
       window.removeEventListener('resize', this.setElementWidth)
       window.removeEventListener('resize', this.setElementHeight)
     }
-  }
+  },
 }

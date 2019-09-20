@@ -1,13 +1,11 @@
 <template>
   <div class="experience-short-preview">
-
     <div class="info">
-
       <p
         class="title txt-3 bold"
-        :class="{ 'clickable': isListed && !custom }"
-        @click.native='experienceClicked'
-        >
+        :class="{ clickable: isListed && !custom }"
+        @click.native="experienceClicked"
+      >
         {{ titleToShow }}
       </p>
 
@@ -19,52 +17,48 @@
         :value="averageRating || 0"
         disabled
         show-score
-        text-color='#353745'
-        class='custom2'
-        />
-
-    </div>
-
-    <div class="image-container">
-      <img
-        class="image"
-        :src='cover'
-        :alt="title"
+        text-color="#353745"
+        class="custom2"
       />
     </div>
 
+    <div class="image-container">
+      <img class="image" :src="cover" :alt="title" />
+    </div>
   </div>
 </template>
 
 <script>
 import { IMG } from '@fishtripr/constants'
-import { Rate } from 'element-ui';
+import { Rate } from 'element-ui'
 
 export default {
   name: 'experience-short-preview',
   components: {
-    'el-rate': Rate
+    'el-rate': Rate,
   },
   props: {
     title: { type: String, required: true },
     image: { type: String, required: true },
     country: { type: String, default: '' },
     isListed: { type: Boolean, default: false },
-    custom: { type: Boolean, default: false }
+    custom: { type: Boolean, default: false },
   },
   computed: {
     titleToShow() {
-      return this.title.length > 20 ? this.title.slice(0, 20).trim() + '...' : this.title
+      return this.title.length > 20
+        ? this.title.slice(0, 20).trim() + '...'
+        : this.title
     },
     cover() {
       return this.custom ? IMG.ILLU.CUSTOM_OFFER : this.image
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/style/default";
+@import '../../../assets/style/default';
 @import '../../../../node_modules/element-ui/lib/theme-chalk/index.css';
 
 .experience-short-preview {
@@ -72,7 +66,7 @@ export default {
   align-items: flex-start;
 
   .info {
-    padding-right: map-get($spacers, "8");
+    padding-right: map-get($spacers, '8');
     flex: 1;
 
     .title {
@@ -82,7 +76,9 @@ export default {
       }
     }
 
-    .el-rate { margin-top: 2px }
+    .el-rate {
+      margin-top: 2px;
+    }
   }
 
   .image-container {

@@ -6,7 +6,7 @@
   font: {
     style: normal;
     weight: $fw;
-    size: $fs
+    size: $fs;
   }
   line-height: $lh;
   color: map-get($colors, "text");
@@ -17,13 +17,22 @@
 
 @each $size in map-keys($fs-title) {
   .title-#{$size} {
-    @include typo-base($fw-l, map-get($fs-title, $size), map-get($lh-title, $size))
+    @include typo-base(
+      $fw-l,
+      map-get($fs-title, $size),
+      map-get($lh-title, $size)
+    );
   }
 }
 
 @each $size in map-keys($fs-text) {
   .txt-#{$size} {
-    @include typo-base($fw-m, map-get($fs-text, $size), map-get($lh-text, $size))
+    @include typo-base(
+      $fw-m,
+      map-get($fs-text, $size),
+      map-get($lh-text, $size)
+    );
+    letter-spacing: 0.02rem;
   }
 }
 
@@ -57,35 +66,162 @@
   }
 }
 
+.link-premium {
+  color: map-get($colors, "link-premium") !important;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: map-get($colors, "link-hover-premium") !important;
+  }
+}
+
 //  3. Class light (For reverse theme)
 // ==========================================================================
 
 .light {
   color: map-get($colors, "text-light");
 }
+.lighter {
+  color: map-get($colors, "text-lighter");
+}
 .white {
   color: map-get($colors, "text-white");
 }
 
-//  4. Class bold
+//  4. Class font-weight
 // ==========================================================================
 
 .thin {
   font-weight: $fw-m;
 }
-.bold {
+.semibold {
   font-weight: $fw-l;
+}
+.bold {
+  font-weight: $fw-xl;
 }
 
 //  5. Class font color
 // ==========================================================================
 
-.primary { color: map-get($colors, 'primary') }
-.premium { color: map-get($colors, 'premium') }
-.black { color: map-get($colors, 'text') }
-.light { color: map-get($colors, 'text-light') }
-.white { color: map-get($colors, 'text-white') }
-.success { color: map-get($colors, 'success') }
-.danger { color: map-get($colors, 'danger') }
-.warning { color: map-get($colors, 'warning') }
-.info { color: map-get($colors, 'info') }
+.primary {
+  color: map-get($colors, "primary");
+}
+.premium {
+  color: map-get($colors, "premium");
+}
+.black {
+  color: map-get($colors, "text");
+}
+.light {
+  color: map-get($colors, "text-light");
+}
+.white {
+  color: map-get($colors, "text-white");
+}
+.success {
+  color: map-get($colors, "success");
+}
+.danger {
+  color: map-get($colors, "danger");
+}
+.warning {
+  color: map-get($colors, "warning");
+}
+.info {
+  color: map-get($colors, "info");
+}
+
+//  6. Margin
+// ==========================================================================
+
+@each $size in map-keys($spacers) {
+  @each $direction in "t", "b", "l", "r", "x", "y", "" {
+    $value: map-get($spacers, $size);
+
+    @if $direction == "x" {
+      .m#{$direction}-#{$size} {
+        margin-left: $value;
+        margin-right: $value;
+      }
+    } @else if $direction == "y" {
+      .m#{$direction}-#{$size} {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+    } @else if $direction == "t" {
+      .m#{$direction}-#{$size} {
+        margin-top: $value;
+      }
+    } @else if $direction == "b" {
+      .m#{$direction}-#{$size} {
+        margin-bottom: $value;
+      }
+    } @else if $direction == "l" {
+      .m#{$direction}-#{$size} {
+        margin-left: $value;
+      }
+    } @else if $direction == "r" {
+      .m#{$direction}-#{$size} {
+        margin-right: $value;
+      }
+    } @else if $direction == "" {
+      .m-#{$size} {
+        margin: $value;
+      }
+    }
+  }
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+//  7. Padding
+// ==========================================================================
+
+@each $size in map-keys($spacers) {
+  @each $direction in "t", "b", "l", "r", "x", "y", "" {
+    $value: map-get($spacers, $size);
+
+    @if $direction == "x" {
+      .p#{$direction}-#{$size} {
+        padding-left: $value;
+        padding-right: $value;
+      }
+    } @else if $direction == "y" {
+      .p#{$direction}-#{$size} {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+    } @else if $direction == "t" {
+      .p#{$direction}-#{$size} {
+        padding-top: $value;
+      }
+    } @else if $direction == "b" {
+      .p#{$direction}-#{$size} {
+        padding-bottom: $value;
+      }
+    } @else if $direction == "l" {
+      .p#{$direction}-#{$size} {
+        padding-left: $value;
+      }
+    } @else if $direction == "r" {
+      .p#{$direction}-#{$size} {
+        padding-right: $value;
+      }
+    } @else if $direction == "" {
+      .p-#{$size} {
+        padding: $value;
+      }
+    }
+  }
+}
+
+//  8. Decoration
+// ==========================================================================
+
+.underlined {
+  text-decoration: underline;
+}

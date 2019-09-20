@@ -1,2 +1,2 @@
-import MobileOfferHeader from './MobileOfferHeader';
-export default MobileOfferHeader;
+import MobileOfferHeader from './MobileOfferHeader'
+export default MobileOfferHeader

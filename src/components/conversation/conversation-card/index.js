@@ -1,2 +1,2 @@
-import ConversationCard from './ConversationCard';
-export default ConversationCard;
+import ConversationCard from './ConversationCard'
+export default ConversationCard

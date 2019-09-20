@@ -22,11 +22,14 @@ import Navigation from '../src/components/navigation';
 import ExperienceCard from '../src/components/cards/experience-card';
 import PartnerCard from '../src/components/cards/partner-card';
 import ShortExperiencePreview from '../src/components/experience/short-experience-preview/ShortExperiencePreview';
-import ConversationTextarea from '../src/components/conversation/conversation-textarea';
-import MobilePaymentLink from '../src/components/mobile-payment-link';
+import CopyableLink from '../src/components/copyable-link';
 import MobileOfferHeader from '../src/components/mobile-offer-header';
 import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header';
 import ExperienceListingCard from '../src/components/experience/experience-listing-card';
+import BookingCard from '../src/components/booking/booking-card';
+import InsightGraph from '../src/components/insight-graph';
+import InsightCard from '../src/components/dashboard/insight-card'
+
 
 // Register custom components.
 Vue.component('avatar', Avatar);
@@ -48,11 +51,15 @@ Vue.component('navigation', Navigation);
 Vue.component('experience-card', ExperienceCard);
 Vue.component('partner-card', PartnerCard);
 Vue.component('short-experience-preview', ShortExperiencePreview);
-Vue.component('send-message-textarea', ConversationTextarea);
-Vue.component('mobile-payment-link', MobilePaymentLink);
+Vue.component('copyable-link', CopyableLink);
 Vue.component('mobile-offer-header', MobileOfferHeader);
 Vue.component('conversation-receiver-header', ConversationReceiverHeader);
 Vue.component('experience-listing-card', ExperienceListingCard)
+Vue.component('booking-card', BookingCard)
+Vue.component('experience-listing-card', ExperienceListingCard);
+Vue.component('insight-graph', InsightGraph);
+Vue.component('experience-listing-card', ExperienceListingCard)
+Vue.component('insight-card', InsightCard)
 
 function loadStories() {
   // You can require as many stories as you need.

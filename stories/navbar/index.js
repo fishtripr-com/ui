@@ -1,10 +1,10 @@
-import { storiesOf } from '@storybook/vue';
+import { storiesOf } from '@storybook/vue'
 
 storiesOf('Navbar', module)
   .add(
     'Light',
     () =>
-    `<navbar 
+      `<navbar 
       theme="light"
       logoUrl="https://picsum.photos/150/80">
 
@@ -27,7 +27,7 @@ storiesOf('Navbar', module)
           />
         </template>
 
-      </navbar>`
+      </navbar>`,
   )
   .add(
     'Dark',
@@ -55,7 +55,7 @@ storiesOf('Navbar', module)
           />
         </template>
 
-      </navbar>`
+      </navbar>`,
   )
   .add(
     'Premium',
@@ -83,6 +83,5 @@ storiesOf('Navbar', module)
           />
         </template>
 
-      </navbar>`
-  );
-
+      </navbar>`,
+  )

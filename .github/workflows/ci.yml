@@ -1,0 +1,11 @@
+name: Continious Integration for the UI package
+on: push
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: yarn
+    - name: Run prettier
+      run: node_modules/.bin/prettier --check '{src,stories}/**/*.*'

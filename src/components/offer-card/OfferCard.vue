@@ -1,12 +1,8 @@
 <template functionnal>
-  <div
-    class="offer-card"
-    @click="onClick"
-    >
-
+  <div class="offer-card" @click="onClick">
     <template v-if="!isLoading">
       <div class="img">
-        <img :src="image"/>
+        <img :src="image" />
       </div>
 
       <div class="body">
@@ -14,26 +10,17 @@
           {{ truncate(title) }}
         </p>
 
-        <p class="hat">
-          {{ hat }}
-        </p>
+        <p class="hat">{{ truncate(hat) }}</p>
 
-        <p class="status" :class="mode">
-          {{ status }}
-        </p>
-
+        <p class="status" :class="mode">{{ actionStatus() }}</p>
       </div>
 
-      <div class="arrow">
-        <img
-          class="image"
-          :src="arrowIcon"
-          />
+      <div v-if="deviceSize > deviceSizes.s" class="arrow">
+        <img class="image" :src="arrowIcon" />
       </div>
     </template>
 
     <p v-else>Loading...</p>
-
   </div>
 </template>
 
@@ -43,7 +30,7 @@ import { responsiveHandler } from '../../mixins/responsiveHandler'
 
 export default {
   name: 'offer-card',
-  mixins: [ responsiveHandler ],
+  mixins: [responsiveHandler],
   props: {
     isLoading: { type: Boolean },
     image: { type: String },
@@ -55,30 +42,33 @@ export default {
   computed: {
     arrowIcon() {
       return IMG.ICON.ARROW_RIGHT
-    }
+    },
   },
   methods: {
     onClick() {
       this.$emit('click')
     },
-    truncate(title) {
+    truncate(text) {
       const charLimit = this.deviceSize === this.deviceSizes.s ? 20 : 50
-      if (title.length > charLimit) {
-        return title.slice(0, charLimit - 3).trim() + "...";
+      if (text.length > charLimit) {
+        return text.slice(0, charLimit - 3).trim() + '...'
       }
-      return title;
-    }
-  }
+      return text
+    },
+    actionStatus() {
+      return this.deviceSize <= this.deviceSizes.s ? 'See details' : this.status
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/index";
+@import '../../assets/style/index';
 
 .offer-card {
   display: flex;
   align-items: center;
-  border: 1px solid #E4E5EC;
+  border: 1px solid #e4e5ec;
   width: 100%;
   cursor: pointer;
   background-color: white;
@@ -88,7 +78,13 @@ export default {
   .img {
     width: 100px;
     height: 70px;
-    padding: 0.6rem;
+    padding: $space-xs;
+
+    @media #{$small-and-down} {
+      width: 80px;
+      height: 65px;
+      padding: $space-xxs;
+    }
 
     img {
       width: 100%;
@@ -100,7 +96,7 @@ export default {
   .body {
     flex: 1;
     height: 100%;
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: $font-family;
     max-height: 60px;
     display: flex;
     flex-direction: column;
@@ -116,7 +112,11 @@ export default {
       font-size: $font-size-xs;
       line-height: $line-height-xs;
       margin: 0;
-      color: #898EA2;
+      color: #898ea2;
+
+      @media #{$small-and-down} {
+        font-size: $font-size-xxs;
+      }
     }
     .status {
       font-size: $font-size-xs;
@@ -124,17 +124,21 @@ export default {
       line-height: $line-height-xs;
       margin: 0;
 
+      @media #{$small-and-down} {
+        color: $tag-guideNHost !important;
+      }
+
       &.success {
-        color: #30DEA0
+        color: #30dea0;
       }
       &.danger {
-        color: #FF4961
+        color: #ff4961;
       }
       &.warning {
-        color: #FFC06A
+        color: #ffc06a;
       }
       &.info {
-        color: #1E9FF2
+        color: #1e9ff2;
       }
     }
   }

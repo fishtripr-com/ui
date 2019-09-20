@@ -8,18 +8,18 @@
 
 <script>
 export default {
-  name: "employee-card",
+  name: 'employee-card',
   props: {
-    firstName: { type: String, default: "" },
-    lastName: { type: String, default: "" },
-    role: { type: String, default: "" }
-  }
-};
+    firstName: { type: String, default: '' },
+    lastName: { type: String, default: '' },
+    role: { type: String, default: '' },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
 .employee-card {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
 
   .first-name,
   .last-name {
@@ -37,4 +37,3 @@ export default {
   }
 }
 </style>
-

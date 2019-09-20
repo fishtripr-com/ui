@@ -1,2 +1,2 @@
-import ImageContainer from './ImageContainer';
-export default ImageContainer;
+import ImageContainer from './ImageContainer'
+export default ImageContainer

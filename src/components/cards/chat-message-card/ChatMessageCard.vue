@@ -1,26 +1,19 @@
 <template functionnal>
   <div class="chat-message-card">
-
     <div class="avatar-container">
-      <avatar 
-        :image="avatar"
-        size="s"
-       />
+      <avatar :image="avatar" size="s" />
     </div>
 
     <div class="body">
-
       <p class="header">
         <span class="nameAction">{{ messageHeader }}</span>
         <span class="time">{{ messageTime }}</span>
       </p>
 
       <div class="content">
-        <slot name="body"/>
+        <slot name="body" />
       </div>
-
     </div>
-
   </div>
 </template>
 
@@ -33,16 +26,18 @@ export default {
   props: {
     avatar: { type: String },
     messageHeader: { type: String },
-    messageTime: { type: String }
-  }
+    messageTime: { type: String },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/style/main';
+
 .chat-message-card {
   display: flex;
   font-family: 'Montserrat', sans-serif !important;
-  padding: .6rem 1.2rem;
+  padding: 0.6rem 1.2rem;
 
   &:hover {
     background-color: #f4f5fa;
@@ -52,7 +47,7 @@ export default {
     margin-right: 10px;
   }
 
-  .body { 
+  .body {
     width: 100%;
     overflow-x: hidden;
 
@@ -62,18 +57,26 @@ export default {
 
       .nameAction {
         font-weight: 700;
-        font-size: .9rem;
+        font-size: $font-size-m;
+
+        @media #{$small-and-down} {
+          font-size: $font-size-s;
+        }
       }
 
       .time {
-        font-size: .7rem;
-        color: #898EA2;
+        font-size: $font-size-s;
+        color: #898ea2;
+
+        @media #{$small-and-down} {
+          font-size: $font-size-xs;
+        }
       }
     }
 
     .content {
       width: 100%;
-      padding: .6rem 0;
+      padding: 0.6rem 0;
     }
   }
 }

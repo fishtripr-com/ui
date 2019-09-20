@@ -1,6 +1,6 @@
 {
   "name": "@fishtripr/ui",
-  "version": "0.0.3",
+  "version": "0.0.9",
   "description": "UI elements for Fishtripr",
   "license": "MIT",
   "repository": {
@@ -24,6 +24,7 @@
     "babel-preset-vue": "^2.0.2",
     "file-loader": "^4.2.0",
     "node-sass": "^4.11.0",
+    "prettier": "1.18.2",
     "sass-loader": "^7.1.0",
     "svg-inline-loader": "^0.8.0",
     "uglifyjs-webpack-plugin": "^2.1.2",
@@ -35,12 +36,13 @@
   "dependencies": {
     "@fishtripr/constants": "^0.0.12",
     "@fishtripr/js-functions": "^0.0.17",
-    "element-ui": "^2.11.1",
+    "element-ui": "^2.12.0",
     "vue": "^2.6.8",
     "vue-styled-components": "^1.4.4"
   },
   "scripts": {
     "build:prod": "webpack --mode production",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "prettier": "prettier --write '{src,stories}/**/*.*'"
   }
 }

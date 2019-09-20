@@ -1,22 +1,11 @@
 <template>
-  <div
-    class="check-box-card"
-    :class="{ 'disabled': disabled }"
-    @click="onClick"
-    >
-    <div
-      :class="[
-        'wrapper',
-        { 'checked': checked }
-      ]"
-      >
-
+  <div class="check-box-card" :class="{ disabled: disabled }" @click="onClick">
+    <div :class="['wrapper', { checked: checked }]">
       <div class="radio">
-        <div class="bullet" v-if="checked"/>
+        <div class="bullet" v-if="checked" />
       </div>
 
       <div class="body">
-
         <div class="row">
           <p class="title">{{ title }}</p>
           <p v-if="subtitle" class="text">{{ subtitle }}</p>
@@ -26,9 +15,7 @@
           <p class="title">{{ text }}</p>
           <p v-if="subtext" class="text">{{ subtext }}</p>
         </div>
-
       </div>
-
     </div>
   </div>
 </template>
@@ -42,18 +29,18 @@ export default {
     text: { type: String },
     subtitle: { type: String },
     subtext: { type: String },
-    disabled: { type: Boolean, default: false }
+    disabled: { type: Boolean, default: false },
   },
   methods: {
     onClick() {
       !this.disabled && this.$emit('click')
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/index";
+@import '../../assets/style/index';
 
 .check-box-card {
   display: flex;
@@ -63,7 +50,9 @@ export default {
   border: $border-card solid transparent;
   cursor: pointer;
 
-  &.disabled { opacity: 0.4 }
+  &.disabled {
+    opacity: 0.4;
+  }
 
   .wrapper {
     display: flex;
