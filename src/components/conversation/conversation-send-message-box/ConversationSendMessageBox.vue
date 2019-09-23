@@ -1,26 +1,27 @@
 <template>
   <form class="conversation-send-message-box">
-      <textarea
-        v-model="message"
-        :disabled="isLoading"
-        class="textarea txt-4"
-        :style="style.textarea"
-        id="textarea-element"
-        style="box-shadow: 0 1px 5px 0 rgba(0,0,0,.1)"
-      />
+    <textarea
+      v-model="message"
+      :disabled="isLoading"
+      class="textarea txt-4"
+      :style="style.textarea"
+      id="textarea-element"
+      style="box-shadow: 0 1px 5px 0 rgba(0,0,0,.1)"
+    />
 
-      <div class="action-group">
-        <div class="additionnal-actions">
-          <slot name="additionnal-actions"/>
-        </div>
-        <button
-          class="send-button txt-3 semibold mr-3 mt-3"
-          :class="{ primary: !premium, premium }"
-          :disabled="isLoading"
-          @click.stop.prevent="emitMessage">
-          Send
-        </button>
+    <div class="action-group">
+      <div class="additionnal-actions">
+        <slot name="additionnal-actions" />
       </div>
+      <button
+        class="send-button txt-3 semibold mr-3 mt-3"
+        :class="{ primary: !premium, premium }"
+        :disabled="isLoading"
+        @click.stop.prevent="emitMessage"
+      >
+        Send
+      </button>
+    </div>
   </form>
 </template>
 
@@ -41,9 +42,11 @@ export default {
       observe: null,
       style: {
         textarea: {
-          borderColor: this.premium ? COLORS.PRIMARY.PURPLE : COLORS.PRIMARY.GREEN
-        }
-      }
+          borderColor: this.premium
+            ? COLORS.PRIMARY.PURPLE
+            : COLORS.PRIMARY.GREEN,
+        },
+      },
     }
   },
   methods: {
