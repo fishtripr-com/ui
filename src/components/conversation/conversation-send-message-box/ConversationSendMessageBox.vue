@@ -3,8 +3,9 @@
     <textarea
       v-model="message"
       :disabled="isLoading"
-      class="textarea txt-4"
+      class="textarea txt-4 p-3"
       :style="style.textarea"
+      placeholder="Type a message..."
       id="textarea-element"
       style="box-shadow: 0 1px 5px 0 rgba(0,0,0,.1)"
     />
@@ -14,9 +15,9 @@
         <slot name="additionnal-actions" />
       </div>
       <button
-        class="send-button txt-3 semibold mr-3 mt-3"
-        :class="{ primary: !premium, premium }"
-        :disabled="isLoading"
+        class="send-button semibold mr-2 mt-2"
+        :class="[{ primary: !premium, premium }, this.isSmallOrDown ? 'txt-5' : 'txt-3']"
+        :disabled="!message.length || isLoading"
         @click.stop.prevent="emitMessage"
       >
         Send
@@ -107,6 +108,10 @@ export default {
   display: flex;
   flex-direction: column;
 
+  @media #{$screen-s} {
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
   .textarea {
     outline: none;
     resize: none;
@@ -116,15 +121,38 @@ export default {
       radius: 4px;
       color: map-get($colors, 'border');
     }
+
+    &:disabled {
+      border-color: map-get($colors, 'border') !important;
+      background-color: lighten(map-get($colors, 'border'), 5%) !important;
+      cursor: no-drop;
+    }
+
+    @media #{$screen-s} {
+      border: none;
+      border-radius: 0px;
+      box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px !important;
+    }
   }
+
   .action-group {
     display: flex;
     justify-content: space-between;
-  }
-  .send-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+
+    .additionnal-actions {
+      flex-grow: 1;
+    }
+
+    .send-button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:disabled {
+        color: map-get($colors, 'border') !important;
+        cursor: no-drop;
+      }
+    }
   }
 }
 </style>
