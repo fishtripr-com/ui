@@ -16,7 +16,10 @@
       </div>
       <button
         class="send-button semibold mr-2 mt-2"
-        :class="[{ primary: !premium, premium }, this.isSmallOrDown ? 'txt-5' : 'txt-3']"
+        :class="[
+          { primary: !premium, premium },
+          this.isSmallOrDown ? 'txt-5' : 'txt-3',
+        ]"
         :disabled="!message.length || isLoading"
         @click.stop.prevent="emitMessage"
       >
