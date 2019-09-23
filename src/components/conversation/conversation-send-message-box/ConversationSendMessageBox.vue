@@ -1,54 +1,53 @@
 <template>
-  <div class="conversation-send-message-box">
-    <!-- <el-form> -->
-      <el-input
+  <form class="conversation-send-message-box">
+      <textarea
         v-model="message"
-        :rows="2"
         :disabled="isLoading"
-        size="mini"
+        class="textarea txt-4"
+        :style="style.textarea"
         id="textarea-element"
-        resize="none"
         style="box-shadow: 0 1px 5px 0 rgba(0,0,0,.1)"
-        type="textarea"
       />
 
-      <div class="btn-group">
-        <div>
-          <el-button
-            v-if="deviceSize < deviceSizes.l"
-            icon="el-icon-tickets"
-            type="text"
-            class="more"
-            @click="onDocumentClicked"
-          />
+      <div class="action-group">
+        <div class="additionnal-actions">
+          <slot name="additionnal-actions"/>
         </div>
-        <el-button type="text" :disabled="isLoading" @click="sendMessage">
+        <button
+          class="send-button txt-3 semibold mr-3 mt-3"
+          :class="{ primary: !premium, premium }"
+          :disabled="isLoading"
+          @click.stop.prevent="emitMessage">
           Send
-        </el-button>
+        </button>
       </div>
-    <!-- </el-form> -->
-  </div>
+  </form>
 </template>
 
 <script>
-// import { ElButton, ElForm, ElInput } from 'element-ui'
+import { COLORS } from '@fishtripr/constants'
 import { responsiveHandler } from '../../../mixins/responsiveHandler'
 
 export default {
   name: 'conversation-send-message-box',
   mixins: [responsiveHandler],
-  // components: { ElButton, ElForm, ElInput },
   props: {
     isLoading: { type: Boolean, default: false },
+    premium: { type: Boolean, default: false },
   },
   data() {
     return {
       message: '',
       observe: null,
+      style: {
+        textarea: {
+          borderColor: this.premium ? COLORS.PRIMARY.PURPLE : COLORS.PRIMARY.GREEN
+        }
+      }
     }
   },
   methods: {
-    sendMessage() {
+    emitMessage() {
       if (this.message.length && !this.isLoading) {
         this.$emit('newMessage', this.message)
       }
@@ -75,9 +74,6 @@ export default {
       textAreaElement.select()
       resize()
     },
-    onDocumentClicked() {
-      this.$emit('documentClicked')
-    },
   },
   watch: {
     isLoading(newValue) {
@@ -102,15 +98,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.conversation-send-message-box {
-  .btn-group {
-    display: flex;
-    justify-content: space-between;
+@import '../../../assets/style/default';
 
-    .more {
-      transform: scale(1.3);
+.conversation-send-message-box {
+  display: flex;
+  flex-direction: column;
+
+  .textarea {
+    outline: none;
+    resize: none;
+    border: {
+      width: 1px;
+      style: solid;
+      radius: 4px;
+      color: map-get($colors, 'border');
     }
   }
+  .action-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  .send-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
-
 </style>
