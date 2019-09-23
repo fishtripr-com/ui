@@ -6,7 +6,8 @@
         v-if="!isCopied"
         class="copy-button txt-5 semibold premium"
         @click.stop.prevent="copyLink"
-      >Copy</span>
+        >Copy</span
+      >
       <span v-else class="copy-button txt-5 semibold success">Copied!</span>
     </header>
     <a

@@ -1,19 +1,19 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
-  externals : {
-    moment: 'element-ui'
+  externals: {
+    moment: 'element-ui',
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: path.resolve(__dirname, '../')
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        include: path.resolve(__dirname, '../'),
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        loader: 'svg-inline-loader',
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -22,11 +22,11 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      }
-    ]
-  }
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
