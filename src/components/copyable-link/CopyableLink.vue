@@ -14,9 +14,9 @@
       class="link-to-copy txt-5 link-premium"
       :href="link"
       @click.stop.prevent="copyLink"
+      >{{ link }}</a
     >
-      {{ link }}
-    </a>
+
     <input type="hidden" id="linkToCopy" :value="link" />
   </div>
 </template>
