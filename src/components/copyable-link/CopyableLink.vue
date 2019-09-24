@@ -38,16 +38,47 @@ export default {
       this.isCopied = !this.isCopied
     },
     copyLink() {
+      //for iOs mobile devices
       const textToCopy = document.querySelector('#linkToCopy')
       textToCopy.setAttribute('type', 'text')
-      textToCopy.select()
-      document.execCommand('copy')
-      textToCopy.setAttribute('type', 'hidden')
-      window.getSelection().removeAllRanges()
-      this.switchIsCopied()
-      setTimeout(() => {
+      let userAgent = window.navigator.userAgent
+
+      if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+        let oldContentEditable = textToCopy.contentEditable,
+          oldReadOnly = textToCopy.readOnly,
+          range = document.createRange()
+
+        textToCopy.contentEditable = true
+        textToCopy.readOnly = false
+        range.selectNodeContents(textToCopy)
+
+        let s = window.getSelection()
+        s.removeAllRanges()
+        s.addRange(range)
+
+        textToCopy.setSelectionRange(0, 999999)
+
+        textToCopy.contentEditable = oldContentEditable
+        textToCopy.readOnly = oldReadOnly
+
+        document.execCommand('copy')
+        textToCopy.setAttribute('type', 'hidden')
+        window.getSelection().removeAllRanges()
         this.switchIsCopied()
-      }, 2000)
+        setTimeout(() => {
+          this.switchIsCopied()
+        }, 2000)
+      } else {
+        //for other devices
+        textToCopy.select()
+        document.execCommand('copy')
+        textToCopy.setAttribute('type', 'hidden')
+        window.getSelection().removeAllRanges()
+        this.switchIsCopied()
+        setTimeout(() => {
+          this.switchIsCopied()
+        }, 2000)
+      }
     },
   },
 }
