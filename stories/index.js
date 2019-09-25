@@ -14,6 +14,7 @@ import './dashboard/insight-graph'
 import './dashboard/insight-card'
 import './copyable-link/copyableLink'
 import './modal/index'
+import './ui/loader'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
@@ -51,8 +52,6 @@ storiesOf('Images', module)
       '<image-container image="https://i.ytimg.com/vi/OJcvzRnPHCI/maxresdefault.jpg" :height="80" />',
   )
   .add('without URL', () => '<image-container/>')
-
-storiesOf('Loader', module).add('Basic', () => '<fishtripr-loader/>')
 
 storiesOf('Cards', module)
   .add(
