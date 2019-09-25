@@ -120,6 +120,7 @@ export default {
     outline: none;
     resize: none;
     font-family: $font-family;
+    font-size: $font-size-m;
     border: {
       width: 1px;
       style: solid;
