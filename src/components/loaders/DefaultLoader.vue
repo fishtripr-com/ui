@@ -1,6 +1,6 @@
 <template>
   <div class="default-loader">
-    <div class="spinner">
+    <div class="spinner" :class="size">
       <div
         :class="mode"
         v-for="i in 12"
@@ -18,6 +18,11 @@ export default {
       type: String,
       default: 'primary',
       validator: value => ['primary', 'premium'].includes(value)
+    },
+    size: {
+      type: String,
+      default: 'm',
+      validator: value => ['xs', 's', 'm', 'l', 'xl'].includes(value)
     }
   },
 }
@@ -47,6 +52,22 @@ export default {
     position: relative;
     width: 64px;
     height: 64px;
+
+    &.xs {
+      transform: scale(0.25);
+    }
+    &.s {
+      transform: scale(0.5);
+    }
+    &.m {
+      transform: scale(0.75);
+    }
+    &.l {
+      transform: scale(1);
+    }
+    &.xl {
+      transform: scale(1.25);
+    }
 
     div {
       transform-origin: 32px 32px;
