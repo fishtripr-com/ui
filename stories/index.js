@@ -13,6 +13,7 @@ import './conversation/send-message-box'
 import './dashboard/insight-graph'
 import './dashboard/insight-card'
 import './copyable-link/copyableLink'
+import './modal/index'
 import './ui/loader'
 
 storiesOf('Button', module)

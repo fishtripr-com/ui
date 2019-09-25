@@ -6,7 +6,6 @@ import Vue from 'vue'
 import Avatar from '../src/components/avatar'
 import ImageContainer from '../src/components/image-container'
 import ConversationCard from '../src/components/conversation/conversation-card'
-import FishtriprLoader from '../src/components/loaders/fishtripr-loader'
 import OfferCard from '../src/components/offer-card'
 import ChatMessageCard from '../src/components/cards/chat-message-card'
 import AppCard from '../src/components/cards/app-card'
@@ -30,13 +29,13 @@ import BookingCard from '../src/components/booking/booking-card'
 import InsightGraph from '../src/components/insight-graph'
 import InsightCard from '../src/components/dashboard/insight-card'
 import ConversationSendMessageBox from '../src/components/conversation/conversation-send-message-box'
+import BasicModal from '../src/components/modal'
 import DefaultLoader from '../src/components/loaders/DefaultLoader'
 
 // Register custom components.
 Vue.component('avatar', Avatar)
 Vue.component('image-container', ImageContainer)
 Vue.component('conversation-card', ConversationCard)
-Vue.component('fishtripr-loader', FishtriprLoader)
 Vue.component('offer-card', OfferCard)
 Vue.component('chat-message-card', ChatMessageCard)
 Vue.component('app-card', AppCard)
@@ -62,6 +61,7 @@ Vue.component('insight-graph', InsightGraph)
 Vue.component('experience-listing-card', ExperienceListingCard)
 Vue.component('insight-card', InsightCard)
 Vue.component('conversation-send-message-box', ConversationSendMessageBox)
+Vue.component('basic-modal', BasicModal)
 Vue.component('default-loader', DefaultLoader)
 
 function loadStories() {

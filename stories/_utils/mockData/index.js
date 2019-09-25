@@ -45,4 +45,7 @@ export default {
       { label: 'Dec', value: 0 },
     ],
   },
+  modal: {
+    image: 'https://picsum.photos/200/300',
+  },
 }
