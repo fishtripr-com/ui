@@ -13,6 +13,7 @@ import './conversation/send-message-box'
 import './dashboard/insight-graph'
 import './dashboard/insight-card'
 import './copyable-link/copyableLink'
+import './modal/index'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
