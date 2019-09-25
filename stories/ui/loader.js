@@ -1,47 +1,26 @@
 import { storiesOf } from '@storybook/vue'
 
 storiesOf('UI/Loader/Mode', module)
-.add(
-  'Primary',
-  () => ({
+  .add('Primary', () => ({
     template: `<default-loader/>`,
-  })
-)
-.add(
-  'Premium',
-  () => ({
+  }))
+  .add('Premium', () => ({
     template: `<default-loader mode="premium"/>`,
-  })
-)
+  }))
 
 storiesOf('UI/Loader/Sizes', module)
-.add(
-  'Extra small',
-  () => ({
+  .add('Extra small', () => ({
     template: `<default-loader size="xs"/>`,
-  })
-)
-.add(
-  'Small',
-  () => ({
+  }))
+  .add('Small', () => ({
     template: `<default-loader size="s"/>`,
-  })
-)
-.add(
-  'Medium (default)',
-  () => ({
+  }))
+  .add('Medium (default)', () => ({
     template: `<default-loader/>`,
-  })
-)
-.add(
-  'Large',
-  () => ({
+  }))
+  .add('Large', () => ({
     template: `<default-loader size="l"/>`,
-  })
-)
-.add(
-  'Extra large',
-  () => ({
+  }))
+  .add('Extra large', () => ({
     template: `<default-loader size="xl"/>`,
-  })
-)
+  }))

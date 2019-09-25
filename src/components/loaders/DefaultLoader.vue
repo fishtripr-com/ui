@@ -1,11 +1,7 @@
 <template>
   <div class="default-loader">
     <div class="spinner" :class="size">
-      <div
-        :class="mode"
-        v-for="i in 12"
-        :key="i"
-      />
+      <div :class="mode" v-for="i in 12" :key="i" />
     </div>
   </div>
 </template>
@@ -17,13 +13,13 @@ export default {
     mode: {
       type: String,
       default: 'primary',
-      validator: value => ['primary', 'premium'].includes(value)
+      validator: value => ['primary', 'premium'].includes(value),
     },
     size: {
       type: String,
       default: 'm',
-      validator: value => ['xs', 's', 'm', 'l', 'xl'].includes(value)
-    }
+      validator: value => ['xs', 's', 'm', 'l', 'xl'].includes(value),
+    },
   },
 }
 </script>
@@ -74,7 +70,7 @@ export default {
       animation: spinner 1.2s linear infinite;
 
       &:after {
-        content: " ";
+        content: ' ';
         display: block;
         position: absolute;
         top: 3px;
