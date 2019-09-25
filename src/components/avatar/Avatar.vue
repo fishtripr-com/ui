@@ -54,7 +54,9 @@ export default {
   methods: {
     getRandomFallback() {
       const randomNumber = getRandomNumber(1, this.fishesColorNames.length)
-      return `${S3_BUCKET_URL}/illu_fish_${this.fishesColorNames[randomNumber]}.png`
+      return `${S3_BUCKET_URL}/illu_fish_${
+        this.fishesColorNames[randomNumber]
+      }.png`
     },
   },
 }
