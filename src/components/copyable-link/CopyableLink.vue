@@ -17,7 +17,7 @@
       >{{ link }}</a
     >
 
-    <input type="hidden" id="linkToCopy" :value="link" />
+    <input type="hidden" id="linkToCopy" :value="link" readonly="true" />
   </div>
 </template>
 

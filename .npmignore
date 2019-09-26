@@ -1,1 +1,28 @@
+# npmignore
+
+# Dependency directory
 node_modules
+node_modules/*
+
+# Optional npm cache directory
+.npm
+
+# Compile tools
+.babelrc
+.editorconfig
+webpack.config.js
+.prettierrc
+.prettierignore
+
+# scripts
+*.sh
+
+# storybook
+.storybook
+.storybook/*
+stories
+stories/*
+
+# dev sources
+src
+src/*
