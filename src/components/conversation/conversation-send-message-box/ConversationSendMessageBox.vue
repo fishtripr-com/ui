@@ -106,7 +106,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../../assets/style/default';
-@import '../../../assets/style/index';
 
 .conversation-send-message-box {
   display: flex;
@@ -119,8 +118,7 @@ export default {
   .textarea {
     outline: none;
     resize: none;
-    font-family: $font-family;
-    font-size: $font-size-m;
+    font-family: $ff;
     border: {
       width: 1px;
       style: solid;
