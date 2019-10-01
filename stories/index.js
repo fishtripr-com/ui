@@ -15,6 +15,7 @@ import './dashboard/insight-card'
 import './copyable-link/copyableLink'
 import './modal/index'
 import './ui/loader'
+import './ui/status'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')

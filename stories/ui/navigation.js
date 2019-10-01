@@ -12,11 +12,10 @@ const dataMixin = {
 
 storiesOf('UI/Navigation/Theme', module)
 .add(
-  'Light',
+  'Light (default)',
   () => ({
     mixins: [dataMixin],
     template: `<navigation
-      theme="light"
       :items="navItems"
       />`,
   })

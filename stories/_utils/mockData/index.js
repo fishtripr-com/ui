@@ -56,5 +56,6 @@ export default {
       { id: 3, path: '/ddd', label: 'Experience' },
       { id: 4, path: '/eee', label: 'Appstore' },
     ]
-  }
+  },
+  status: ['Inquiry sent', 'Offer created', 'Offer accepted', 'Offer paid'],
 }

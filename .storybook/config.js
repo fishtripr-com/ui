@@ -31,6 +31,7 @@ import InsightCard from '../src/components/dashboard/insight-card'
 import ConversationSendMessageBox from '../src/components/conversation/conversation-send-message-box'
 import BasicModal from '../src/components/modal'
 import DefaultLoader from '../src/components/loaders/DefaultLoader'
+import Status from '../src/components/ui/status'
 
 // Register custom components.
 Vue.component('avatar', Avatar)
@@ -63,6 +64,7 @@ Vue.component('insight-card', InsightCard)
 Vue.component('conversation-send-message-box', ConversationSendMessageBox)
 Vue.component('basic-modal', BasicModal)
 Vue.component('default-loader', DefaultLoader)
+Vue.component('status', Status)
 
 function loadStories() {
   // You can require as many stories as you need.
