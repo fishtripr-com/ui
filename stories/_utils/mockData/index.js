@@ -48,4 +48,14 @@ export default {
   modal: {
     image: 'https://picsum.photos/200/300',
   },
+  nav: {
+    navItems: [
+      { id: 0, path: '/aaa', label: 'Dashboard' },
+      { id: 1, path: '/bbb', label: 'Inbox' },
+      { id: 2, path: '/ccc', label: 'Bookings' },
+      { id: 3, path: '/ddd', label: 'Experience' },
+      { id: 4, path: '/eee', label: 'Appstore' },
+    ]
+  },
+  status: ['Inquiry sent', 'Offer created', 'Offer accepted', 'Offer paid'],
 }

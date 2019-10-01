@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/vue'
 import './booking/booking-card/index'
 import './experience/experience-listing-card'
 import './experience/short-experience-preview/index'
-import './navigation/index'
+import './ui/navigation'
 import './navbar/index'
 import './offer/offerCard'
 import './offer/offerMobileHeader'
@@ -15,6 +15,7 @@ import './dashboard/insight-card'
 import './copyable-link/copyableLink'
 import './modal/index'
 import './ui/loader'
+import './ui/status'
 
 storiesOf('Button', module)
   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
