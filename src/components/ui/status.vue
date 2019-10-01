@@ -72,9 +72,6 @@ export default {
 .status {
   display: flex;
   flex-direction: column;
-  padding-top: map-get($spacers, 8);
-  margin-top: 20px;
-  border-top: 1px solid map-get($colors, "border");
 
   .step {
     display: flex;
