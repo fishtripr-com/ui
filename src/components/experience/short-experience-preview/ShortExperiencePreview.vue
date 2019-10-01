@@ -1,20 +1,24 @@
 <template>
-  <div class="experience-short-preview">
+  <loader
+    v-if="!isLoading"
+    :mode="premium ? 'premium' : 'primary'"
+  />
+  <div v-else class="experience-short-preview">
     <div class="info">
       <p
-        class="title txt-3 bold"
+        class="title txt-3 semibold"
         :class="{ clickable: isListed && !custom }"
         @click.native="experienceClicked"
       >
         {{ titleToShow }}
       </p>
 
-      <span class="txt-5">
-        {{ country }}
+      <span class="txt-6 light">
+        {{ `${country}${city && ', ' + city}` }}
       </span>
 
       <el-rate
-        :value="averageRating || 0"
+        :value="averageRating"
         disabled
         show-score
         text-color="#353745"
@@ -31,18 +35,24 @@
 <script>
 import { IMG } from '@fishtripr/constants'
 import { Rate } from 'element-ui'
+import Loader from '../../loaders/DefaultLoader'
 
 export default {
   name: 'experience-short-preview',
   components: {
     'el-rate': Rate,
+    Loader
   },
   props: {
     title: { type: String, required: true },
     image: { type: String, required: true },
     country: { type: String, default: '' },
+    city: { type: String, default: '' },
     isListed: { type: Boolean, default: false },
     custom: { type: Boolean, default: false },
+    isLoading: { type: Boolean, default: false },
+    premium: { type: Boolean, default: false },
+    averageRating: { type: Number, default: 0 },
   },
   computed: {
     titleToShow() {
