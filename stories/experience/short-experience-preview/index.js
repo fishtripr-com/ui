@@ -6,13 +6,19 @@ storiesOf('Experience/Short Experience Preview', module).add('Default', () => ({
   data() {
     return {
       title: data.experience.title,
+      cover: data.experience.cover,
+      country: data.experience.country,
+      city: data.experience.city,
+      averageRating: data.experience.reviews_average,
     }
   },
   template: `<div style="width:350px;">
       <short-experience-preview
         :title="title"
-        country="Belgium"
-        image="https://picsum.photos/200/300"
+        :country="country"
+        :city="city"
+        :image="cover"
+        :average-rating="averageRating"
         is-listed
       />
     </div>`,
