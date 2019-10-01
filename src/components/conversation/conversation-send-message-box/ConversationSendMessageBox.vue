@@ -118,6 +118,7 @@ export default {
   .textarea {
     outline: none;
     resize: none;
+    font-family: $ff;
     border: {
       width: 1px;
       style: solid;
