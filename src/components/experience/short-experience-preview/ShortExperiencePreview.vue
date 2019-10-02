@@ -1,6 +1,6 @@
 <template>
   <loader
-    v-if="!isLoading"
+    v-if="isLoading"
     :mode="premium ? 'premium' : 'primary'"
   />
   <div v-else class="experience-short-preview">

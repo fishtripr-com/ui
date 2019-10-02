@@ -32,6 +32,7 @@ import ConversationSendMessageBox from '../src/components/conversation/conversat
 import BasicModal from '../src/components/modal'
 import DefaultLoader from '../src/components/loaders/DefaultLoader'
 import Status from '../src/components/ui/status'
+import OfferPreview from '../src/components/offer/offer-preview/OfferPreview'
 
 // Register custom components.
 Vue.component('avatar', Avatar)
@@ -65,6 +66,7 @@ Vue.component('conversation-send-message-box', ConversationSendMessageBox)
 Vue.component('basic-modal', BasicModal)
 Vue.component('default-loader', DefaultLoader)
 Vue.component('status', Status)
+Vue.component('offer-preview', OfferPreview)
 
 function loadStories() {
   // You can require as many stories as you need.
