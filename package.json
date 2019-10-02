@@ -42,6 +42,7 @@
   },
   "scripts": {
     "build:prod": "webpack --mode production",
+    "build:storybook": "build-storybook -c .storybook -s public -o storybook-static",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "prettier": "prettier --write '{src,stories,.storybook}/**/*.*'"
   }

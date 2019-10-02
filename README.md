@@ -34,6 +34,12 @@ To start Storybook for this project, run this command:
 $ yarn run storybook
 ```
 
+To build storybook for deployment run:
+
+```bash
+$ yarn run build:storybook
+```
+
 This will redirect to [http://localhost:9001](http://localhost:9001) where you can browse all the components.
 
 ## License
