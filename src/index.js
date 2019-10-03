@@ -1,7 +1,7 @@
 // Vue omponents
 import AppCard from './components/cards/app-card'
 import Avatar from './components/avatar'
-import BaseButton from './components/button'
+import BaseButton from './components/ui/BaseButton'
 import BookingCard from './components/booking/booking-card'
 import ChatMessageCard from './components/cards/chat-message-card'
 import CheckBoxCard from './components/check-box-card'

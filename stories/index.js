@@ -1,9 +1,12 @@
 import { storiesOf } from '@storybook/vue'
 
+import './ui/button'
+import './ui/loader'
+import './ui/status'
+import './ui/navigation'
 import './booking/booking-card/index'
 import './experience/experience-listing-card'
 import './experience/short-experience-preview/index'
-import './ui/navigation'
 import './navbar/index'
 import './offer/offerCard'
 import './offer/offerMobileHeader'
@@ -15,17 +18,15 @@ import './dashboard/insight-graph'
 import './dashboard/insight-card'
 import './copyable-link/copyableLink'
 import './modal/index'
-import './ui/loader'
-import './ui/status'
 
-storiesOf('Button', module)
-  .add('Loading', () => '<base-button label="I\'m loading" loading/>')
-  .add('Primary', () => '<base-button>Click me</base-button>')
-  .add('Success', () => '<base-button type="success">Click me</base-button>')
-  .add('Danger', () => '<base-button type="danger">Click me</base-button>')
-  .add('Premium', () => '<base-button type="premium">Click me</base-button>')
-  .add('Small', () => '<base-button size="s">Click me</base-button>')
-  .add('Medium', () => '<base-button size="m">Click me</base-button>')
+// storiesOf('Button', module)
+//   .add('Loading', () => '<base-button label="I\'m loading" loading/>')
+//   .add('Primary', () => '<base-button>Click me</base-button>')
+//   .add('Success', () => '<base-button type="success">Click me</base-button>')
+//   .add('Danger', () => '<base-button type="danger">Click me</base-button>')
+//   .add('Premium', () => '<base-button type="premium">Click me</base-button>')
+//   .add('Small', () => '<base-button size="s">Click me</base-button>')
+//   .add('Medium', () => '<base-button size="m">Click me</base-button>')
 
 storiesOf('Avatar', module)
   .add(

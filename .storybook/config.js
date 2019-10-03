@@ -2,37 +2,57 @@ import { configure } from '@storybook/vue'
 
 import Vue from 'vue'
 
-// Import your custom components.
+/**
+ * UI
+ */
 import Avatar from '../src/components/avatar'
 import ImageContainer from '../src/components/image-container'
-import ConversationCard from '../src/components/conversation/conversation-card'
-import OfferCard from '../src/components/offer-card'
-import ChatMessageCard from '../src/components/cards/chat-message-card'
 import AppCard from '../src/components/cards/app-card'
 import EmployeeCard from '../src/components/cards/employee-card'
 import UserNavbarCard from '../src/components/cards/user-navbar-card'
-import BaseButton from '../src/components/button'
+import BaseButton from '../src/components/ui/BaseButton'
 import TextTypeBloc from '../src/components/base-elements/text-type-bloc'
 import CheckBoxCard from '../src/components/check-box-card/CheckBoxCard'
-import TipCard from '../src/components/tip-card'
-import MarketingThumb from '../src/components/marketing-thumb'
 import Navbar from '../src/components/navbar'
 import Navigation from '../src/components/navigation'
-import ExperienceCard from '../src/components/cards/experience-card'
-import PartnerCard from '../src/components/cards/partner-card'
-import ShortExperiencePreview from '../src/components/experience/short-experience-preview/ShortExperiencePreview'
-import CopyableLink from '../src/components/copyable-link'
-import MobileOfferHeader from '../src/components/mobile-offer-header'
-import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header'
-import ExperienceListingCard from '../src/components/experience/experience-listing-card'
-import BookingCard from '../src/components/booking/booking-card'
-import InsightGraph from '../src/components/insight-graph'
-import InsightCard from '../src/components/dashboard/insight-card'
-import ConversationSendMessageBox from '../src/components/conversation/conversation-send-message-box'
-import BasicModal from '../src/components/modal'
 import DefaultLoader from '../src/components/loaders/DefaultLoader'
-import Status from '../src/components/ui/status'
+import PartnerCard from '../src/components/cards/partner-card'
+
+/**
+ * Experience
+ */
+import ExperienceCard from '../src/components/cards/experience-card'
+import ShortExperiencePreview from '../src/components/experience/short-experience-preview/ShortExperiencePreview'
+import ExperienceListingCard from '../src/components/experience/experience-listing-card'
+
+/**
+ * Conversation
+ */
+import ConversationCard from '../src/components/conversation/conversation-card'
+import ChatMessageCard from '../src/components/cards/chat-message-card'
+import ConversationReceiverHeader from '../src/components/conversation/conversation-receiver-header'
+import ConversationSendMessageBox from '../src/components/conversation/conversation-send-message-box'
+
+/**
+ * Offer
+ */
+import OfferCard from '../src/components/offer-card'
 import OfferPreview from '../src/components/offer/offer-preview/OfferPreview'
+import MobileOfferHeader from '../src/components/mobile-offer-header'
+
+/**
+ * booking
+ */
+import BookingCard from '../src/components/booking/booking-card'
+
+/**
+ * Others
+ */
+import TipCard from '../src/components/tip-card'
+import MarketingThumb from '../src/components/marketing-thumb'
+import CopyableLink from '../src/components/copyable-link'
+import InsightCard from '../src/components/dashboard/insight-card'
+import InsightGraph from '../src/components/insight-graph'
 
 // Register custom components.
 Vue.component('avatar', Avatar)
@@ -63,9 +83,7 @@ Vue.component('insight-graph', InsightGraph)
 Vue.component('experience-listing-card', ExperienceListingCard)
 Vue.component('insight-card', InsightCard)
 Vue.component('conversation-send-message-box', ConversationSendMessageBox)
-Vue.component('basic-modal', BasicModal)
 Vue.component('default-loader', DefaultLoader)
-Vue.component('status', Status)
 Vue.component('offer-preview', OfferPreview)
 
 function loadStories() {
