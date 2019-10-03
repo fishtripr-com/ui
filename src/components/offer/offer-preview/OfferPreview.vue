@@ -17,7 +17,7 @@
           Offer status
         </p>
         <p class="txt-4 bold" :class="offerStatusType">
-          {{ offerStatusType }}
+          {{ offerStatusText }}
         </p>
       </div>
 
