@@ -5,38 +5,29 @@ import data from '../_utils/mockData/index'
 const dataMixin = {
   data() {
     return {
-      navItems: data.nav.navItems
+      navItems: data.nav.navItems,
     }
   },
 }
 
 storiesOf('UI/Navigation/Theme', module)
-.add(
-  'Light (default)',
-  () => ({
+  .add('Light (default)', () => ({
     mixins: [dataMixin],
     template: `<navigation
       :items="navItems"
       />`,
-  })
-)
-.add(
-  'Dark',
-  () => ({
+  }))
+  .add('Dark', () => ({
     mixins: [dataMixin],
     template: `<navigation
       theme="dark"
       :items="navItems"
       />`,
-  })
-)
-.add(
-  'Premium',
-  () => ({
+  }))
+  .add('Premium', () => ({
     mixins: [dataMixin],
     template: `<navigation
       theme="premium"
       :items="navItems"
       />`,
-  })
-)
+  }))

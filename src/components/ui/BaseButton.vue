@@ -6,8 +6,8 @@
     @click="onClick"
   >
     <div v-if="isLoading || $slots.icon" class="icon-wrapper">
-      <loader v-if="isLoading" :mode="loaderMode" size="xs"/>
-      <slot v-else-if="$slots.icon" name="icon"/>
+      <loader v-if="isLoading" :mode="loaderMode" size="xs" />
+      <slot v-else-if="$slots.icon" name="icon" />
     </div>
     <p class="text">
       {{ label }}
@@ -43,7 +43,8 @@ export default {
     size: {
       type: String,
       default: 'm',
-      validator: value => ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'].includes(value),
+      validator: value =>
+        ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'].includes(value),
     },
     isLoading: { type: Boolean, default: false },
     isDisabled: { type: Boolean, default: false },
@@ -55,43 +56,43 @@ export default {
         case 'default':
           return {
             backgroundColor: 'transparent',
-            boxShadow: 'none'
+            boxShadow: 'none',
           }
         case 'primary':
           return {
             backgroundColor: COLORS.PRIMARY.GREEN,
             borderColor: COLORS.PRIMARY.GREEN,
-            color: COLORS.BACKGROUND.WHITE
+            color: COLORS.BACKGROUND.WHITE,
           }
         case 'premium':
           return {
             backgroundColor: COLORS.PRIMARY.PURPLE,
             borderColor: COLORS.PRIMARY.PURPLE,
-            color: COLORS.BACKGROUND.WHITE
+            color: COLORS.BACKGROUND.WHITE,
           }
         case 'success':
           return {
             backgroundColor: COLORS.STATE.SUCCESS,
             borderColor: COLORS.STATE.SUCCESS,
-            color: COLORS.BACKGROUND.WHITE
+            color: COLORS.BACKGROUND.WHITE,
           }
         case 'danger':
           return {
             backgroundColor: COLORS.STATE.DANGER,
             borderColor: COLORS.STATE.DANGER,
-            color: COLORS.BACKGROUND.WHITE
+            color: COLORS.BACKGROUND.WHITE,
           }
         case 'info':
           return {
             backgroundColor: COLORS.STATE.INFO,
             borderColor: COLORS.STATE.INFO,
-            color: COLORS.BACKGROUND.WHITE
+            color: COLORS.BACKGROUND.WHITE,
           }
         case 'warning':
           return {
             backgroundColor: COLORS.STATE.WARNING,
             borderColor: COLORS.STATE.WARNING,
-            color: COLORS.BACKGROUND.WHITE
+            color: COLORS.BACKGROUND.WHITE,
           }
         case 'text':
           return {
@@ -104,52 +105,52 @@ export default {
       switch (this.size) {
         case 'xxs':
           return {
-            'xxs': true,
+            xxs: true,
             'txt-6': true,
             'px-3': true,
-            'py-1': true
+            'py-1': true,
           }
         case 'xs':
           return {
-            'xs': true,
+            xs: true,
             'txt-5': true,
             'px-5': true,
-            'py-2': true
+            'py-2': true,
           }
         case 's':
           return {
-            's': true,
+            s: true,
             'txt-4': true,
             'px-6': true,
-            'py-3': true
+            'py-3': true,
           }
         case 'm':
           return {
-            'm': true,
+            m: true,
             'txt-3': true,
             'px-6': true,
-            'py-3': true
+            'py-3': true,
           }
         case 'l':
           return {
-            'l': true,
+            l: true,
             'txt-2': true,
             'px-7': true,
-            'py-4': true
+            'py-4': true,
           }
         case 'xl':
           return {
-            'xl': true,
+            xl: true,
             'txt-2': true,
             'px-8': true,
-            'py-5': true
+            'py-5': true,
           }
         case 'xxl':
           return {
-            'xxl': true,
+            xxl: true,
             'txt-1': true,
             'px-10': true,
-            'py-6': true
+            'py-6': true,
           }
       }
     },
@@ -157,14 +158,12 @@ export default {
       return {
         ...this.buttonSizeClasses,
         disabled: this.isDisabled,
-        radiusless: this.radiusless
+        radiusless: this.radiusless,
       }
     },
     loaderMode() {
-      return this.type === 'default' || this.type === 'text'
-        ? 'black'
-        : 'white'
-    }
+      return this.type === 'default' || this.type === 'text' ? 'black' : 'white'
+    },
   },
   methods: {
     onClick() {
@@ -208,7 +207,7 @@ export default {
     .icon-wrapper {
       .default-loader {
         left: -8px;
-        transform: scale(0.7)
+        transform: scale(0.7);
       }
     }
   }

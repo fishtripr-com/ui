@@ -13,7 +13,8 @@ export default {
     mode: {
       type: String,
       default: 'primary',
-      validator: value => ['primary', 'premium', 'white', 'black'].includes(value),
+      validator: value =>
+        ['primary', 'premium', 'white', 'black'].includes(value),
     },
     size: {
       type: String,

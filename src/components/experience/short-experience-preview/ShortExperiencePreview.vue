@@ -1,8 +1,5 @@
 <template>
-  <loader
-    v-if="isLoading"
-    :mode="premium ? 'premium' : 'primary'"
-  />
+  <loader v-if="isLoading" :mode="premium ? 'premium' : 'primary'" />
   <div v-else class="experience-short-preview">
     <div class="info">
       <p
@@ -41,7 +38,7 @@ export default {
   name: 'experience-short-preview',
   components: {
     'el-rate': Rate,
-    Loader
+    Loader,
   },
   props: {
     title: { type: String, required: true },

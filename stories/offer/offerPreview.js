@@ -2,8 +2,7 @@ import { storiesOf } from '@storybook/vue'
 
 import data from '../_utils/mockData'
 
-storiesOf('Offer/Offer preview', module)
-.add('Default', () => ({
+storiesOf('Offer/Offer preview', module).add('Default', () => ({
   data() {
     return {
       experience: data.experience,
@@ -26,5 +25,4 @@ storiesOf('Offer/Offer preview', module)
       extraCTALabel="Or send another offer"
       />
     `,
-  })
-)
+}))

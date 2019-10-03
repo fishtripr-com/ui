@@ -1,12 +1,13 @@
 export default {
   experience: {
     title: 'Fishing in the wild Alagnak River',
-    cover: 'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/partners/5a86f4f05a298f7384391939/offers/15085380/cover.jpeg',
+    cover:
+      'https://fishtripr-prod-offer-pics.s3.eu-west-3.amazonaws.com/partners/5a86f4f05a298f7384391939/offers/15085380/cover.jpeg',
     country: 'Canada',
     city: 'Montréal',
     region: 'Québec',
     reviews_average: 4.5,
-    reviews_count: 11
+    reviews_count: 11,
   },
   offer: {
     image: 'https://picsum.photos/200/300',
@@ -61,7 +62,7 @@ export default {
       { id: 2, path: '/ccc', label: 'Bookings' },
       { id: 3, path: '/ddd', label: 'Experience' },
       { id: 4, path: '/eee', label: 'Appstore' },
-    ]
+    ],
   },
   status: ['Inquiry sent', 'Offer created', 'Offer accepted', 'Offer paid'],
 }

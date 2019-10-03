@@ -1,6 +1,5 @@
 <template>
   <div class="offer-preview">
-
     <short-experience-preview
       :is-loading="isExperienceLoading"
       :title="experienceTitle"
@@ -10,29 +9,19 @@
       :average-rating="experienceAverageRating"
     />
 
-    <status
-      :data="offerStatuses"
-      :actual-status="offerStatusLevel"
-    />
+    <status :data="offerStatuses" :actual-status="offerStatusLevel" />
 
     <div class="details">
-      <div
-        v-if="offerStatusText && offerStatusType"
-        class="row status">
+      <div v-if="offerStatusText && offerStatusType" class="row status">
         <p class="txt-4">
           Offer status
         </p>
-        <p
-          class="txt-4 bold"
-          :class="offerStatusType"
-          >
+        <p class="txt-4 bold" :class="offerStatusType">
           {{ offerStatusType }}
         </p>
       </div>
 
-      <div
-        v-if="offerDateString"
-        class="row dates">
+      <div v-if="offerDateString" class="row dates">
         <p class="txt-4">
           Dates
         </p>
@@ -41,9 +30,7 @@
         </p>
       </div>
 
-      <div
-        v-if="offerGuestsString"
-        class="row guests">
+      <div v-if="offerGuestsString" class="row guests">
         <p class="txt-4">
           Guests
         </p>
@@ -52,23 +39,15 @@
         </p>
       </div>
 
-      <div
-        v-if="offerTotalPriceString"
-        class="row total pb-6">
-        <p class="txt-4">
-          Total ({{ offerCurrencySymbol }})
-        </p>
+      <div v-if="offerTotalPriceString" class="row total pb-6">
+        <p class="txt-4">Total ({{ offerCurrencySymbol }})</p>
         <p class="txt-4">
           {{ `${offerCurrencySymbol}${offerTotalPriceString}` }}
         </p>
       </div>
 
-      <div
-        v-if="offerDueNowString"
-        class="row last">
-        <p class="txt-4 bold">
-          Due now ({{ offerCurrency }})
-        </p>
+      <div v-if="offerDueNowString" class="row last">
+        <p class="txt-4 bold">Due now ({{ offerCurrency }})</p>
         <p class="txt-4 bold">
           {{ `${offerCurrencySymbol}${offerDueNowString}` }}
         </p>
@@ -76,7 +55,9 @@
 
       <div class="policy" v-if="true">
         <p class="txt-4 my-8">
-          Cancel within 24 hours of booking to get a full refund by contacting <a href="mailto:help@fishtripr.com" class="link-underlined">support</a>.
+          Cancel within 24 hours of booking to get a full refund by contacting
+          <a href="mailto:help@fishtripr.com" class="link-underlined">support</a
+          >.
         </p>
       </div>
     </div>
@@ -97,7 +78,6 @@
         @click="onExtraCTAClicked"
       />
     </div>
-
   </div>
 </template>
 
@@ -118,10 +98,14 @@ export default {
     experienceTitle: { type: String, default: '' },
     experienceCountry: { type: String, default: '' },
     experienceCity: { type: String, default: '' },
-    experienceCover: { type: String, default: ''},
+    experienceCover: { type: String, default: '' },
     experienceAverageRating: { type: Number, default: 0 },
     offerIsLoading: { type: Boolean, default: false },
-    offerStatusLevel: { type: Number, default: 0, validator: value => value >= 0 && value <= 4},
+    offerStatusLevel: {
+      type: Number,
+      default: 0,
+      validator: value => value >= 0 && value <= 4,
+    },
     offerStatusText: { type: String, default: '' },
     offerStatusType: { type: String, default: 'default' },
     offerDateString: { type: String, default: '' },
@@ -140,7 +124,12 @@ export default {
   },
   data() {
     return {
-      offerStatuses: ['Inquiry sent', 'Offer created', 'Offer accepted', 'Offer paid']
+      offerStatuses: [
+        'Inquiry sent',
+        'Offer created',
+        'Offer accepted',
+        'Offer paid',
+      ],
     }
   },
   methods: {
@@ -149,7 +138,7 @@ export default {
     },
     onExtraCTAClicked() {
       this.$emit('extraCTAClicked')
-    }
+    },
   },
 }
 </script>
@@ -158,7 +147,7 @@ export default {
 @import '../../../assets/style/default';
 
 .offer-preview {
-  border: 1px solid map-get($colors, "border");
+  border: 1px solid map-get($colors, 'border');
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -167,7 +156,7 @@ export default {
   .details {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid map-get($colors, "border");
+    border-top: 1px solid map-get($colors, 'border');
     margin-top: map-get($spacers, 8);
 
     .row {
@@ -183,8 +172,8 @@ export default {
       }
 
       &.last {
-        border-top: 1px solid map-get($colors, "border");
-        border-bottom: 1px solid map-get($colors, "border");
+        border-top: 1px solid map-get($colors, 'border');
+        border-bottom: 1px solid map-get($colors, 'border');
         padding: map-get($spacers, 8) 0;
         margin-top: 0;
       }
