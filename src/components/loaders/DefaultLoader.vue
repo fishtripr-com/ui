@@ -13,7 +13,7 @@ export default {
     mode: {
       type: String,
       default: 'primary',
-      validator: value => ['primary', 'premium'].includes(value),
+      validator: value => ['primary', 'premium', 'white', 'black'].includes(value),
     },
     size: {
       type: String,
@@ -85,6 +85,12 @@ export default {
       }
       &.premium:after {
         background: map-get($colors, 'premium');
+      }
+      &.white:after {
+        background: map-get($colors, 'text-white');
+      }
+      &.black:after {
+        background: map-get($colors, 'text');
       }
 
       &:nth-child(1) {
