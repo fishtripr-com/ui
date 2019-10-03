@@ -15,13 +15,15 @@ storiesOf('Offer/Offer preview', module)
   },
   template: `
     <offer-preview
-      :experience-is-loading="false"
+      :is-experience-loading="false"
       :experience-title="experience.title"
       :experience-country="experience.country"
       :experience-city="experience.city"
       :experience-cover="experience.cover"
       :experience-average-rating="experience.reviews_average"
       :offer-is-loading="false"
+      CTALabel="Send an offer"
+      extraCTALabel="Or send another offer"
       />
     `,
   })
