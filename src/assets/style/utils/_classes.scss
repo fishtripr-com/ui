@@ -225,3 +225,67 @@
 .underlined {
   text-decoration: underline;
 }
+
+//  9. Border
+// ==========================================================================
+
+.b {
+  border: 1px solid map-get($colors, "border");
+}
+.bt {
+  border-top: 1px solid map-get($colors, "border");
+}
+.bb {
+  border-bottom: 1px solid map-get($colors, "border");
+}
+.bl {
+  border-left: 1px solid map-get($colors, "border");
+}
+.br {
+  border-right: 1px solid map-get($colors, "border");
+}
+
+//  10. Display
+// ==========================================================================
+
+.flx {
+  display: flex;
+}
+.flx-r {
+  display: flex;
+  flex-direction: row;
+}
+.flx-r-ctt-c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.flx-r-ctt-l {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.flx-r-ctt-r {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.flx-c {
+  display: flex;
+  flex-direction: column;
+}
+.flx-c-ctt-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flx-c-ctt-l {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.flx-c-ctt-r {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
