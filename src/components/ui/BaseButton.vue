@@ -186,6 +186,7 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: transparent;
 
   .icon-wrapper {
