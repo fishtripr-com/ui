@@ -1,5 +1,5 @@
 <template>
-  <div class="offer-preview">
+  <div class="offer-preview flx-c b p-6">
     <short-experience-preview
       :is-loading="isExperienceLoading"
       :title="experienceTitle"
@@ -9,10 +9,15 @@
       :average-rating="experienceAverageRating"
     />
 
-    <status :data="offerStatuses" :actual-status="offerStatusLevel" />
+    <status
+      v-if="!noStatus"
+      class="bt pt-8 mt-8"
+      :data="offerStatuses"
+      :actual-status="offerStatusLevel"
+    />
 
-    <div class="details">
-      <div v-if="offerStatusText && offerStatusType" class="row status">
+    <div v-if="offerStatusText" class="details flx-c bt mt-8">
+      <div v-if="offerStatusText && offerStatusType" class="row status pt-8">
         <p class="txt-4">
           Offer status
         </p>
@@ -21,48 +26,53 @@
         </p>
       </div>
 
-      <div v-if="offerDateString" class="row dates">
+      <div v-if="offerDateString" class="row dates pt-5">
         <p class="txt-4">
           Dates
         </p>
-        <p class="txt-4">
+        <p class="txt-4 semibold">
           {{ offerDateString }}
         </p>
       </div>
 
-      <div v-if="offerGuestsString" class="row guests">
+      <div v-if="offerGuestsString" class="row guests pt-5">
         <p class="txt-4">
           Guests
         </p>
-        <p class="txt-4">
+        <p class="txt-4 semibold">
           {{ offerGuestsString }}
         </p>
       </div>
 
-      <div v-if="offerTotalPriceString" class="row total pb-6">
-        <p class="txt-4">Total ({{ offerCurrencySymbol }})</p>
-        <p class="txt-4">
+      <div v-if="offerTotalPriceString" class="row total pt-5">
+        <p class="txt-4">Total ({{ offerCurrency }})</p>
+        <p class="txt-4 semibold">
           {{ `${offerCurrencySymbol}${offerTotalPriceString}` }}
         </p>
       </div>
 
-      <div v-if="offerDueNowString" class="row last">
-        <p class="txt-4 bold">Due now ({{ offerCurrency }})</p>
-        <p class="txt-4 bold">
+      <div v-if="offerDueNowString" class="row pt-8 mt-8 bt">
+        <p class="txt-4 semibold">Due now ({{ offerCurrency }})</p>
+        <p class="txt-4 semibold">
           {{ `${offerCurrencySymbol}${offerDueNowString}` }}
         </p>
       </div>
 
-      <div class="policy" v-if="true">
-        <p class="txt-4 my-8">
-          Cancel within 24 hours of booking to get a full refund by contacting
-          <a href="mailto:help@fishtripr.com" class="link-underlined">support</a
-          >.
+      <div v-if="offerDueOnDateString" class="row pt-5">
+        <p class="txt-4">Due on {{ offerDueOnDateString }}</p>
+        <p class="txt-4">
+          {{ `${offerCurrencySymbol}${offerDueOnValueString}` }}
+        </p>
+      </div>
+
+      <div class="policy mt-8 pt-8 bt" v-if="true">
+        <p class="txt-5">
+          {{ extraText }}
         </p>
       </div>
     </div>
 
-    <div class="call-to-actions">
+    <div class="call-to-actions flx-c mt-8">
       <base-button
         :label="CTALabel"
         size="s"
@@ -100,6 +110,7 @@ export default {
     experienceCity: { type: String, default: '' },
     experienceCover: { type: String, default: '' },
     experienceAverageRating: { type: Number, default: 0 },
+    noStatus: { type: Boolean, default: false },
     offerIsLoading: { type: Boolean, default: false },
     offerStatusLevel: {
       type: Number,
@@ -147,37 +158,17 @@ export default {
 @import '../../../assets/style/default';
 
 .offer-preview {
-  border: 1px solid map-get($colors, 'border');
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
-  padding: 20px;
 
   .details {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid map-get($colors, 'border');
-    margin-top: map-get($spacers, 8);
-
     .row {
       display: flex;
       justify-content: space-between;
-      margin-top: 20px;
-
-      &:first-child {
-        margin-top: map-get($spacers, 8);
-      }
-      &:nth-child(4) {
-        margin-bottom: map-get($spacers, 4);
-      }
-
-      &.last {
-        border-top: 1px solid map-get($colors, 'border');
-        border-bottom: 1px solid map-get($colors, 'border');
-        padding: map-get($spacers, 8) 0;
-        margin-top: 0;
-      }
     }
+  }
+
+  .call-to-actions {
+    // align-items: flex-start;
   }
 }
 </style>
