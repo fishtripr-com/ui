@@ -65,10 +65,8 @@
         </p>
       </div>
 
-      <div class="policy mt-8 pt-8 bt" v-if="true">
-        <p class="txt-5">
-          {{ extraText }}
-        </p>
+      <div class="policy mt-8 pt-8 bt" v-if="$slots.extra">
+        <slot name="extra"/>
       </div>
     </div>
 
@@ -77,6 +75,7 @@
         :label="CTALabel"
         size="s"
         :is-loading="isCTALoading"
+        :type="CTAType"
         @click="onCTAClicked"
       />
       <base-button
@@ -92,14 +91,14 @@
 </template>
 
 <script>
-import ShortExperiencePreviw from '../../experience/short-experience-preview/ShortExperiencePreview'
+import ShortExperiencePreview from '../../experience/short-experience-preview/ShortExperiencePreview'
 import Status from '../../ui/status'
 import BaseButton from '../../ui/BaseButton'
 
 export default {
   name: 'offer-preview',
   components: {
-    ShortExperiencePreviw,
+    ShortExperiencePreview,
     Status,
     BaseButton,
   },
@@ -130,6 +129,7 @@ export default {
     extraText: { type: String, default: '' },
     isCTALoading: { type: Boolean, default: false },
     CTALabel: { type: String, default: '' },
+    CTAType: { type: String, default: 'default' },
     isExtraCTALoading: { type: Boolean, default: false },
     extraCTALabel: { type: String, default: '' },
   },
@@ -165,10 +165,6 @@ export default {
       display: flex;
       justify-content: space-between;
     }
-  }
-
-  .call-to-actions {
-    // align-items: flex-start;
   }
 }
 </style>

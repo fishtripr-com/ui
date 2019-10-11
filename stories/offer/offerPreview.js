@@ -37,6 +37,8 @@ storiesOf('Offer/Offer preview', module).add('Default', () => ({
       CTALabel="Continue Conversation"
       :isExtraCTALoading="false"
       extraCTALabel="Or send another offer"
-      />
+      >
+      <p slot="extra">test</p>
+    </offer-preview>
     `,
 }))
