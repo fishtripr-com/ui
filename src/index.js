@@ -18,6 +18,7 @@ import CopyableLink from './components/copyable-link'
 import MobileOfferHeader from './components/mobile-offer-header'
 import InsightCard from './components/dashboard/insight-card'
 import OfferPreview from './components/offer/offer-preview/OfferPreview'
+import ShortExperiencePreview from './components/experience/short-experience-preview/ShortExperiencePreview'
 
 // Mixins
 import { responsiveHandler } from './mixins/responsiveHandler'
@@ -43,6 +44,7 @@ export {
   MobileOfferHeader,
   InsightCard,
   OfferPreview,
+  ShortExperiencePreview,
   // Mixins
   responsiveHandler,
 }
